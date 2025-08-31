@@ -1,4 +1,5 @@
 #!/bin/bash
+# Week 2 – Task 5: Extract CSV column (default col=2)
 # Week 2 – Task 5: Print a column from a CSV file (defaults: file=data.csv, column=2)
 
 file="${1:-data.csv}"

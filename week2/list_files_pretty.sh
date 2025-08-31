@@ -1,4 +1,5 @@
 #!/bin/bash
+# Week 2 – Task 3 (Bonus): Pretty table of files and sizes (KB)
 # Week 2 – Task 3 (Bonus): Pretty table of files and sizes in KB
 
 printf "%-30s %10s\n" "Filename" "Size(KB)"

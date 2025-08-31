@@ -1,4 +1,5 @@
 #!/bin/bash
+# Week 2 – Task 2: Checks if path is file/dir/not-exist
 
 if [ -f "$1" ]; then
     echo "$1 is a file."

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Week 2 – Task 4: Find & count ERROR entries in a log
 
 if [ ! -f "access.log" ]; then
     echo "access.log not found!"
