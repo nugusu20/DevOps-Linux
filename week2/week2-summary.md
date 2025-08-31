@@ -202,4 +202,3 @@ In this week we learned:
 - How to loop through files and display results in a formatted table.  
 - How to filter and count errors in log files using grep.  
 - How to extract specific columns from CSV files using awk.  
-All snippets above are copy-paste ready.
