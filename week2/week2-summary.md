@@ -195,18 +195,6 @@ Ed
 
 ---
 
-## ✅ Summary
-This week we practiced:
-- Creating and running Bash scripts (`#!/bin/bash`, `chmod +x`).
-- File tests and conditions to validate inputs.
-- Loops and `printf` for readable CLI tables.
-- `grep` for log filtering and counting occurrences.
-- `awk` for working with CSV data.
-
-All snippets above are copy-paste ready.
-
----
-
 ## ✅ Summary of Week 2
 In this week we learned:
 - How to create and run Bash scripts (#/bin/bash, chmod +x).  
@@ -214,4 +202,3 @@ In this week we learned:
 - How to loop through files and display results in a formatted table.  
 - How to filter and count errors in log files using grep.  
 - How to extract specific columns from CSV files using awk.  
-
