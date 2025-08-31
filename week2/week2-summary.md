@@ -1,31 +1,39 @@
 # Week 2 – Shell Scripting Basics
 
 In Week 2 we practiced creating and running simple Bash scripts.  
-The main goal was to understand how DevOps engineers automate daily tasks such as printing messages, checking files, listing directory contents, searching logs, and extracting columns from CSV files.  
-Each task builds a foundation for real-world DevOps work.
+The goal is to build habits that are used daily in DevOps: printing messages, checking files, looping through directories, searching logs, and extracting CSV columns.
 
 ---
 
 ## Task 1 – Hello DevOps
-Goal: Learn how to write the most basic Bash script and make it executable.  
+**Goal:** Write the most basic Bash script and run it.
 
-Script (hello_devops.sh):
+### Script (`hello_devops.sh`)
+```bash
 #!/bin/bash
 echo "Hello DevOps"
+```
 
-Run:
+### Run
+```bash
+chmod +x hello_devops.sh
 ./hello_devops.sh
+```
 
-Expected Output:
+### Expected Output
+```
 Hello DevOps
+```
 
 ---
 
 ## Task 2 – File & Directory Checker
-Goal: Practice using conditions (if/else) and file tests (-f, -d).  
+**Goal:** Use conditions (`if/elif/else`) and file tests (`-f`, `-d`).
 
-Script (file_checker.sh):
+### Script (`file_checker.sh`)
+```bash
 #!/bin/bash
+# Week 2 – Task 2: Checks if path is file/dir/not-exist
 if [ -f "$1" ]; then
   echo "$1 is a file."
 elif [ -d "$1" ]; then
@@ -33,24 +41,32 @@ elif [ -d "$1" ]; then
 else
   echo "$1 does not exist."
 fi
+```
 
-Run Examples:
+### Run (examples)
+```bash
 ./file_checker.sh hello_devops.sh
 ./file_checker.sh /etc
 ./file_checker.sh not_exists.txt
+```
 
-Expected Output:
+### Expected Output
+```
 hello_devops.sh is a file.
 /etc is a directory.
 not_exists.txt does not exist.
+```
 
 ---
 
 ## Task 3 – List Files with Sizes
-Goal: Use loops and printf formatting to create a readable table of files and sizes.  
+**Goal:** Loop over files and print a **formatted table**.
 
-Script (list_files_pretty.sh):
+### Script (`list_files_pretty.sh`)
+```bash
 #!/bin/bash
+# Week 2 – Task 3 (Bonus): Pretty table of files and sizes (KB)
+
 printf "%-30s %10s\n" "Filename" "Size(KB)"
 printf "%-30s %10s\n" "------------------------------" "--------"
 
@@ -60,30 +76,41 @@ for file in *; do
     printf "%-30s %10s\n" "$file" "$size"
   fi
 done
+```
 
-Run:
+### Run
+```bash
+chmod +x list_files_pretty.sh
 ./list_files_pretty.sh
+```
 
-Expected Output Example:
+### Example Output
+```
 Filename                         Size(KB)
 ------------------------------   --------
 hello_devops.sh                         4
 file_checker.sh                         4
 list_files_pretty.sh                    4
+```
 
 ---
 
-## Task 4 – Search for ERROR in Logs
-Goal: Learn how to search and count errors in log files using grep.  
+## Task 4 – Search for `ERROR` in Logs
+**Goal:** Use `grep` to filter and count errors in logs.
 
-Log file (access.log example):
+### Sample log (`access.log`)
+```
 200 OK
 404 ERROR: Not Found
 500 ERROR: Server Error
 ERROR: Unauthorized access
+```
 
-Script (error_checker.sh):
+### Script (`error_checker.sh`)
+```bash
 #!/bin/bash
+# Week 2 – Task 4: Find & count ERROR entries in a log
+
 if [ ! -f "access.log" ]; then
   echo "access.log not found!"
   exit 1
@@ -99,11 +126,16 @@ grep -c ERROR access.log
 echo ""
 echo "Total ERROR occurrences:"
 grep -o ERROR access.log | wc -l
+```
 
-Run:
+### Run
+```bash
+chmod +x error_checker.sh
 ./error_checker.sh
+```
 
-Expected Output:
+### Expected Output
+```
 Lines containing ERROR:
 404 ERROR: Not Found
 500 ERROR: Server Error
@@ -114,41 +146,64 @@ Number of lines with ERROR:
 
 Total ERROR occurrences:
 3
+```
 
 ---
 
 ## Task 5 – AWK Column Extractor
-Goal: Use awk to extract specific columns from CSV files.  
+**Goal:** Use `awk` to extract a specific CSV column.
 
-Data file (data.csv):
+### Data (`data.csv`)
+```
 id,name,score
 1,Alice,88
 2,Bob,92
 3,Charlie,75
 4,Dina,81
 5,Ed,95
+```
 
-Script (awk_column_extractor.sh):
+### Script (`awk_column_extractor.sh`)
+```bash
 #!/bin/bash
+# Week 2 – Task 5: Extract CSV column (default col=2)
 file="${1:-data.csv}"
 col="${2:-2}"
 
 if [ ! -f "$file" ]; then
-  echo "Error: '$file' not found."
+  echo "Error: '$file' not found." >&2
   exit 1
 fi
 
 awk -F, -v c="$col" 'NR>1 {print $c}' "$file"
+```
 
-Run:
+### Run
+```bash
+chmod +x awk_column_extractor.sh
 ./awk_column_extractor.sh data.csv 2
+```
 
-Expected Output:
+### Expected Output
+```
 Alice
 Bob
 Charlie
 Dina
 Ed
+```
+
+---
+
+## ✅ Summary
+This week we practiced:
+- Creating and running Bash scripts (`#!/bin/bash`, `chmod +x`).
+- File tests and conditions to validate inputs.
+- Loops and `printf` for readable CLI tables.
+- `grep` for log filtering and counting occurrences.
+- `awk` for working with CSV data.
+
+All snippets above are copy-paste ready.
 
 ---
 
@@ -159,7 +214,4 @@ In this week we learned:
 - How to loop through files and display results in a formatted table.  
 - How to filter and count errors in log files using grep.  
 - How to extract specific columns from CSV files using awk.  
-
-These are essential building blocks for automation in DevOps.  
-They will be reused later when working with GitHub Actions, Docker, Kubernetes, and other tools.
 
