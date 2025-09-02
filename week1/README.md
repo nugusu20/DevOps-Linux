@@ -6,7 +6,6 @@ _A starter guide for Linux and DevOps basics: filesystem, navigation, users & gr
 ## 📂 Linux Filesystem (Quick Map)
 
 ```bash
-# --- Linux Filesystem (Quick Map) ---
 /       → root of the filesystem
 /etc    → system configuration files
 /var    → variable data (e.g., logs)
