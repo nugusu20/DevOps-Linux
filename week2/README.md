@@ -1,11 +1,11 @@
-# Week 2 – Shell Scripting Basics
+# 📗 Week 2 – Shell Scripting Basics
 
 In Week 2 we practiced creating and running simple Bash scripts.  
-The goal is to build habits that are used daily in DevOps: printing messages, checking files, looping through directories, searching logs, and extracting CSV columns.
+The goal is to build habits that are used daily in DevOps: printing messages, checking files, looping, searching logs, and parsing data.
 
 ---
 
-## Task 1 – Hello DevOps
+## 📝 Task 1 – Hello DevOps
 **Goal:** Write the most basic Bash script and run it.
 
 ### Script (`hello_devops.sh`)
@@ -27,7 +27,7 @@ Hello DevOps
 
 ---
 
-## Task 2 – File & Directory Checker
+## 📂 Task 2 – File & Directory Checker
 **Goal:** Use conditions (`if/elif/else`) and file tests (`-f`, `-d`).
 
 ### Script (`file_checker.sh`)
@@ -59,7 +59,7 @@ not_exists.txt does not exist.
 
 ---
 
-## Task 3 – List Files with Sizes
+## 📊 Task 3 – List Files with Sizes
 **Goal:** Loop over files and print a **formatted table**.
 
 ### Script (`list_files_pretty.sh`)
@@ -95,7 +95,7 @@ list_files_pretty.sh                    4
 
 ---
 
-## Task 4 – Search for `ERROR` in Logs
+## 🔎 Task 4 – Search for `ERROR` in Logs
 **Goal:** Use `grep` to filter and count errors in logs.
 
 ### Sample log (`access.log`)
@@ -150,7 +150,7 @@ Total ERROR occurrences:
 
 ---
 
-## Task 5 – AWK Column Extractor
+## 📑 Task 5 – AWK Column Extractor
 **Goal:** Use `awk` to extract a specific CSV column.
 
 ### Data (`data.csv`)
@@ -197,8 +197,8 @@ Ed
 
 ## ✅ Summary of Week 2
 In this week we learned:
-- How to create and run Bash scripts (#/bin/bash, chmod +x).  
-- How to use conditions to check files and directories.  
-- How to loop through files and display results in a formatted table.  
-- How to filter and count errors in log files using grep.  
-- How to extract specific columns from CSV files using awk.  
+- How to create and run Bash scripts (`#!/bin/bash`, `chmod +x`).
+- How to use conditions to check files and directories.
+- How to loop through files and display results in a formatted table.
+- How to filter and count errors in log files using `grep`.
+- How to extract specific columns from CSV files using `awk`.
