@@ -20,10 +20,10 @@
 
 | Week | Title | Link |
 |------|---------------------------|---------------------------|
-| 📘 Week 1 | Intro to DevOps & Linux | [Week 1 README](week1/README.md) |
-| 📗 Week 2 | Shell Scripting Basics | [Week 2 README](week2/README.md) |
-| 📙 Week 3 | Git, GitHub & CI/CD   | [Week 3 README](week3/README.md) |
-| 📒 Week 4 | Docker Essentials    | [Week 4 README](week4/README.md) |
+| 📘 Week 1 | Intro to DevOps & Linux          | [Week 1 README](week1/README.md) |
+| 📗 Week 2 | Shell Scripting Basics           | [Week 2 README](week2/README.md) |
+| 📙 Week 3 | Remote Log Monitoring & Analyzer | [Week 3 README](week3/README.md) |
+| 📒 Week 4 | Docker Essentials                | [Week 4 README](week4/README.md) |
 
 ---
 
