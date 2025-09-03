@@ -1,30 +1,58 @@
-# DevOps Course – Hands-on Journey
+<p align="center">
+  <img src="https://img.shields.io/badge/DevOps%20Course-Linux%20%7C%20Cloud-blue?style=for-the-badge&logo=linux&logoColor=white" alt="DevOps Banner">
+</p>
 
-This repository contains my weekly practice tasks and summaries from the DevOps course.  
-Each week is organized into its own folder with scripts, notes, and examples.
+<h1 align="center">🚀 DevOps Course – Hands-on Journey</h1>
+<p align="center">
+  <b>Your personal DevOps learning repository</b><br>
+  <i>Linux • Cloud • GitHub • CI/CD • Docker</i>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Platform-Ubuntu%20WSL-orange?style=for-the-badge&logo=ubuntu">
+  <img src="https://img.shields.io/badge/Tools-Git%20%7C%20Docker%20%7C%20AWS-yellow?style=for-the-badge">
+</p>
 
 ---
 
-<details>
-  <summary><b>Week 1 – Intro to DevOps & Linux</b></summary>
+## 📑 Table of Contents
 
-- [Week 1 README](week1/README.md)  
-- Topics: Linux basics, navigation commands, user & group management, permissions, project structure.
+| Week | Title | Link |
+|------|---------------------------|---------------------------|
+| 📘 Week 1 | Intro to DevOps & Linux | [Week 1 README](week1/README.md) |
+| 📗 Week 2 | Shell Scripting Basics | [Week 2 README](week2/README.md) |
+| 📙 Week 3 | Git, GitHub & CI/CD   | [Week 3 README](week3/README.md) |
+| 📒 Week 4 | Docker Essentials    | [Week 4 README](week4/README.md) |
 
-</details>
+---
 
-<details>
-  <summary><b>Week 2 – Shell Scripting Basics</b></summary>
+## 🛠️ Tech Stack
 
-- [Week 2 Summary](week2/week2-summary.md)  
-- Topics: Bash scripting, file checker, error log search, awk CSV extractor.
+- **OS:** Ubuntu 22.04 (WSL)
+- **Version Control:** Git & GitHub
+- **Cloud Provider:** AWS (Free Tier)
+- **Dev Tools:** Nano, VS Code, PuTTY, Docker
 
-</details>
+---
 
-<details>
-  <summary><b>Week 3 – Networking & SSH</b></summary>
+## 📌 How to Use
 
-- [Week 3 Practice](week3/week3_practice/README.md)  
-- [Week 3 Summary Task](week3/remote_log_analyzer.sh)
+Clone this repository:
+```bash
+git clone https://github.com/nugusu20/DevOps-Linux.git
+cd DevOps-Linux
+```
 
-</details>
+Then navigate into any week:
+```bash
+cd week1
+nano README.md
+```
+
+---
+
+## 📢 Notes
+
+> This repository is updated weekly as I progress through the DevOps journey.  
+> Stay tuned for more scripts, automation, and projects!
