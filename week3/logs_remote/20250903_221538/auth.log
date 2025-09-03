@@ -1,0 +1,263 @@
+2025-09-01T23:04:57.133576+00:00 ip-172-31-37-199 useradd[551]: new group: name=ubuntu, GID=1000
+2025-09-01T23:04:57.133578+00:00 ip-172-31-37-199 useradd[551]: new user: name=ubuntu, UID=1000, GID=1000, home=/home/ubuntu, shell=/bin/bash, from=none
+2025-09-01T23:04:57.133582+00:00 ip-172-31-37-199 useradd[551]: add 'ubuntu' to group 'adm'
+2025-09-01T23:04:57.133586+00:00 ip-172-31-37-199 useradd[551]: add 'ubuntu' to group 'cdrom'
+2025-09-01T23:04:57.133589+00:00 ip-172-31-37-199 useradd[551]: add 'ubuntu' to group 'sudo'
+2025-09-01T23:04:57.133591+00:00 ip-172-31-37-199 useradd[551]: add 'ubuntu' to group 'dip'
+2025-09-01T23:04:57.133593+00:00 ip-172-31-37-199 useradd[551]: add 'ubuntu' to group 'lxd'
+2025-09-01T23:04:57.133596+00:00 ip-172-31-37-199 useradd[551]: add 'ubuntu' to shadow group 'adm'
+2025-09-01T23:04:57.133598+00:00 ip-172-31-37-199 useradd[551]: add 'ubuntu' to shadow group 'cdrom'
+2025-09-01T23:04:57.133603+00:00 ip-172-31-37-199 useradd[551]: add 'ubuntu' to shadow group 'sudo'
+2025-09-01T23:04:57.133606+00:00 ip-172-31-37-199 useradd[551]: add 'ubuntu' to shadow group 'dip'
+2025-09-01T23:04:57.133608+00:00 ip-172-31-37-199 useradd[551]: add 'ubuntu' to shadow group 'lxd'
+2025-09-01T23:04:57.133611+00:00 ip-172-31-37-199 passwd[559]: password for 'ubuntu' changed by 'root'
+2025-09-01T23:04:57.133997+00:00 ip-172-31-37-199 systemd-logind[608]: Watching system buttons on /dev/input/event0 (Power Button)
+2025-09-01T23:04:57.134000+00:00 ip-172-31-37-199 systemd-logind[608]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2025-09-01T23:04:57.134002+00:00 ip-172-31-37-199 systemd-logind[608]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2025-09-01T23:04:57.134004+00:00 ip-172-31-37-199 systemd-logind[608]: New seat seat0.
+2025-09-01T23:04:57.134049+00:00 ip-172-31-37-199 polkitd[587]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-01T23:04:57.134051+00:00 ip-172-31-37-199 polkitd[587]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-01T23:04:57.134054+00:00 ip-172-31-37-199 polkitd[587]: Finished loading, compiling and executing 6 rules
+2025-09-01T23:04:57.161095+00:00 ip-172-31-37-199 polkitd[587]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2025-09-01T23:05:01.513550+00:00 ip-172-31-37-199 CRON[995]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-01T23:05:01.523989+00:00 ip-172-31-37-199 CRON[995]: pam_unix(cron:session): session closed for user root
+2025-09-01T23:07:41.267266+00:00 ip-172-31-37-199 sshd[1039]: Server listening on 0.0.0.0 port 22.
+2025-09-01T23:07:41.268426+00:00 ip-172-31-37-199 sshd[1039]: Server listening on :: port 22.
+2025-09-01T23:07:47.800486+00:00 ip-172-31-37-199 sshd[1040]: Accepted publickey for ubuntu from 5.29.13.41 port 12479 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-01T23:07:47.802502+00:00 ip-172-31-37-199 sshd[1040]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-01T23:07:47.817405+00:00 ip-172-31-37-199 systemd-logind[608]: New session 2 of user ubuntu.
+2025-09-01T23:07:47.853435+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-01T23:09:41.262952+00:00 ip-172-31-37-199 sshd[1150]: Received disconnect from 5.29.13.41 port 12479:11: disconnected by user
+2025-09-01T23:09:41.263184+00:00 ip-172-31-37-199 sshd[1150]: Disconnected from user ubuntu 5.29.13.41 port 12479
+2025-09-01T23:09:41.263462+00:00 ip-172-31-37-199 sshd[1040]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-01T23:09:41.270211+00:00 ip-172-31-37-199 systemd-logind[608]: Session 2 logged out. Waiting for processes to exit.
+2025-09-01T23:09:41.270307+00:00 ip-172-31-37-199 systemd-logind[608]: Removed session 2.
+2025-09-01T23:15:01.529145+00:00 ip-172-31-37-199 CRON[1220]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-01T23:15:01.533207+00:00 ip-172-31-37-199 CRON[1220]: pam_unix(cron:session): session closed for user root
+2025-09-01T23:17:01.536092+00:00 ip-172-31-37-199 CRON[1224]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-01T23:17:01.539780+00:00 ip-172-31-37-199 CRON[1224]: pam_unix(cron:session): session closed for user root
+2025-09-01T23:23:17.432539+00:00 ip-172-31-37-199 sshd[1234]: Accepted publickey for ubuntu from 5.29.13.41 port 12299 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-01T23:23:17.436708+00:00 ip-172-31-37-199 sshd[1234]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-01T23:23:17.445906+00:00 ip-172-31-37-199 systemd-logind[608]: New session 6 of user ubuntu.
+2025-09-01T23:23:17.480001+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-01T23:23:33.736918+00:00 ip-172-31-37-199 sshd[1308]: Received disconnect from 5.29.13.41 port 12299:11: disconnected by user
+2025-09-01T23:23:33.737498+00:00 ip-172-31-37-199 sshd[1308]: Disconnected from user ubuntu 5.29.13.41 port 12299
+2025-09-01T23:23:33.738746+00:00 ip-172-31-37-199 sshd[1234]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-01T23:23:33.741189+00:00 ip-172-31-37-199 systemd-logind[608]: Session 6 logged out. Waiting for processes to exit.
+2025-09-01T23:23:33.743849+00:00 ip-172-31-37-199 systemd-logind[608]: Removed session 6.
+2025-09-01T23:25:01.543850+00:00 ip-172-31-37-199 CRON[1331]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-01T23:25:01.547586+00:00 ip-172-31-37-199 CRON[1331]: pam_unix(cron:session): session closed for user root
+2025-09-01T23:30:12.341519+00:00 ip-172-31-37-199 sshd[1336]: Accepted publickey for ubuntu from 5.29.13.41 port 12520 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-01T23:30:12.343554+00:00 ip-172-31-37-199 sshd[1336]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-01T23:30:12.351371+00:00 ip-172-31-37-199 systemd-logind[608]: New session 9 of user ubuntu.
+2025-09-01T23:30:12.388530+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-01T23:34:01.106572+00:00 ip-172-31-37-199 sudo:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/sbin/shutdown
+2025-09-01T23:34:01.107504+00:00 ip-172-31-37-199 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by ubuntu(uid=1000)
+2025-09-01T23:34:01.112972+00:00 ip-172-31-37-199 systemd-logind[608]: The system will power off at Mon 2025-09-01 23:35:01 UTC!
+2025-09-01T23:34:01.115481+00:00 ip-172-31-37-199 systemd-logind[608]: Creating /run/nologin, blocking further logins...
+2025-09-01T23:34:01.116196+00:00 ip-172-31-37-199 sudo: pam_unix(sudo:session): session closed for user root
+2025-09-01T23:34:40.323835+00:00 ip-172-31-37-199 sudo:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/sbin/poweroff
+2025-09-01T23:34:40.325549+00:00 ip-172-31-37-199 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by ubuntu(uid=1000)
+2025-09-01T23:34:40.330208+00:00 ip-172-31-37-199 systemd-logind[608]: The system will power off now!
+2025-09-01T23:34:40.343245+00:00 ip-172-31-37-199 sudo: pam_unix(sudo:session): session closed for user root
+2025-09-01T23:34:40.361105+00:00 ip-172-31-37-199 systemd-logind[608]: System is powering down.
+2025-09-01T23:34:40.381672+00:00 ip-172-31-37-199 sshd[1336]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T14:35:37.077870+00:00 ip-172-31-37-199 systemd-logind[532]: Watching system buttons on /dev/input/event0 (Power Button)
+2025-09-03T14:35:37.077873+00:00 ip-172-31-37-199 systemd-logind[532]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2025-09-03T14:35:37.077875+00:00 ip-172-31-37-199 systemd-logind[532]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2025-09-03T14:35:37.077878+00:00 ip-172-31-37-199 systemd-logind[532]: New seat seat0.
+2025-09-03T14:35:37.077937+00:00 ip-172-31-37-199 polkitd[519]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-03T14:35:37.077939+00:00 ip-172-31-37-199 polkitd[519]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-03T14:35:37.077944+00:00 ip-172-31-37-199 polkitd[519]: Finished loading, compiling and executing 6 rules
+2025-09-03T14:35:37.077949+00:00 ip-172-31-37-199 polkitd[519]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2025-09-03T14:45:01.465850+00:00 ip-172-31-37-199 CRON[1205]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T14:45:01.471293+00:00 ip-172-31-37-199 CRON[1205]: pam_unix(cron:session): session closed for user root
+2025-09-03T14:51:46.744451+00:00 ip-172-31-37-199 sshd[1220]: Server listening on 0.0.0.0 port 22.
+2025-09-03T14:51:46.745341+00:00 ip-172-31-37-199 sshd[1220]: Server listening on :: port 22.
+2025-09-03T14:52:00.855746+00:00 ip-172-31-37-199 sshd[1221]: Accepted publickey for ubuntu from 5.29.13.41 port 12301 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T14:52:00.857816+00:00 ip-172-31-37-199 sshd[1221]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T14:52:00.872114+00:00 ip-172-31-37-199 systemd-logind[532]: New session 2 of user ubuntu.
+2025-09-03T14:52:00.907278+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T14:53:52.035810+00:00 ip-172-31-37-199 sshd[1339]: Received disconnect from 5.29.13.41 port 12301:11: disconnected by user
+2025-09-03T14:53:52.036081+00:00 ip-172-31-37-199 sshd[1339]: Disconnected from user ubuntu 5.29.13.41 port 12301
+2025-09-03T14:53:52.036423+00:00 ip-172-31-37-199 sshd[1221]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T14:53:52.040800+00:00 ip-172-31-37-199 systemd-logind[532]: Session 2 logged out. Waiting for processes to exit.
+2025-09-03T14:53:52.042161+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 2.
+2025-09-03T14:55:01.478525+00:00 ip-172-31-37-199 CRON[1395]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T14:55:01.481404+00:00 ip-172-31-37-199 CRON[1395]: pam_unix(cron:session): session closed for user root
+2025-09-03T15:05:01.487224+00:00 ip-172-31-37-199 CRON[1404]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T15:05:01.492780+00:00 ip-172-31-37-199 CRON[1404]: pam_unix(cron:session): session closed for user root
+2025-09-03T15:15:01.499454+00:00 ip-172-31-37-199 CRON[1413]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T15:15:01.502541+00:00 ip-172-31-37-199 CRON[1413]: pam_unix(cron:session): session closed for user root
+2025-09-03T15:17:01.505463+00:00 ip-172-31-37-199 CRON[1418]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T15:17:01.509853+00:00 ip-172-31-37-199 CRON[1418]: pam_unix(cron:session): session closed for user root
+2025-09-03T15:25:01.513660+00:00 ip-172-31-37-199 CRON[1474]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T15:25:01.517342+00:00 ip-172-31-37-199 CRON[1474]: pam_unix(cron:session): session closed for user root
+2025-09-03T15:35:01.522336+00:00 ip-172-31-37-199 CRON[1488]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T15:35:01.526086+00:00 ip-172-31-37-199 CRON[1488]: pam_unix(cron:session): session closed for user root
+2025-09-03T15:45:01.530226+00:00 ip-172-31-37-199 CRON[1618]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T15:45:01.533412+00:00 ip-172-31-37-199 CRON[1618]: pam_unix(cron:session): session closed for user root
+2025-09-03T15:55:01.538727+00:00 ip-172-31-37-199 CRON[1627]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T15:55:01.541593+00:00 ip-172-31-37-199 CRON[1627]: pam_unix(cron:session): session closed for user root
+2025-09-03T16:00:07.231355+00:00 ip-172-31-37-199 sshd[1633]: Invalid user ununtu from 5.29.13.41 port 12533
+2025-09-03T16:00:07.356888+00:00 ip-172-31-37-199 sshd[1633]: Connection closed by invalid user ununtu 5.29.13.41 port 12533 [preauth]
+2025-09-03T16:02:40.169271+00:00 ip-172-31-37-199 sshd[1640]: Invalid user nuntu from 5.29.13.41 port 12384
+2025-09-03T16:02:40.292095+00:00 ip-172-31-37-199 sshd[1640]: Connection closed by invalid user nuntu 5.29.13.41 port 12384 [preauth]
+2025-09-03T16:03:12.250325+00:00 ip-172-31-37-199 sshd[1642]: Accepted publickey for ubuntu from 5.29.13.41 port 12503 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T16:03:12.252119+00:00 ip-172-31-37-199 sshd[1642]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:03:12.261183+00:00 ip-172-31-37-199 systemd-logind[532]: New session 12 of user ubuntu.
+2025-09-03T16:03:12.299341+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:05:01.547800+00:00 ip-172-31-37-199 CRON[1779]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T16:05:01.550061+00:00 ip-172-31-37-199 CRON[1779]: pam_unix(cron:session): session closed for user root
+2025-09-03T16:06:52.384983+00:00 ip-172-31-37-199 sshd[1758]: Received disconnect from 5.29.13.41 port 12503:11: disconnected by user
+2025-09-03T16:06:52.385211+00:00 ip-172-31-37-199 sshd[1758]: Disconnected from user ubuntu 5.29.13.41 port 12503
+2025-09-03T16:06:52.385466+00:00 ip-172-31-37-199 sshd[1642]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T16:06:52.390045+00:00 ip-172-31-37-199 systemd-logind[532]: Session 12 logged out. Waiting for processes to exit.
+2025-09-03T16:06:52.392101+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 12.
+2025-09-03T16:07:13.275977+00:00 ip-172-31-37-199 sshd[1794]: Accepted publickey for ubuntu from 5.29.13.41 port 12477 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T16:07:13.277597+00:00 ip-172-31-37-199 sshd[1794]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:07:13.285910+00:00 ip-172-31-37-199 systemd-logind[532]: New session 15 of user ubuntu.
+2025-09-03T16:07:13.320313+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:07:14.444583+00:00 ip-172-31-37-199 sshd[1869]: Received disconnect from 5.29.13.41 port 12477:11: disconnected by user
+2025-09-03T16:07:14.444789+00:00 ip-172-31-37-199 sshd[1869]: Disconnected from user ubuntu 5.29.13.41 port 12477
+2025-09-03T16:07:14.445442+00:00 ip-172-31-37-199 sshd[1794]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T16:07:14.450302+00:00 ip-172-31-37-199 systemd-logind[532]: Session 15 logged out. Waiting for processes to exit.
+2025-09-03T16:07:14.451261+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 15.
+2025-09-03T16:08:23.648187+00:00 ip-172-31-37-199 sshd[1881]: AuthorizedKeysCommand /usr/share/ec2-instance-connect/eic_run_authorized_keys ubuntu SHA256:BsTBNJ7fdJs2EL35ewMkFgmbFPcjRLiAppV7SJ3kBxY failed, status 22
+2025-09-03T16:08:23.736337+00:00 ip-172-31-37-199 sshd[1881]: Connection closed by authenticating user ubuntu 5.29.13.41 port 12463 [preauth]
+2025-09-03T16:09:11.397244+00:00 ip-172-31-37-199 sshd[1897]: Accepted publickey for ubuntu from 5.29.13.41 port 12366 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T16:09:11.399451+00:00 ip-172-31-37-199 sshd[1897]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:09:11.424936+00:00 ip-172-31-37-199 systemd-logind[532]: New session 17 of user ubuntu.
+2025-09-03T16:09:11.445053+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:12:46.685111+00:00 ip-172-31-37-199 sshd[1971]: Received disconnect from 5.29.13.41 port 12366:11: disconnected by user
+2025-09-03T16:12:46.685343+00:00 ip-172-31-37-199 sshd[1971]: Disconnected from user ubuntu 5.29.13.41 port 12366
+2025-09-03T16:12:46.685604+00:00 ip-172-31-37-199 sshd[1897]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T16:12:46.691464+00:00 ip-172-31-37-199 systemd-logind[532]: Session 17 logged out. Waiting for processes to exit.
+2025-09-03T16:12:46.692826+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 17.
+2025-09-03T16:14:28.811934+00:00 ip-172-31-37-199 sshd[2005]: Accepted publickey for ubuntu from 5.29.13.41 port 12522 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T16:14:28.816244+00:00 ip-172-31-37-199 sshd[2005]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:14:28.824299+00:00 ip-172-31-37-199 systemd-logind[532]: New session 19 of user ubuntu.
+2025-09-03T16:14:28.858561+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:14:29.563075+00:00 ip-172-31-37-199 sshd[2079]: Received disconnect from 5.29.13.41 port 12522:11: disconnected by user
+2025-09-03T16:14:29.563244+00:00 ip-172-31-37-199 sshd[2079]: Disconnected from user ubuntu 5.29.13.41 port 12522
+2025-09-03T16:14:29.563442+00:00 ip-172-31-37-199 sshd[2005]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T16:14:29.567281+00:00 ip-172-31-37-199 systemd-logind[532]: Session 19 logged out. Waiting for processes to exit.
+2025-09-03T16:14:29.569872+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 19.
+2025-09-03T16:15:01.555881+00:00 ip-172-31-37-199 CRON[2089]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T16:15:01.558201+00:00 ip-172-31-37-199 CRON[2089]: pam_unix(cron:session): session closed for user root
+2025-09-03T16:16:49.493506+00:00 ip-172-31-37-199 sshd[2093]: Accepted publickey for ubuntu from 5.29.13.41 port 12399 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T16:16:49.496143+00:00 ip-172-31-37-199 sshd[2093]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:16:49.521177+00:00 ip-172-31-37-199 systemd-logind[532]: New session 22 of user ubuntu.
+2025-09-03T16:16:49.540768+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:16:50.234633+00:00 ip-172-31-37-199 sshd[2167]: Received disconnect from 5.29.13.41 port 12399:11: disconnected by user
+2025-09-03T16:16:50.235359+00:00 ip-172-31-37-199 sshd[2167]: Disconnected from user ubuntu 5.29.13.41 port 12399
+2025-09-03T16:16:50.235522+00:00 ip-172-31-37-199 sshd[2093]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T16:16:50.239768+00:00 ip-172-31-37-199 systemd-logind[532]: Session 22 logged out. Waiting for processes to exit.
+2025-09-03T16:16:50.241226+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 22.
+2025-09-03T16:17:01.561123+00:00 ip-172-31-37-199 CRON[2177]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T16:17:01.563930+00:00 ip-172-31-37-199 CRON[2177]: pam_unix(cron:session): session closed for user root
+2025-09-03T16:20:34.854790+00:00 ip-172-31-37-199 sshd[2185]: Accepted publickey for ubuntu from 5.29.13.41 port 12378 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T16:20:34.856278+00:00 ip-172-31-37-199 sshd[2185]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:20:34.866146+00:00 ip-172-31-37-199 systemd-logind[532]: New session 25 of user ubuntu.
+2025-09-03T16:20:34.898750+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T16:20:35.601674+00:00 ip-172-31-37-199 sshd[2260]: Received disconnect from 5.29.13.41 port 12378:11: disconnected by user
+2025-09-03T16:20:35.601843+00:00 ip-172-31-37-199 sshd[2260]: Disconnected from user ubuntu 5.29.13.41 port 12378
+2025-09-03T16:20:35.602044+00:00 ip-172-31-37-199 sshd[2185]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T16:20:35.604655+00:00 ip-172-31-37-199 systemd-logind[532]: Session 25 logged out. Waiting for processes to exit.
+2025-09-03T16:20:35.607882+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 25.
+2025-09-03T16:25:01.568127+00:00 ip-172-31-37-199 CRON[2284]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T16:25:01.575554+00:00 ip-172-31-37-199 CRON[2284]: pam_unix(cron:session): session closed for user root
+2025-09-03T16:35:01.580572+00:00 ip-172-31-37-199 CRON[2298]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T16:35:01.585472+00:00 ip-172-31-37-199 CRON[2298]: pam_unix(cron:session): session closed for user root
+2025-09-03T16:45:01.588622+00:00 ip-172-31-37-199 CRON[2308]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T16:45:01.590918+00:00 ip-172-31-37-199 CRON[2308]: pam_unix(cron:session): session closed for user root
+2025-09-03T16:55:01.595245+00:00 ip-172-31-37-199 CRON[2317]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T16:55:01.599400+00:00 ip-172-31-37-199 CRON[2317]: pam_unix(cron:session): session closed for user root
+2025-09-03T17:05:01.604312+00:00 ip-172-31-37-199 CRON[2341]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T17:05:01.607741+00:00 ip-172-31-37-199 CRON[2341]: pam_unix(cron:session): session closed for user root
+2025-09-03T17:15:01.612184+00:00 ip-172-31-37-199 CRON[2353]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T17:15:01.616289+00:00 ip-172-31-37-199 CRON[2353]: pam_unix(cron:session): session closed for user root
+2025-09-03T17:17:01.618682+00:00 ip-172-31-37-199 CRON[2357]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T17:17:01.621543+00:00 ip-172-31-37-199 CRON[2357]: pam_unix(cron:session): session closed for user root
+2025-09-03T17:25:01.625469+00:00 ip-172-31-37-199 CRON[2365]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T17:25:01.628761+00:00 ip-172-31-37-199 CRON[2365]: pam_unix(cron:session): session closed for user root
+2025-09-03T17:35:01.634493+00:00 ip-172-31-37-199 CRON[2373]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T17:35:01.637952+00:00 ip-172-31-37-199 CRON[2373]: pam_unix(cron:session): session closed for user root
+2025-09-03T17:35:20.794867+00:00 ip-172-31-37-199 sshd[2377]: AuthorizedKeysCommand /usr/share/ec2-instance-connect/eic_run_authorized_keys ubuntu SHA256:BsTBNJ7fdJs2EL35ewMkFgmbFPcjRLiAppV7SJ3kBxY failed, status 22
+2025-09-03T17:35:20.883040+00:00 ip-172-31-37-199 sshd[2377]: Connection closed by authenticating user ubuntu 5.29.13.41 port 12317 [preauth]
+2025-09-03T17:35:34.405165+00:00 ip-172-31-37-199 sshd[2393]: AuthorizedKeysCommand /usr/share/ec2-instance-connect/eic_run_authorized_keys ubuntu SHA256:BsTBNJ7fdJs2EL35ewMkFgmbFPcjRLiAppV7SJ3kBxY failed, status 22
+2025-09-03T17:35:34.465333+00:00 ip-172-31-37-199 sshd[2393]: Connection closed by authenticating user ubuntu 5.29.13.41 port 12430 [preauth]
+2025-09-03T17:35:52.425122+00:00 ip-172-31-37-199 sshd[2410]: Accepted publickey for ubuntu from 5.29.13.41 port 12376 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T17:35:52.426527+00:00 ip-172-31-37-199 sshd[2410]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T17:35:52.435927+00:00 ip-172-31-37-199 systemd-logind[532]: New session 36 of user ubuntu.
+2025-09-03T17:35:52.467767+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T17:39:13.917371+00:00 ip-172-31-37-199 sshd[2528]: Received disconnect from 5.29.13.41 port 12376:11: disconnected by user
+2025-09-03T17:39:13.917818+00:00 ip-172-31-37-199 sshd[2528]: Disconnected from user ubuntu 5.29.13.41 port 12376
+2025-09-03T17:39:13.918631+00:00 ip-172-31-37-199 sshd[2410]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T17:39:13.922819+00:00 ip-172-31-37-199 systemd-logind[532]: Session 36 logged out. Waiting for processes to exit.
+2025-09-03T17:39:13.923353+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 36.
+2025-09-03T17:40:55.628591+00:00 ip-172-31-37-199 sshd[2566]: AuthorizedKeysCommand /usr/share/ec2-instance-connect/eic_run_authorized_keys ubuntu SHA256:BsTBNJ7fdJs2EL35ewMkFgmbFPcjRLiAppV7SJ3kBxY failed, status 22
+2025-09-03T17:40:55.725478+00:00 ip-172-31-37-199 sshd[2566]: Connection closed by authenticating user ubuntu 5.29.13.41 port 12463 [preauth]
+2025-09-03T17:42:51.886655+00:00 ip-172-31-37-199 sshd[2582]: AuthorizedKeysCommand /usr/share/ec2-instance-connect/eic_run_authorized_keys ubuntu SHA256:BsTBNJ7fdJs2EL35ewMkFgmbFPcjRLiAppV7SJ3kBxY failed, status 22
+2025-09-03T17:42:51.948058+00:00 ip-172-31-37-199 sshd[2582]: Connection closed by authenticating user ubuntu 5.29.13.41 port 12491 [preauth]
+2025-09-03T17:45:01.642729+00:00 ip-172-31-37-199 CRON[2598]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T17:45:01.646600+00:00 ip-172-31-37-199 CRON[2598]: pam_unix(cron:session): session closed for user root
+2025-09-03T17:53:23.077454+00:00 ip-172-31-37-199 sshd[2609]: Accepted publickey for ubuntu from 5.29.13.41 port 12353 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T17:53:23.082410+00:00 ip-172-31-37-199 sshd[2609]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T17:53:23.104546+00:00 ip-172-31-37-199 systemd-logind[532]: New session 39 of user ubuntu.
+2025-09-03T17:53:23.126717+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T17:53:24.264526+00:00 ip-172-31-37-199 sshd[2684]: Received disconnect from 5.29.13.41 port 12353:11: disconnected by user
+2025-09-03T17:53:24.264664+00:00 ip-172-31-37-199 sshd[2684]: Disconnected from user ubuntu 5.29.13.41 port 12353
+2025-09-03T17:53:24.264983+00:00 ip-172-31-37-199 sshd[2609]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T17:53:24.269685+00:00 ip-172-31-37-199 systemd-logind[532]: Session 39 logged out. Waiting for processes to exit.
+2025-09-03T17:53:24.270680+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 39.
+2025-09-03T17:54:25.403273+00:00 ip-172-31-37-199 sshd[2695]: Accepted publickey for ubuntu from 5.29.13.41 port 12368 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T17:54:25.405305+00:00 ip-172-31-37-199 sshd[2695]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T17:54:25.428845+00:00 ip-172-31-37-199 systemd-logind[532]: New session 41 of user ubuntu.
+2025-09-03T17:54:25.449533+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T17:54:26.521156+00:00 ip-172-31-37-199 sshd[2769]: Received disconnect from 5.29.13.41 port 12368:11: disconnected by user
+2025-09-03T17:54:26.521323+00:00 ip-172-31-37-199 sshd[2769]: Disconnected from user ubuntu 5.29.13.41 port 12368
+2025-09-03T17:54:26.521693+00:00 ip-172-31-37-199 sshd[2695]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T17:54:26.524955+00:00 ip-172-31-37-199 systemd-logind[532]: Session 41 logged out. Waiting for processes to exit.
+2025-09-03T17:54:26.527287+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 41.
+2025-09-03T17:55:01.652163+00:00 ip-172-31-37-199 CRON[2779]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T17:55:01.655034+00:00 ip-172-31-37-199 CRON[2779]: pam_unix(cron:session): session closed for user root
+2025-09-03T17:57:31.695683+00:00 ip-172-31-37-199 sshd[2783]: Accepted publickey for ubuntu from 5.29.13.41 port 12400 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T17:57:31.698620+00:00 ip-172-31-37-199 sshd[2783]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T17:57:31.707766+00:00 ip-172-31-37-199 systemd-logind[532]: New session 44 of user ubuntu.
+2025-09-03T17:57:31.742100+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T17:57:33.226696+00:00 ip-172-31-37-199 sshd[2857]: Received disconnect from 5.29.13.41 port 12400:11: disconnected by user
+2025-09-03T17:57:33.226836+00:00 ip-172-31-37-199 sshd[2857]: Disconnected from user ubuntu 5.29.13.41 port 12400
+2025-09-03T17:57:33.227129+00:00 ip-172-31-37-199 sshd[2783]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T17:57:33.229693+00:00 ip-172-31-37-199 systemd-logind[532]: Session 44 logged out. Waiting for processes to exit.
+2025-09-03T17:57:33.233271+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 44.
+2025-09-03T18:05:01.660082+00:00 ip-172-31-37-199 CRON[2872]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T18:05:01.663415+00:00 ip-172-31-37-199 CRON[2872]: pam_unix(cron:session): session closed for user root
+2025-09-03T18:15:01.669457+00:00 ip-172-31-37-199 CRON[2883]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T18:15:01.671142+00:00 ip-172-31-37-199 CRON[2883]: pam_unix(cron:session): session closed for user root
+2025-09-03T18:17:01.674901+00:00 ip-172-31-37-199 CRON[2888]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T18:17:01.678338+00:00 ip-172-31-37-199 CRON[2888]: pam_unix(cron:session): session closed for user root
+2025-09-03T18:25:01.682210+00:00 ip-172-31-37-199 CRON[2897]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T18:25:01.686729+00:00 ip-172-31-37-199 CRON[2897]: pam_unix(cron:session): session closed for user root
+2025-09-03T18:35:01.690138+00:00 ip-172-31-37-199 CRON[2924]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T18:35:01.693982+00:00 ip-172-31-37-199 CRON[2924]: pam_unix(cron:session): session closed for user root
+2025-09-03T18:45:01.699192+00:00 ip-172-31-37-199 CRON[2932]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T18:45:01.701396+00:00 ip-172-31-37-199 CRON[2932]: pam_unix(cron:session): session closed for user root
+2025-09-03T18:55:01.708200+00:00 ip-172-31-37-199 CRON[2941]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T18:55:01.709962+00:00 ip-172-31-37-199 CRON[2941]: pam_unix(cron:session): session closed for user root
+2025-09-03T19:05:01.714041+00:00 ip-172-31-37-199 CRON[2950]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T19:05:01.717387+00:00 ip-172-31-37-199 CRON[2950]: pam_unix(cron:session): session closed for user root
+2025-09-03T19:15:01.722164+00:00 ip-172-31-37-199 CRON[2961]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-03T19:15:01.725050+00:00 ip-172-31-37-199 CRON[2961]: pam_unix(cron:session): session closed for user root
+2025-09-03T19:15:38.950256+00:00 ip-172-31-37-199 sshd[2966]: Accepted publickey for ubuntu from 5.29.13.41 port 12445 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T19:15:38.953404+00:00 ip-172-31-37-199 sshd[2966]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T19:15:38.976284+00:00 ip-172-31-37-199 systemd-logind[532]: New session 55 of user ubuntu.
+2025-09-03T19:15:38.998191+00:00 ip-172-31-37-199 (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T19:15:40.507602+00:00 ip-172-31-37-199 sshd[3082]: Received disconnect from 5.29.13.41 port 12445:11: disconnected by user
+2025-09-03T19:15:40.507786+00:00 ip-172-31-37-199 sshd[3082]: Disconnected from user ubuntu 5.29.13.41 port 12445
+2025-09-03T19:15:40.508090+00:00 ip-172-31-37-199 sshd[2966]: pam_unix(sshd:session): session closed for user ubuntu
+2025-09-03T19:15:40.511746+00:00 ip-172-31-37-199 systemd-logind[532]: Session 55 logged out. Waiting for processes to exit.
+2025-09-03T19:15:40.514206+00:00 ip-172-31-37-199 systemd-logind[532]: Removed session 55.
+2025-09-03T19:15:41.048082+00:00 ip-172-31-37-199 sshd[3084]: Accepted publickey for ubuntu from 5.29.13.41 port 12450 ssh2: ED25519 SHA256:CQSRj86klAfPgkcaJ51RzWsoI7yur27jNMA4R8t4zOg
+2025-09-03T19:15:41.051037+00:00 ip-172-31-37-199 sshd[3084]: pam_unix(sshd:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-03T19:15:41.054460+00:00 ip-172-31-37-199 systemd-logind[532]: New session 57 of user ubuntu.

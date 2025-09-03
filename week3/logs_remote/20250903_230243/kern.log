@@ -1,0 +1,997 @@
+2025-09-01T23:04:57.129331+00:00 ip-172-31-37-199 kernel: Linux version 6.14.0-1011-aws (buildd@lcy02-amd64-107) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #11~24.04.1-Ubuntu SMP Fri Aug  1 02:07:25 UTC 2025 (Ubuntu 6.14.0-1011.11~24.04.1-aws 6.14.8)
+2025-09-01T23:04:57.146720+00:00 ip-172-31-37-199 kernel: Command line: BOOT_IMAGE=/vmlinuz-6.14.0-1011-aws root=PARTUUID=d8b02072-b013-48de-b7a8-331276413234 ro console=tty1 console=ttyS0 nvme_core.io_timeout=4294967295 panic=-1
+2025-09-01T23:04:57.146724+00:00 ip-172-31-37-199 kernel: KERNEL supported cpus:
+2025-09-01T23:04:57.146725+00:00 ip-172-31-37-199 kernel:   Intel GenuineIntel
+2025-09-01T23:04:57.146726+00:00 ip-172-31-37-199 kernel:   AMD AuthenticAMD
+2025-09-01T23:04:57.146735+00:00 ip-172-31-37-199 kernel:   Hygon HygonGenuine
+2025-09-01T23:04:57.146736+00:00 ip-172-31-37-199 kernel:   Centaur CentaurHauls
+2025-09-01T23:04:57.146738+00:00 ip-172-31-37-199 kernel:   zhaoxin   Shanghai  
+2025-09-01T23:04:57.146739+00:00 ip-172-31-37-199 kernel: BIOS-provided physical RAM map:
+2025-09-01T23:04:57.146740+00:00 ip-172-31-37-199 kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009dfff] usable
+2025-09-01T23:04:57.146741+00:00 ip-172-31-37-199 kernel: BIOS-e820: [mem 0x000000000009e000-0x000000000009ffff] reserved
+2025-09-01T23:04:57.146742+00:00 ip-172-31-37-199 kernel: BIOS-e820: [mem 0x00000000000e0000-0x00000000000fffff] reserved
+2025-09-01T23:04:57.146742+00:00 ip-172-31-37-199 kernel: BIOS-e820: [mem 0x0000000000100000-0x000000003fffffff] usable
+2025-09-01T23:04:57.146745+00:00 ip-172-31-37-199 kernel: BIOS-e820: [mem 0x00000000fc000000-0x00000000ffffffff] reserved
+2025-09-01T23:04:57.146745+00:00 ip-172-31-37-199 kernel: NX (Execute Disable) protection: active
+2025-09-01T23:04:57.146746+00:00 ip-172-31-37-199 kernel: APIC: Static calls initialized
+2025-09-01T23:04:57.146747+00:00 ip-172-31-37-199 kernel: SMBIOS 2.7 present.
+2025-09-01T23:04:57.146748+00:00 ip-172-31-37-199 kernel: DMI: Xen HVM domU, BIOS 4.11.amazon 08/24/2006
+2025-09-01T23:04:57.146748+00:00 ip-172-31-37-199 kernel: DMI: Memory slots populated: 1/1
+2025-09-01T23:04:57.146749+00:00 ip-172-31-37-199 kernel: Hypervisor detected: Xen HVM
+2025-09-01T23:04:57.146753+00:00 ip-172-31-37-199 kernel: Xen version 4.11.
+2025-09-01T23:04:57.146754+00:00 ip-172-31-37-199 kernel: platform_pci_unplug: Netfront and the Xen platform PCI driver have been compiled for this kernel: unplug emulated NICs.
+2025-09-01T23:04:57.146755+00:00 ip-172-31-37-199 kernel: platform_pci_unplug: Blkfront and the Xen platform PCI driver have been compiled for this kernel: unplug emulated disks.
+2025-09-01T23:04:57.146756+00:00 ip-172-31-37-199 kernel: You might have to change the root device
+2025-09-01T23:04:57.146757+00:00 ip-172-31-37-199 kernel: from /dev/hd[a-d] to /dev/xvd[a-d]
+2025-09-01T23:04:57.146757+00:00 ip-172-31-37-199 kernel: in your root= kernel command line option
+2025-09-01T23:04:57.146760+00:00 ip-172-31-37-199 kernel: HVMOP_pagetable_dying not supported
+2025-09-01T23:04:57.146760+00:00 ip-172-31-37-199 kernel: tsc: Detected 2299.998 MHz processor
+2025-09-01T23:04:57.146761+00:00 ip-172-31-37-199 kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+2025-09-01T23:04:57.146762+00:00 ip-172-31-37-199 kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+2025-09-01T23:04:57.146763+00:00 ip-172-31-37-199 kernel: last_pfn = 0x40000 max_arch_pfn = 0x400000000
+2025-09-01T23:04:57.146764+00:00 ip-172-31-37-199 kernel: MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
+2025-09-01T23:04:57.146766+00:00 ip-172-31-37-199 kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+2025-09-01T23:04:57.146767+00:00 ip-172-31-37-199 kernel: found SMP MP-table at [mem 0x000fbb70-0x000fbb7f]
+2025-09-01T23:04:57.146767+00:00 ip-172-31-37-199 kernel: RAMDISK: [mem 0x3669d000-0x37345fff]
+2025-09-01T23:04:57.146768+00:00 ip-172-31-37-199 kernel: ACPI: Early table checksum verification disabled
+2025-09-01T23:04:57.146769+00:00 ip-172-31-37-199 kernel: ACPI: RSDP 0x00000000000EA020 000024 (v02 Xen   )
+2025-09-01T23:04:57.146770+00:00 ip-172-31-37-199 kernel: ACPI: XSDT 0x00000000FC00A250 00005C (v01 Xen    HVM      00000000 HVML 00000000)
+2025-09-01T23:04:57.146770+00:00 ip-172-31-37-199 kernel: ACPI: FACP 0x00000000FC00A150 0000F4 (v04 Xen    HVM      00000000 HVML 00000000)
+2025-09-01T23:04:57.146772+00:00 ip-172-31-37-199 kernel: ACPI: DSDT 0x00000000FC001000 008A79 (v02 Xen    HVM      00000000 INTL 20090123)
+2025-09-01T23:04:57.146773+00:00 ip-172-31-37-199 kernel: ACPI: FACS 0x00000000FC00A050 000040
+2025-09-01T23:04:57.146774+00:00 ip-172-31-37-199 kernel: ACPI: FACS 0x00000000FC00A050 000040
+2025-09-01T23:04:57.146776+00:00 ip-172-31-37-199 kernel: ACPI: SSDT 0x00000000FC009A80 000033 (v02 Xen    HVM      00000000 INTL 20090123)
+2025-09-01T23:04:57.146777+00:00 ip-172-31-37-199 kernel: ACPI: SSDT 0x00000000FC009AC0 000031 (v02 Xen    HVM      00000000 INTL 20090123)
+2025-09-01T23:04:57.146778+00:00 ip-172-31-37-199 kernel: ACPI: APIC 0x00000000FC009B00 0000D8 (v02 Xen    HVM      00000000 HVML 00000000)
+2025-09-01T23:04:57.146798+00:00 ip-172-31-37-199 kernel: ACPI: HPET 0x00000000FC009FE0 000038 (v01 Xen    HVM      00000000 HVML 00000000)
+2025-09-01T23:04:57.146799+00:00 ip-172-31-37-199 kernel: ACPI: WAET 0x00000000FC00A020 000028 (v01 Xen    HVM      00000000 HVML 00000000)
+2025-09-01T23:04:57.146800+00:00 ip-172-31-37-199 kernel: ACPI: Reserving FACP table memory at [mem 0xfc00a150-0xfc00a243]
+2025-09-01T23:04:57.146801+00:00 ip-172-31-37-199 kernel: ACPI: Reserving DSDT table memory at [mem 0xfc001000-0xfc009a78]
+2025-09-01T23:04:57.146801+00:00 ip-172-31-37-199 kernel: ACPI: Reserving FACS table memory at [mem 0xfc00a050-0xfc00a08f]
+2025-09-01T23:04:57.146802+00:00 ip-172-31-37-199 kernel: ACPI: Reserving FACS table memory at [mem 0xfc00a050-0xfc00a08f]
+2025-09-01T23:04:57.146805+00:00 ip-172-31-37-199 kernel: ACPI: Reserving SSDT table memory at [mem 0xfc009a80-0xfc009ab2]
+2025-09-01T23:04:57.146806+00:00 ip-172-31-37-199 kernel: ACPI: Reserving SSDT table memory at [mem 0xfc009ac0-0xfc009af0]
+2025-09-01T23:04:57.146806+00:00 ip-172-31-37-199 kernel: ACPI: Reserving APIC table memory at [mem 0xfc009b00-0xfc009bd7]
+2025-09-01T23:04:57.146807+00:00 ip-172-31-37-199 kernel: ACPI: Reserving HPET table memory at [mem 0xfc009fe0-0xfc00a017]
+2025-09-01T23:04:57.146808+00:00 ip-172-31-37-199 kernel: ACPI: Reserving WAET table memory at [mem 0xfc00a020-0xfc00a047]
+2025-09-01T23:04:57.146809+00:00 ip-172-31-37-199 kernel: No NUMA configuration found
+2025-09-01T23:04:57.146811+00:00 ip-172-31-37-199 kernel: Faking a node at [mem 0x0000000000000000-0x000000003fffffff]
+2025-09-01T23:04:57.146812+00:00 ip-172-31-37-199 kernel: NODE_DATA(0) allocated [mem 0x3ffd5540-0x3fffffff]
+2025-09-01T23:04:57.146813+00:00 ip-172-31-37-199 kernel: Zone ranges:
+2025-09-01T23:04:57.146813+00:00 ip-172-31-37-199 kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+2025-09-01T23:04:57.146814+00:00 ip-172-31-37-199 kernel:   DMA32    [mem 0x0000000001000000-0x000000003fffffff]
+2025-09-01T23:04:57.146815+00:00 ip-172-31-37-199 kernel:   Normal   empty
+2025-09-01T23:04:57.146816+00:00 ip-172-31-37-199 kernel:   Device   empty
+2025-09-01T23:04:57.146818+00:00 ip-172-31-37-199 kernel: Movable zone start for each node
+2025-09-01T23:04:57.146819+00:00 ip-172-31-37-199 kernel: Early memory node ranges
+2025-09-01T23:04:57.146819+00:00 ip-172-31-37-199 kernel:   node   0: [mem 0x0000000000001000-0x000000000009dfff]
+2025-09-01T23:04:57.146820+00:00 ip-172-31-37-199 kernel:   node   0: [mem 0x0000000000100000-0x000000003fffffff]
+2025-09-01T23:04:57.146821+00:00 ip-172-31-37-199 kernel: Initmem setup node 0 [mem 0x0000000000001000-0x000000003fffffff]
+2025-09-01T23:04:57.146822+00:00 ip-172-31-37-199 kernel: On node 0, zone DMA: 1 pages in unavailable ranges
+2025-09-01T23:04:57.146824+00:00 ip-172-31-37-199 kernel: On node 0, zone DMA: 98 pages in unavailable ranges
+2025-09-01T23:04:57.146825+00:00 ip-172-31-37-199 kernel: ACPI: PM-Timer IO Port: 0xb008
+2025-09-01T23:04:57.146826+00:00 ip-172-31-37-199 kernel: IOAPIC[0]: apic_id 1, version 17, address 0xfec00000, GSI 0-47
+2025-09-01T23:04:57.146826+00:00 ip-172-31-37-199 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+2025-09-01T23:04:57.146827+00:00 ip-172-31-37-199 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 low level)
+2025-09-01T23:04:57.146828+00:00 ip-172-31-37-199 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 low level)
+2025-09-01T23:04:57.146828+00:00 ip-172-31-37-199 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 low level)
+2025-09-01T23:04:57.146831+00:00 ip-172-31-37-199 kernel: ACPI: Using ACPI (MADT) for SMP configuration information
+2025-09-01T23:04:57.146832+00:00 ip-172-31-37-199 kernel: ACPI: HPET id: 0x8086a201 base: 0xfed00000
+2025-09-01T23:04:57.146832+00:00 ip-172-31-37-199 kernel: TSC deadline timer available
+2025-09-01T23:04:57.146833+00:00 ip-172-31-37-199 kernel: CPU topo: Max. logical packages:   1
+2025-09-01T23:04:57.146834+00:00 ip-172-31-37-199 kernel: CPU topo: Max. logical dies:       1
+2025-09-01T23:04:57.146835+00:00 ip-172-31-37-199 kernel: CPU topo: Max. dies per package:   1
+2025-09-01T23:04:57.146837+00:00 ip-172-31-37-199 kernel: CPU topo: Max. threads per core:   1
+2025-09-01T23:04:57.146838+00:00 ip-172-31-37-199 kernel: CPU topo: Num. cores per package:     1
+2025-09-01T23:04:57.146838+00:00 ip-172-31-37-199 kernel: CPU topo: Num. threads per package:   1
+2025-09-01T23:04:57.146839+00:00 ip-172-31-37-199 kernel: CPU topo: Allowing 1 present CPUs plus 14 hotplug CPUs
+2025-09-01T23:04:57.146840+00:00 ip-172-31-37-199 kernel: PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+2025-09-01T23:04:57.146841+00:00 ip-172-31-37-199 kernel: PM: hibernation: Registered nosave memory: [mem 0x0009e000-0x000fffff]
+2025-09-01T23:04:57.146843+00:00 ip-172-31-37-199 kernel: [mem 0x40000000-0xfbffffff] available for PCI devices
+2025-09-01T23:04:57.146844+00:00 ip-172-31-37-199 kernel: Booting paravirtualized kernel on Xen HVM
+2025-09-01T23:04:57.146845+00:00 ip-172-31-37-199 kernel: clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+2025-09-01T23:04:57.146845+00:00 ip-172-31-37-199 kernel: setup_percpu: NR_CPUS:8192 nr_cpumask_bits:15 nr_cpu_ids:15 nr_node_ids:1
+2025-09-01T23:04:57.146846+00:00 ip-172-31-37-199 kernel: percpu: Embedded 88 pages/cpu s237568 r8192 d114688 u524288
+2025-09-01T23:04:57.146847+00:00 ip-172-31-37-199 kernel: pcpu-alloc: s237568 r8192 d114688 u524288 alloc=1*2097152
+2025-09-01T23:04:57.146848+00:00 ip-172-31-37-199 kernel: pcpu-alloc: [0] 00 01 02 03 [0] 04 05 06 07 
+2025-09-01T23:04:57.146850+00:00 ip-172-31-37-199 kernel: pcpu-alloc: [0] 08 09 10 11 [0] 12 13 14 -- 
+2025-09-01T23:04:57.146851+00:00 ip-172-31-37-199 kernel: xen: PV spinlocks enabled
+2025-09-01T23:04:57.146852+00:00 ip-172-31-37-199 kernel: PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+2025-09-01T23:04:57.146852+00:00 ip-172-31-37-199 kernel: Kernel command line: BOOT_IMAGE=/vmlinuz-6.14.0-1011-aws root=PARTUUID=d8b02072-b013-48de-b7a8-331276413234 ro console=tty1 console=ttyS0 nvme_core.io_timeout=4294967295 panic=-1
+2025-09-01T23:04:57.146853+00:00 ip-172-31-37-199 kernel: Unknown kernel command line parameters "BOOT_IMAGE=/vmlinuz-6.14.0-1011-aws", will be passed to user space.
+2025-09-01T23:04:57.146856+00:00 ip-172-31-37-199 kernel: random: crng init done
+2025-09-01T23:04:57.146856+00:00 ip-172-31-37-199 kernel: printk: log buffer data + meta data: 262144 + 917504 = 1179648 bytes
+2025-09-01T23:04:57.146857+00:00 ip-172-31-37-199 kernel: Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+2025-09-01T23:04:57.146858+00:00 ip-172-31-37-199 kernel: Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+2025-09-01T23:04:57.146859+00:00 ip-172-31-37-199 kernel: Fallback order for Node 0: 0 
+2025-09-01T23:04:57.146859+00:00 ip-172-31-37-199 kernel: Built 1 zonelists, mobility grouping on.  Total pages: 262045
+2025-09-01T23:04:57.146860+00:00 ip-172-31-37-199 kernel: Policy zone: DMA32
+2025-09-01T23:04:57.146900+00:00 ip-172-31-37-199 kernel: mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+2025-09-01T23:04:57.146901+00:00 ip-172-31-37-199 kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=15, Nodes=1
+2025-09-01T23:04:57.146902+00:00 ip-172-31-37-199 kernel: Kernel/User page tables isolation: enabled
+2025-09-01T23:04:57.146902+00:00 ip-172-31-37-199 kernel: ftrace: allocating 60654 entries in 237 pages
+2025-09-01T23:04:57.146903+00:00 ip-172-31-37-199 kernel: ftrace section at ffffffff9a4eb000 sorted properly
+2025-09-01T23:04:57.146904+00:00 ip-172-31-37-199 kernel: ftrace: allocated 237 pages with 6 groups
+2025-09-01T23:04:57.146906+00:00 ip-172-31-37-199 kernel: rcu: Hierarchical RCU implementation.
+2025-09-01T23:04:57.146907+00:00 ip-172-31-37-199 kernel: rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=15.
+2025-09-01T23:04:57.146908+00:00 ip-172-31-37-199 kernel: 	Rude variant of Tasks RCU enabled.
+2025-09-01T23:04:57.146908+00:00 ip-172-31-37-199 kernel: 	Tracing variant of Tasks RCU enabled.
+2025-09-01T23:04:57.146909+00:00 ip-172-31-37-199 kernel: rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+2025-09-01T23:04:57.146910+00:00 ip-172-31-37-199 kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=15
+2025-09-01T23:04:57.146910+00:00 ip-172-31-37-199 kernel: RCU Tasks Rude: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=15.
+2025-09-01T23:04:57.146913+00:00 ip-172-31-37-199 kernel: RCU Tasks Trace: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=15.
+2025-09-01T23:04:57.146914+00:00 ip-172-31-37-199 kernel: NR_IRQS: 524544, nr_irqs: 952, preallocated irqs: 16
+2025-09-01T23:04:57.146915+00:00 ip-172-31-37-199 kernel: xen:events: Using 2-level ABI
+2025-09-01T23:04:57.146915+00:00 ip-172-31-37-199 kernel: xen:events: Xen HVM callback vector for event delivery is enabled
+2025-09-01T23:04:57.146916+00:00 ip-172-31-37-199 kernel: rcu: srcu_init: Setting srcu_struct sizes based on contention.
+2025-09-01T23:04:57.146917+00:00 ip-172-31-37-199 kernel: Console: colour VGA+ 80x25
+2025-09-01T23:04:57.146919+00:00 ip-172-31-37-199 kernel: printk: legacy console [tty1] enabled
+2025-09-01T23:04:57.146920+00:00 ip-172-31-37-199 kernel: Cannot get hvm parameter CONSOLE_EVTCHN (18): -22!
+2025-09-01T23:04:57.146920+00:00 ip-172-31-37-199 kernel: printk: legacy console [ttyS0] enabled
+2025-09-01T23:04:57.146921+00:00 ip-172-31-37-199 kernel: ACPI: Core revision 20240827
+2025-09-01T23:04:57.146922+00:00 ip-172-31-37-199 kernel: clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 30580167144 ns
+2025-09-01T23:04:57.146923+00:00 ip-172-31-37-199 kernel: APIC: Switch to symmetric I/O mode setup
+2025-09-01T23:04:57.146925+00:00 ip-172-31-37-199 kernel: x2apic enabled
+2025-09-01T23:04:57.146926+00:00 ip-172-31-37-199 kernel: APIC: Switched APIC routing to: physical x2apic
+2025-09-01T23:04:57.146926+00:00 ip-172-31-37-199 kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=0 pin2=0
+2025-09-01T23:04:57.146927+00:00 ip-172-31-37-199 kernel: clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x212733415c7, max_idle_ns: 440795236380 ns
+2025-09-01T23:04:57.146928+00:00 ip-172-31-37-199 kernel: Calibrating delay loop (skipped), value calculated using timer frequency.. 4599.99 BogoMIPS (lpj=2299998)
+2025-09-01T23:04:57.146929+00:00 ip-172-31-37-199 kernel: Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+2025-09-01T23:04:57.146931+00:00 ip-172-31-37-199 kernel: Last level dTLB entries: 4KB 64, 2MB 32, 4MB 32, 1GB 4
+2025-09-01T23:04:57.146932+00:00 ip-172-31-37-199 kernel: Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+2025-09-01T23:04:57.146932+00:00 ip-172-31-37-199 kernel: Spectre V2 : Mitigation: Retpolines
+2025-09-01T23:04:57.146933+00:00 ip-172-31-37-199 kernel: Spectre V2 : Spectre v2 / SpectreRSB: Filling RSB on context switch and VMEXIT
+2025-09-01T23:04:57.146934+00:00 ip-172-31-37-199 kernel: Speculative Store Bypass: Vulnerable
+2025-09-01T23:04:57.146934+00:00 ip-172-31-37-199 kernel: MDS: Vulnerable: Clear CPU buffers attempted, no microcode
+2025-09-01T23:04:57.146935+00:00 ip-172-31-37-199 kernel: MMIO Stale Data: Vulnerable: Clear CPU buffers attempted, no microcode
+2025-09-01T23:04:57.146938+00:00 ip-172-31-37-199 kernel: ITS: Mitigation: Aligned branch/return thunks
+2025-09-01T23:04:57.146938+00:00 ip-172-31-37-199 kernel: x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+2025-09-01T23:04:57.146939+00:00 ip-172-31-37-199 kernel: x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+2025-09-01T23:04:57.146940+00:00 ip-172-31-37-199 kernel: x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+2025-09-01T23:04:57.146941+00:00 ip-172-31-37-199 kernel: x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+2025-09-01T23:04:57.146941+00:00 ip-172-31-37-199 kernel: x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+2025-09-01T23:04:57.146944+00:00 ip-172-31-37-199 kernel: pid_max: default: 32768 minimum: 301
+2025-09-01T23:04:57.146944+00:00 ip-172-31-37-199 kernel: LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,ima,evm
+2025-09-01T23:04:57.146947+00:00 ip-172-31-37-199 kernel: landlock: Up and running.
+2025-09-01T23:04:57.146948+00:00 ip-172-31-37-199 kernel: Yama: becoming mindful.
+2025-09-01T23:04:57.146948+00:00 ip-172-31-37-199 kernel: AppArmor: AppArmor initialized
+2025-09-01T23:04:57.146949+00:00 ip-172-31-37-199 kernel: Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+2025-09-01T23:04:57.146950+00:00 ip-172-31-37-199 kernel: Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+2025-09-01T23:04:57.146952+00:00 ip-172-31-37-199 kernel: clocksource: xen: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+2025-09-01T23:04:57.146953+00:00 ip-172-31-37-199 kernel: Xen: using vcpuop timer interface
+2025-09-01T23:04:57.146954+00:00 ip-172-31-37-199 kernel: installing Xen timer for CPU 0
+2025-09-01T23:04:57.146954+00:00 ip-172-31-37-199 kernel: smpboot: CPU0: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz (family: 0x6, model: 0x4f, stepping: 0x1)
+2025-09-01T23:04:57.146955+00:00 ip-172-31-37-199 kernel: cpu 0 spinlock event irq 53
+2025-09-01T23:04:57.146956+00:00 ip-172-31-37-199 kernel: Performance Events: unsupported p6 CPU model 79 no PMU driver, software events only.
+2025-09-01T23:04:57.146958+00:00 ip-172-31-37-199 kernel: signal: max sigframe size: 1776
+2025-09-01T23:04:57.146959+00:00 ip-172-31-37-199 kernel: rcu: Hierarchical SRCU implementation.
+2025-09-01T23:04:57.146959+00:00 ip-172-31-37-199 kernel: rcu: 	Max phase no-delay instances is 400.
+2025-09-01T23:04:57.146960+00:00 ip-172-31-37-199 kernel: Timer migration: 2 hierarchy levels; 8 children per group; 2 crossnode level
+2025-09-01T23:04:57.146961+00:00 ip-172-31-37-199 kernel: NMI watchdog: Perf NMI watchdog permanently disabled
+2025-09-01T23:04:57.146961+00:00 ip-172-31-37-199 kernel: smp: Bringing up secondary CPUs ...
+2025-09-01T23:04:57.146964+00:00 ip-172-31-37-199 kernel: smp: Brought up 1 node, 1 CPU
+2025-09-01T23:04:57.146964+00:00 ip-172-31-37-199 kernel: smpboot: Total of 1 processors activated (4599.99 BogoMIPS)
+2025-09-01T23:04:57.146965+00:00 ip-172-31-37-199 kernel: Memory: 950868K/1048180K available (21443K kernel code, 4583K rwdata, 15116K rodata, 5248K init, 4312K bss, 90456K reserved, 0K cma-reserved)
+2025-09-01T23:04:57.146966+00:00 ip-172-31-37-199 kernel: devtmpfs: initialized
+2025-09-01T23:04:57.146967+00:00 ip-172-31-37-199 kernel: x86/mm: Memory block size: 128MB
+2025-09-01T23:04:57.146967+00:00 ip-172-31-37-199 kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+2025-09-01T23:04:57.146968+00:00 ip-172-31-37-199 kernel: futex hash table entries: 4096 (order: 6, 262144 bytes, linear)
+2025-09-01T23:04:57.146970+00:00 ip-172-31-37-199 kernel: pinctrl core: initialized pinctrl subsystem
+2025-09-01T23:04:57.146971+00:00 ip-172-31-37-199 kernel: PM: RTC time: 23:04:43, date: 2025-09-01
+2025-09-01T23:04:57.146972+00:00 ip-172-31-37-199 kernel: NET: Registered PF_NETLINK/PF_ROUTE protocol family
+2025-09-01T23:04:57.146973+00:00 ip-172-31-37-199 kernel: DMA: preallocated 128 KiB GFP_KERNEL pool for atomic allocations
+2025-09-01T23:04:57.146973+00:00 ip-172-31-37-199 kernel: DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+2025-09-01T23:04:57.146974+00:00 ip-172-31-37-199 kernel: DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+2025-09-01T23:04:57.146976+00:00 ip-172-31-37-199 kernel: audit: initializing netlink subsys (disabled)
+2025-09-01T23:04:57.146977+00:00 ip-172-31-37-199 kernel: thermal_sys: Registered thermal governor 'fair_share'
+2025-09-01T23:04:57.146978+00:00 ip-172-31-37-199 kernel: thermal_sys: Registered thermal governor 'bang_bang'
+2025-09-01T23:04:57.146979+00:00 ip-172-31-37-199 kernel: thermal_sys: Registered thermal governor 'step_wise'
+2025-09-01T23:04:57.146979+00:00 ip-172-31-37-199 kernel: thermal_sys: Registered thermal governor 'user_space'
+2025-09-01T23:04:57.146980+00:00 ip-172-31-37-199 kernel: thermal_sys: Registered thermal governor 'power_allocator'
+2025-09-01T23:04:57.146982+00:00 ip-172-31-37-199 kernel: audit: type=2000 audit(1756767884.407:1): state=initialized audit_enabled=0 res=1
+2025-09-01T23:04:57.146983+00:00 ip-172-31-37-199 kernel: cpuidle: using governor ladder
+2025-09-01T23:04:57.146984+00:00 ip-172-31-37-199 kernel: cpuidle: using governor menu
+2025-09-01T23:04:57.146984+00:00 ip-172-31-37-199 kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+2025-09-01T23:04:57.146985+00:00 ip-172-31-37-199 kernel: PCI: Using configuration type 1 for base access
+2025-09-01T23:04:57.146986+00:00 ip-172-31-37-199 kernel: kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+2025-09-01T23:04:57.146987+00:00 ip-172-31-37-199 kernel: HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+2025-09-01T23:04:57.146989+00:00 ip-172-31-37-199 kernel: HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+2025-09-01T23:04:57.146990+00:00 ip-172-31-37-199 kernel: ACPI: Added _OSI(Module Device)
+2025-09-01T23:04:57.146990+00:00 ip-172-31-37-199 kernel: ACPI: Added _OSI(Processor Device)
+2025-09-01T23:04:57.146991+00:00 ip-172-31-37-199 kernel: ACPI: Added _OSI(3.0 _SCP Extensions)
+2025-09-01T23:04:57.146992+00:00 ip-172-31-37-199 kernel: ACPI: Added _OSI(Processor Aggregator Device)
+2025-09-01T23:04:57.146992+00:00 ip-172-31-37-199 kernel: ACPI: 3 ACPI AML tables successfully acquired and loaded
+2025-09-01T23:04:57.146998+00:00 ip-172-31-37-199 kernel: xen: --> pirq=16 -> irq=9 (gsi=9)
+2025-09-01T23:04:57.146999+00:00 ip-172-31-37-199 kernel: ACPI: Interpreter enabled
+2025-09-01T23:04:57.147000+00:00 ip-172-31-37-199 kernel: ACPI: PM: (supports S0 S4 S5)
+2025-09-01T23:04:57.147000+00:00 ip-172-31-37-199 kernel: ACPI: Using IOAPIC for interrupt routing
+2025-09-01T23:04:57.147001+00:00 ip-172-31-37-199 kernel: PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+2025-09-01T23:04:57.147002+00:00 ip-172-31-37-199 kernel: PCI: Using E820 reservations for host bridge windows
+2025-09-01T23:04:57.147002+00:00 ip-172-31-37-199 kernel: ACPI: Enabled 2 GPEs in block 00 to 0F
+2025-09-01T23:04:57.147007+00:00 ip-172-31-37-199 kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+2025-09-01T23:04:57.147008+00:00 ip-172-31-37-199 kernel: acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI EDR HPX-Type3]
+2025-09-01T23:04:57.147009+00:00 ip-172-31-37-199 kernel: acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+2025-09-01T23:04:57.147010+00:00 ip-172-31-37-199 kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+2025-09-01T23:04:57.147011+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [0] registered
+2025-09-01T23:04:57.147011+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [3] registered
+2025-09-01T23:04:57.147015+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [4] registered
+2025-09-01T23:04:57.147015+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [5] registered
+2025-09-01T23:04:57.147016+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [6] registered
+2025-09-01T23:04:57.147017+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [7] registered
+2025-09-01T23:04:57.147051+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [8] registered
+2025-09-01T23:04:57.147052+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [9] registered
+2025-09-01T23:04:57.147055+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [10] registered
+2025-09-01T23:04:57.147056+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [11] registered
+2025-09-01T23:04:57.147057+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [12] registered
+2025-09-01T23:04:57.147058+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [13] registered
+2025-09-01T23:04:57.147059+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [14] registered
+2025-09-01T23:04:57.147059+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [15] registered
+2025-09-01T23:04:57.147060+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [16] registered
+2025-09-01T23:04:57.147077+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [17] registered
+2025-09-01T23:04:57.147077+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [18] registered
+2025-09-01T23:04:57.147078+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [19] registered
+2025-09-01T23:04:57.147079+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [20] registered
+2025-09-01T23:04:57.147080+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [21] registered
+2025-09-01T23:04:57.147080+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [22] registered
+2025-09-01T23:04:57.147084+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [23] registered
+2025-09-01T23:04:57.147084+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [24] registered
+2025-09-01T23:04:57.147085+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [25] registered
+2025-09-01T23:04:57.147086+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [26] registered
+2025-09-01T23:04:57.147087+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [27] registered
+2025-09-01T23:04:57.147087+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [28] registered
+2025-09-01T23:04:57.147091+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [29] registered
+2025-09-01T23:04:57.147091+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [30] registered
+2025-09-01T23:04:57.147092+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [31] registered
+2025-09-01T23:04:57.147093+00:00 ip-172-31-37-199 kernel: PCI host bridge to bus 0000:00
+2025-09-01T23:04:57.147094+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+2025-09-01T23:04:57.147095+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+2025-09-01T23:04:57.147095+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+2025-09-01T23:04:57.147098+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: root bus resource [mem 0x40000000-0xffffffff window]
+2025-09-01T23:04:57.147099+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+2025-09-01T23:04:57.147100+00:00 ip-172-31-37-199 kernel: pci 0000:00:00.0: [8086:1237] type 00 class 0x060000 conventional PCI endpoint
+2025-09-01T23:04:57.147101+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.0: [8086:7000] type 00 class 0x060100 conventional PCI endpoint
+2025-09-01T23:04:57.147102+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: [8086:7010] type 00 class 0x010180 conventional PCI endpoint
+2025-09-01T23:04:57.147102+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: BAR 4 [io  0xc000-0xc00f]
+2025-09-01T23:04:57.147106+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: legacy IDE quirk
+2025-09-01T23:04:57.147107+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy IDE quirk
+2025-09-01T23:04:57.147107+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: legacy IDE quirk
+2025-09-01T23:04:57.147108+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy IDE quirk
+2025-09-01T23:04:57.147109+00:00 ip-172-31-37-199 kernel: * Found PM-Timer Bug on the chipset. Due to workarounds for a bug,
+2025-09-01T23:04:57.147110+00:00 ip-172-31-37-199 kernel: * this clock source is slow. Consider trying other clock sources
+2025-09-01T23:04:57.147110+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.3: [8086:7113] type 00 class 0x068000 conventional PCI endpoint
+2025-09-01T23:04:57.147114+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.3: quirk: [io  0xb000-0xb03f] claimed by PIIX4 ACPI
+2025-09-01T23:04:57.147114+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: [1013:00b8] type 00 class 0x030000 conventional PCI endpoint
+2025-09-01T23:04:57.147115+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: BAR 0 [mem 0xf8000000-0xf9ffffff pref]
+2025-09-01T23:04:57.147116+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: BAR 1 [mem 0xfbfff000-0xfbffffff]
+2025-09-01T23:04:57.147117+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+2025-09-01T23:04:57.147117+00:00 ip-172-31-37-199 kernel: pci 0000:00:03.0: [5853:0001] type 00 class 0xff8000 conventional PCI endpoint
+2025-09-01T23:04:57.147120+00:00 ip-172-31-37-199 kernel: pci 0000:00:03.0: BAR 0 [io  0xc100-0xc1ff]
+2025-09-01T23:04:57.147121+00:00 ip-172-31-37-199 kernel: pci 0000:00:03.0: BAR 1 [mem 0xfa000000-0xfaffffff pref]
+2025-09-01T23:04:57.147122+00:00 ip-172-31-37-199 kernel: ACPI: PCI: Interrupt link LNKA configured for IRQ 5
+2025-09-01T23:04:57.147123+00:00 ip-172-31-37-199 kernel: ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+2025-09-01T23:04:57.147124+00:00 ip-172-31-37-199 kernel: ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+2025-09-01T23:04:57.147124+00:00 ip-172-31-37-199 kernel: ACPI: PCI: Interrupt link LNKD configured for IRQ 5
+2025-09-01T23:04:57.147127+00:00 ip-172-31-37-199 kernel: xen:balloon: Initialising balloon driver
+2025-09-01T23:04:57.147128+00:00 ip-172-31-37-199 kernel: iommu: Default domain type: Translated
+2025-09-01T23:04:57.147129+00:00 ip-172-31-37-199 kernel: iommu: DMA domain TLB invalidation policy: lazy mode
+2025-09-01T23:04:57.147130+00:00 ip-172-31-37-199 kernel: SCSI subsystem initialized
+2025-09-01T23:04:57.147131+00:00 ip-172-31-37-199 kernel: libata version 3.00 loaded.
+2025-09-01T23:04:57.147131+00:00 ip-172-31-37-199 kernel: ACPI: bus type USB registered
+2025-09-01T23:04:57.147132+00:00 ip-172-31-37-199 kernel: usbcore: registered new interface driver usbfs
+2025-09-01T23:04:57.147135+00:00 ip-172-31-37-199 kernel: usbcore: registered new interface driver hub
+2025-09-01T23:04:57.147136+00:00 ip-172-31-37-199 kernel: usbcore: registered new device driver usb
+2025-09-01T23:04:57.147137+00:00 ip-172-31-37-199 kernel: pps_core: LinuxPPS API ver. 1 registered
+2025-09-01T23:04:57.147138+00:00 ip-172-31-37-199 kernel: pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+2025-09-01T23:04:57.147138+00:00 ip-172-31-37-199 kernel: PTP clock support registered
+2025-09-01T23:04:57.147139+00:00 ip-172-31-37-199 kernel: EDAC MC: Ver: 3.0.0
+2025-09-01T23:04:57.147142+00:00 ip-172-31-37-199 kernel: NetLabel: Initializing
+2025-09-01T23:04:57.147143+00:00 ip-172-31-37-199 kernel: NetLabel:  domain hash size = 128
+2025-09-01T23:04:57.147144+00:00 ip-172-31-37-199 kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+2025-09-01T23:04:57.147144+00:00 ip-172-31-37-199 kernel: NetLabel:  unlabeled traffic allowed by default
+2025-09-01T23:04:57.147145+00:00 ip-172-31-37-199 kernel: mctp: management component transport protocol core
+2025-09-01T23:04:57.147146+00:00 ip-172-31-37-199 kernel: NET: Registered PF_MCTP protocol family
+2025-09-01T23:04:57.147147+00:00 ip-172-31-37-199 kernel: PCI: Using ACPI for IRQ routing
+2025-09-01T23:04:57.147150+00:00 ip-172-31-37-199 kernel: PCI: pci_cache_line_size set to 64 bytes
+2025-09-01T23:04:57.147150+00:00 ip-172-31-37-199 kernel: e820: reserve RAM buffer [mem 0x0009e000-0x0009ffff]
+2025-09-01T23:04:57.147151+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: vgaarb: setting as boot VGA device
+2025-09-01T23:04:57.147152+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: vgaarb: bridge control possible
+2025-09-01T23:04:57.147153+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+2025-09-01T23:04:57.147153+00:00 ip-172-31-37-199 kernel: vgaarb: loaded
+2025-09-01T23:04:57.147157+00:00 ip-172-31-37-199 kernel: hpet: 3 channels of 0 reserved for per-cpu timers
+2025-09-01T23:04:57.147157+00:00 ip-172-31-37-199 kernel: hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+2025-09-01T23:04:57.147158+00:00 ip-172-31-37-199 kernel: hpet0: 3 comparators, 64-bit 62.500000 MHz counter
+2025-09-01T23:04:57.147159+00:00 ip-172-31-37-199 kernel: clocksource: Switched to clocksource xen
+2025-09-01T23:04:57.147160+00:00 ip-172-31-37-199 kernel: VFS: Disk quotas dquot_6.6.0
+2025-09-01T23:04:57.147160+00:00 ip-172-31-37-199 kernel: VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+2025-09-01T23:04:57.147163+00:00 ip-172-31-37-199 kernel: AppArmor: AppArmor Filesystem Enabled
+2025-09-01T23:04:57.147164+00:00 ip-172-31-37-199 kernel: pnp: PnP ACPI init
+2025-09-01T23:04:57.147165+00:00 ip-172-31-37-199 kernel: system 00:00: [mem 0x00000000-0x0009ffff] could not be reserved
+2025-09-01T23:04:57.147166+00:00 ip-172-31-37-199 kernel: system 00:01: [io  0x08a0-0x08a3] has been reserved
+2025-09-01T23:04:57.147166+00:00 ip-172-31-37-199 kernel: system 00:01: [io  0x0cc0-0x0ccf] has been reserved
+2025-09-01T23:04:57.147167+00:00 ip-172-31-37-199 kernel: system 00:01: [io  0x04d0-0x04d1] has been reserved
+2025-09-01T23:04:57.147168+00:00 ip-172-31-37-199 kernel: xen: --> pirq=17 -> irq=8 (gsi=8)
+2025-09-01T23:04:57.147171+00:00 ip-172-31-37-199 kernel: xen: --> pirq=18 -> irq=12 (gsi=12)
+2025-09-01T23:04:57.147172+00:00 ip-172-31-37-199 kernel: xen: --> pirq=19 -> irq=1 (gsi=1)
+2025-09-01T23:04:57.147173+00:00 ip-172-31-37-199 kernel: xen: --> pirq=20 -> irq=6 (gsi=6)
+2025-09-01T23:04:57.147174+00:00 ip-172-31-37-199 kernel: pnp 00:05: [dma 2]
+2025-09-01T23:04:57.147174+00:00 ip-172-31-37-199 kernel: xen: --> pirq=21 -> irq=4 (gsi=4)
+2025-09-01T23:04:57.147175+00:00 ip-172-31-37-199 kernel: system 00:07: [io  0x10c0-0x1141] has been reserved
+2025-09-01T23:04:57.147178+00:00 ip-172-31-37-199 kernel: system 00:07: [io  0xb044-0xb047] has been reserved
+2025-09-01T23:04:57.147179+00:00 ip-172-31-37-199 kernel: pnp: PnP ACPI: found 8 devices
+2025-09-01T23:04:57.147180+00:00 ip-172-31-37-199 kernel: clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+2025-09-01T23:04:57.147181+00:00 ip-172-31-37-199 kernel: NET: Registered PF_INET protocol family
+2025-09-01T23:04:57.147181+00:00 ip-172-31-37-199 kernel: IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+2025-09-01T23:04:57.147182+00:00 ip-172-31-37-199 kernel: tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+2025-09-01T23:04:57.147183+00:00 ip-172-31-37-199 kernel: Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+2025-09-01T23:04:57.147186+00:00 ip-172-31-37-199 kernel: TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+2025-09-01T23:04:57.147187+00:00 ip-172-31-37-199 kernel: TCP bind hash table entries: 8192 (order: 6, 262144 bytes, linear)
+2025-09-01T23:04:57.147188+00:00 ip-172-31-37-199 kernel: TCP: Hash tables configured (established 8192 bind 8192)
+2025-09-01T23:04:57.147188+00:00 ip-172-31-37-199 kernel: MPTCP token hash table entries: 1024 (order: 2, 24576 bytes, linear)
+2025-09-01T23:04:57.147189+00:00 ip-172-31-37-199 kernel: UDP hash table entries: 512 (order: 3, 32768 bytes, linear)
+2025-09-01T23:04:57.147190+00:00 ip-172-31-37-199 kernel: UDP-Lite hash table entries: 512 (order: 3, 32768 bytes, linear)
+2025-09-01T23:04:57.147193+00:00 ip-172-31-37-199 kernel: NET: Registered PF_UNIX/PF_LOCAL protocol family
+2025-09-01T23:04:57.147194+00:00 ip-172-31-37-199 kernel: NET: Registered PF_XDP protocol family
+2025-09-01T23:04:57.147195+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+2025-09-01T23:04:57.147195+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+2025-09-01T23:04:57.147196+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+2025-09-01T23:04:57.147197+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: resource 7 [mem 0x40000000-0xffffffff window]
+2025-09-01T23:04:57.147207+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.0: PIIX3: Enabling Passive Release
+2025-09-01T23:04:57.147208+00:00 ip-172-31-37-199 kernel: pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+2025-09-01T23:04:57.147208+00:00 ip-172-31-37-199 kernel: PCI: CLS 0 bytes, default 64
+2025-09-01T23:04:57.147209+00:00 ip-172-31-37-199 kernel: Trying to unpack rootfs image as initramfs...
+2025-09-01T23:04:57.147210+00:00 ip-172-31-37-199 kernel: clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x212733415c7, max_idle_ns: 440795236380 ns
+2025-09-01T23:04:57.147210+00:00 ip-172-31-37-199 kernel: Freeing initrd memory: 12964K
+2025-09-01T23:04:57.147245+00:00 ip-172-31-37-199 kernel: Initialise system trusted keyrings
+2025-09-01T23:04:57.147249+00:00 ip-172-31-37-199 kernel: Key type blacklist registered
+2025-09-01T23:04:57.147250+00:00 ip-172-31-37-199 kernel: workingset: timestamp_bits=36 max_order=18 bucket_order=0
+2025-09-01T23:04:57.147250+00:00 ip-172-31-37-199 kernel: zbud: loaded
+2025-09-01T23:04:57.147251+00:00 ip-172-31-37-199 kernel: squashfs: version 4.0 (2009/01/31) Phillip Lougher
+2025-09-01T23:04:57.147252+00:00 ip-172-31-37-199 kernel: fuse: init (API version 7.42)
+2025-09-01T23:04:57.147252+00:00 ip-172-31-37-199 kernel: integrity: Platform Keyring initialized
+2025-09-01T23:04:57.147256+00:00 ip-172-31-37-199 kernel: integrity: Machine keyring initialized
+2025-09-01T23:04:57.147256+00:00 ip-172-31-37-199 kernel: Key type asymmetric registered
+2025-09-01T23:04:57.147257+00:00 ip-172-31-37-199 kernel: Asymmetric key parser 'x509' registered
+2025-09-01T23:04:57.147258+00:00 ip-172-31-37-199 kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+2025-09-01T23:04:57.147259+00:00 ip-172-31-37-199 kernel: io scheduler mq-deadline registered
+2025-09-01T23:04:57.147259+00:00 ip-172-31-37-199 kernel: ledtrig-cpu: registered to indicate activity on CPUs
+2025-09-01T23:04:57.147260+00:00 ip-172-31-37-199 kernel: shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+2025-09-01T23:04:57.147263+00:00 ip-172-31-37-199 kernel: input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+2025-09-01T23:04:57.147264+00:00 ip-172-31-37-199 kernel: ACPI: button: Power Button [PWRF]
+2025-09-01T23:04:57.147265+00:00 ip-172-31-37-199 kernel: input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+2025-09-01T23:04:57.147266+00:00 ip-172-31-37-199 kernel: ACPI: button: Sleep Button [SLPF]
+2025-09-01T23:04:57.147266+00:00 ip-172-31-37-199 kernel: xen: --> pirq=22 -> irq=28 (gsi=28)
+2025-09-01T23:04:57.147267+00:00 ip-172-31-37-199 kernel: xen:grant_table: Grant tables using version 1 layout
+2025-09-01T23:04:57.147270+00:00 ip-172-31-37-199 kernel: Grant table initialized
+2025-09-01T23:04:57.147271+00:00 ip-172-31-37-199 kernel: Cannot get hvm parameter CONSOLE_EVTCHN (18): -22!
+2025-09-01T23:04:57.147272+00:00 ip-172-31-37-199 kernel: Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+2025-09-01T23:04:57.147273+00:00 ip-172-31-37-199 kernel: 00:06: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+2025-09-01T23:04:57.147273+00:00 ip-172-31-37-199 kernel: Linux agpgart interface v0.103
+2025-09-01T23:04:57.147274+00:00 ip-172-31-37-199 kernel: loop: module loaded
+2025-09-01T23:04:57.147277+00:00 ip-172-31-37-199 kernel: Invalid max_queues (4), will use default max: 1.
+2025-09-01T23:04:57.147278+00:00 ip-172-31-37-199 kernel: Key type psk registered
+2025-09-01T23:04:57.147279+00:00 ip-172-31-37-199 kernel: ata_piix 0000:00:01.1: version 2.13
+2025-09-01T23:04:57.147280+00:00 ip-172-31-37-199 kernel: blkfront: xvda: barrier or flush: disabled; persistent grants: disabled; indirect descriptors: enabled; bounce buffer: disabled;
+2025-09-01T23:04:57.147280+00:00 ip-172-31-37-199 kernel: scsi host0: ata_piix
+2025-09-01T23:04:57.147281+00:00 ip-172-31-37-199 kernel: scsi host1: ata_piix
+2025-09-01T23:04:57.147282+00:00 ip-172-31-37-199 kernel: ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc000 irq 14 lpm-pol 0
+2025-09-01T23:04:57.147285+00:00 ip-172-31-37-199 kernel: ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc008 irq 15 lpm-pol 0
+2025-09-01T23:04:57.147302+00:00 ip-172-31-37-199 kernel: ACPI: bus type drm_connector registered
+2025-09-01T23:04:57.147303+00:00 ip-172-31-37-199 kernel: tun: Universal TUN/TAP device driver, 1.6
+2025-09-01T23:04:57.147304+00:00 ip-172-31-37-199 kernel: PPP generic driver version 2.4.2
+2025-09-01T23:04:57.147304+00:00 ip-172-31-37-199 kernel: xen_netfront: Initialising Xen virtual ethernet driver
+2025-09-01T23:04:57.147305+00:00 ip-172-31-37-199 kernel: i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f13:PS2M] at 0x60,0x64 irq 1,12
+2025-09-01T23:04:57.147309+00:00 ip-172-31-37-199 kernel: i8042: Warning: Keylock active
+2025-09-01T23:04:57.147310+00:00 ip-172-31-37-199 kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+2025-09-01T23:04:57.147310+00:00 ip-172-31-37-199 kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+2025-09-01T23:04:57.147311+00:00 ip-172-31-37-199 kernel: mousedev: PS/2 mouse device common for all mice
+2025-09-01T23:04:57.147312+00:00 ip-172-31-37-199 kernel:  xvda: xvda1 xvda14 xvda15 xvda16
+2025-09-01T23:04:57.147312+00:00 ip-172-31-37-199 kernel: rtc_cmos 00:02: registered as rtc0
+2025-09-01T23:04:57.147316+00:00 ip-172-31-37-199 kernel: rtc_cmos 00:02: setting system clock to 2025-09-01T23:04:44 UTC (1756767884)
+2025-09-01T23:04:57.147316+00:00 ip-172-31-37-199 kernel: rtc_cmos 00:02: alarms up to one day, 114 bytes nvram, hpet irqs
+2025-09-01T23:04:57.147317+00:00 ip-172-31-37-199 kernel: i2c_dev: i2c /dev entries driver
+2025-09-01T23:04:57.147318+00:00 ip-172-31-37-199 kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+2025-09-01T23:04:57.147319+00:00 ip-172-31-37-199 kernel: device-mapper: uevent: version 1.0.3
+2025-09-01T23:04:57.147319+00:00 ip-172-31-37-199 kernel: device-mapper: ioctl: 4.49.0-ioctl (2025-01-17) initialised: dm-devel@lists.linux.dev
+2025-09-01T23:04:57.147321+00:00 ip-172-31-37-199 kernel: intel_pstate: CPU model not supported
+2025-09-01T23:04:57.147324+00:00 ip-172-31-37-199 kernel: drop_monitor: Initializing network drop monitor service
+2025-09-01T23:04:57.147325+00:00 ip-172-31-37-199 kernel: NET: Registered PF_INET6 protocol family
+2025-09-01T23:04:57.147325+00:00 ip-172-31-37-199 kernel: Segment Routing with IPv6
+2025-09-01T23:04:57.147326+00:00 ip-172-31-37-199 kernel: In-situ OAM (IOAM) with IPv6
+2025-09-01T23:04:57.147327+00:00 ip-172-31-37-199 kernel: NET: Registered PF_PACKET protocol family
+2025-09-01T23:04:57.147327+00:00 ip-172-31-37-199 kernel: Key type dns_resolver registered
+2025-09-01T23:04:57.147331+00:00 ip-172-31-37-199 kernel: resctrl: No MBM correction factor available
+2025-09-01T23:04:57.147332+00:00 ip-172-31-37-199 kernel: IPI shorthand broadcast: enabled
+2025-09-01T23:04:57.147333+00:00 ip-172-31-37-199 kernel: sched_clock: Marking stable (367004030, 275934436)->(1073573116, -430634650)
+2025-09-01T23:04:57.147333+00:00 ip-172-31-37-199 kernel: registered taskstats version 1
+2025-09-01T23:04:57.147334+00:00 ip-172-31-37-199 kernel: Loading compiled-in X.509 certificates
+2025-09-01T23:04:57.147335+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Build time autogenerated kernel key: 0cf8a6b46dcd641ad7b737fe6daf194f26895f62'
+2025-09-01T23:04:57.147341+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Live Patch Signing 2025 Kmod: d541cef61dc7e793b7eb7e899970a2eef0b5dc8c'
+2025-09-01T23:04:57.147341+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+2025-09-01T23:04:57.147342+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+2025-09-01T23:04:57.147343+00:00 ip-172-31-37-199 kernel: blacklist: Loading compiled-in revocation X.509 certificates
+2025-09-01T23:04:57.147344+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+2025-09-01T23:04:57.147344+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+2025-09-01T23:04:57.147348+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+2025-09-01T23:04:57.147348+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+2025-09-01T23:04:57.147349+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+2025-09-01T23:04:57.147350+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+2025-09-01T23:04:57.147351+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+2025-09-01T23:04:57.147352+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+2025-09-01T23:04:57.147355+00:00 ip-172-31-37-199 kernel: Demotion targets for Node 0: null
+2025-09-01T23:04:57.147370+00:00 ip-172-31-37-199 kernel: Key type .fscrypt registered
+2025-09-01T23:04:57.147371+00:00 ip-172-31-37-199 kernel: Key type fscrypt-provisioning registered
+2025-09-01T23:04:57.147371+00:00 ip-172-31-37-199 kernel: Key type encrypted registered
+2025-09-01T23:04:57.147372+00:00 ip-172-31-37-199 kernel: AppArmor: AppArmor sha256 policy hashing enabled
+2025-09-01T23:04:57.147373+00:00 ip-172-31-37-199 kernel: ima: No TPM chip found, activating TPM-bypass!
+2025-09-01T23:04:57.147376+00:00 ip-172-31-37-199 kernel: Loading compiled-in module X.509 certificates
+2025-09-01T23:04:57.147377+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Build time autogenerated kernel key: 0cf8a6b46dcd641ad7b737fe6daf194f26895f62'
+2025-09-01T23:04:57.147378+00:00 ip-172-31-37-199 kernel: ima: Allocated hash algorithm: sha256
+2025-09-01T23:04:57.147379+00:00 ip-172-31-37-199 kernel: ima: No architecture policies found
+2025-09-01T23:04:57.147379+00:00 ip-172-31-37-199 kernel: evm: Initialising EVM extended attributes:
+2025-09-01T23:04:57.147380+00:00 ip-172-31-37-199 kernel: evm: security.selinux
+2025-09-01T23:04:57.147383+00:00 ip-172-31-37-199 kernel: evm: security.SMACK64
+2025-09-01T23:04:57.147384+00:00 ip-172-31-37-199 kernel: evm: security.SMACK64EXEC
+2025-09-01T23:04:57.147385+00:00 ip-172-31-37-199 kernel: evm: security.SMACK64TRANSMUTE
+2025-09-01T23:04:57.147386+00:00 ip-172-31-37-199 kernel: evm: security.SMACK64MMAP
+2025-09-01T23:04:57.147386+00:00 ip-172-31-37-199 kernel: evm: security.apparmor
+2025-09-01T23:04:57.147387+00:00 ip-172-31-37-199 kernel: evm: security.ima
+2025-09-01T23:04:57.147388+00:00 ip-172-31-37-199 kernel: evm: security.capability
+2025-09-01T23:04:57.147391+00:00 ip-172-31-37-199 kernel: evm: HMAC attrs: 0x1
+2025-09-01T23:04:57.147392+00:00 ip-172-31-37-199 kernel: PM:   Magic number: 9:48:99
+2025-09-01T23:04:57.147392+00:00 ip-172-31-37-199 kernel: RAS: Correctable Errors collector initialized.
+2025-09-01T23:04:57.147393+00:00 ip-172-31-37-199 kernel: clk: Disabling unused clocks
+2025-09-01T23:04:57.147394+00:00 ip-172-31-37-199 kernel: PM: genpd: Disabling unused power domains
+2025-09-01T23:04:57.147395+00:00 ip-172-31-37-199 kernel: input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+2025-09-01T23:04:57.147398+00:00 ip-172-31-37-199 kernel: md: Waiting for all devices to be available before autodetect
+2025-09-01T23:04:57.147399+00:00 ip-172-31-37-199 kernel: md: If you don't use raid, use raid=noautodetect
+2025-09-01T23:04:57.147399+00:00 ip-172-31-37-199 kernel: md: Autodetecting RAID arrays.
+2025-09-01T23:04:57.147400+00:00 ip-172-31-37-199 kernel: md: autorun ...
+2025-09-01T23:04:57.147401+00:00 ip-172-31-37-199 kernel: md: ... autorun DONE.
+2025-09-01T23:04:57.147402+00:00 ip-172-31-37-199 kernel: EXT4-fs (xvda1): mounted filesystem 41a438f9-9b73-40e9-9093-3c0a3ce03d5c ro with ordered data mode. Quota mode: none.
+2025-09-01T23:04:57.147405+00:00 ip-172-31-37-199 kernel: VFS: Mounted root (ext4 filesystem) readonly on device 202:1.
+2025-09-01T23:04:57.147406+00:00 ip-172-31-37-199 kernel: devtmpfs: mounted
+2025-09-01T23:04:57.147406+00:00 ip-172-31-37-199 kernel: Freeing unused decrypted memory: 2028K
+2025-09-01T23:04:57.147407+00:00 ip-172-31-37-199 kernel: Freeing unused kernel image (initmem) memory: 5248K
+2025-09-01T23:04:57.147408+00:00 ip-172-31-37-199 kernel: Write protecting the kernel read-only data: 38912k
+2025-09-01T23:04:57.147408+00:00 ip-172-31-37-199 kernel: Freeing unused kernel image (text/rodata gap) memory: 1084K
+2025-09-01T23:04:57.147409+00:00 ip-172-31-37-199 kernel: Freeing unused kernel image (rodata/data gap) memory: 1268K
+2025-09-01T23:04:57.147412+00:00 ip-172-31-37-199 kernel: x86/mm: Checked W+X mappings: passed, no W+X pages found.
+2025-09-01T23:04:57.147413+00:00 ip-172-31-37-199 kernel: x86/mm: Checking user space page tables
+2025-09-01T23:04:57.147414+00:00 ip-172-31-37-199 kernel: x86/mm: Checked W+X mappings: passed, no W+X pages found.
+2025-09-01T23:04:57.147441+00:00 ip-172-31-37-199 kernel: Run /sbin/init as init process
+2025-09-01T23:04:57.147442+00:00 ip-172-31-37-199 kernel:   with arguments:
+2025-09-01T23:04:57.147443+00:00 ip-172-31-37-199 kernel:     /sbin/init
+2025-09-01T23:04:57.147446+00:00 ip-172-31-37-199 kernel:   with environment:
+2025-09-01T23:04:57.147447+00:00 ip-172-31-37-199 kernel:     HOME=/
+2025-09-01T23:04:57.147447+00:00 ip-172-31-37-199 kernel:     TERM=linux
+2025-09-01T23:04:57.147448+00:00 ip-172-31-37-199 kernel:     BOOT_IMAGE=/vmlinuz-6.14.0-1011-aws
+2025-09-01T23:04:57.147518+00:00 ip-172-31-37-199 kernel: EXT4-fs (xvda1): re-mounted 41a438f9-9b73-40e9-9093-3c0a3ce03d5c r/w. Quota mode: none.
+2025-09-01T23:04:57.147522+00:00 ip-172-31-37-199 kernel: loop0: detected capacity change from 0 to 56624
+2025-09-01T23:04:57.147523+00:00 ip-172-31-37-199 kernel: loop1: detected capacity change from 0 to 100952
+2025-09-01T23:04:57.147524+00:00 ip-172-31-37-199 kernel: loop2: detected capacity change from 0 to 151376
+2025-09-01T23:04:57.147524+00:00 ip-172-31-37-199 kernel: vif vif-0 enX0: renamed from eth0
+2025-09-01T23:04:57.147525+00:00 ip-172-31-37-199 kernel: EXT4-fs (xvda16): mounted filesystem fc01183f-27c0-4f69-b1c0-fb1c01e8fe57 r/w with ordered data mode. Quota mode: none.
+2025-09-01T23:04:57.147528+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767887.428:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="1password" pid=284 comm="apparmor_parser"
+2025-09-01T23:04:57.147529+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767887.430:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="Discord" pid=288 comm="apparmor_parser"
+2025-09-01T23:04:57.147530+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767887.439:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name=4D6F6E676F444220436F6D70617373 pid=289 comm="apparmor_parser"
+2025-09-01T23:04:57.147531+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767887.445:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="QtWebEngineProcess" pid=291 comm="apparmor_parser"
+2025-09-01T23:04:57.147532+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767887.450:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="balena-etcher" pid=292 comm="apparmor_parser"
+2025-09-01T23:04:57.147535+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767887.457:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="brave" pid=293 comm="apparmor_parser"
+2025-09-01T23:04:57.147536+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767887.460:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="buildah" pid=295 comm="apparmor_parser"
+2025-09-01T23:04:57.147543+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767887.466:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="busybox" pid=297 comm="apparmor_parser"
+2025-09-01T23:04:57.147544+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767887.476:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="cam" pid=299 comm="apparmor_parser"
+2025-09-01T23:04:57.147544+00:00 ip-172-31-37-199 kernel: cryptd: max_cpu_qlen set to 1000
+2025-09-01T23:04:57.147548+00:00 ip-172-31-37-199 kernel: AES CTR mode by8 optimization enabled
+2025-09-01T23:04:57.147548+00:00 ip-172-31-37-199 kernel: input: ImPS/2 Generic Wheel Mouse as /devices/platform/i8042/serio1/input/input4
+2025-09-01T23:04:57.147549+00:00 ip-172-31-37-199 kernel: kauditd_printk_skb: 111 callbacks suppressed
+2025-09-01T23:04:57.147550+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767889.532:122): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/snap/snapd/24792/usr/lib/snapd/snap-confine" pid=431 comm="apparmor_parser"
+2025-09-01T23:04:57.147551+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767889.533:123): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/snap/snapd/24792/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=431 comm="apparmor_parser"
+2025-09-01T23:04:57.147552+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767889.548:124): apparmor="STATUS" operation="profile_load" profile="unconfined" name="snap-update-ns.amazon-ssm-agent" pid=432 comm="apparmor_parser"
+2025-09-01T23:04:57.147555+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767889.555:125): apparmor="STATUS" operation="profile_load" profile="unconfined" name="snap.amazon-ssm-agent.amazon-ssm-agent" pid=433 comm="apparmor_parser"
+2025-09-01T23:04:57.147556+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767889.563:126): apparmor="STATUS" operation="profile_load" profile="unconfined" name="snap.amazon-ssm-agent.ssm-cli" pid=434 comm="apparmor_parser"
+2025-09-01T23:04:57.147556+00:00 ip-172-31-37-199 kernel: floppy0: no floppy controllers found
+2025-09-01T23:04:57.147557+00:00 ip-172-31-37-199 kernel: work still pending
+2025-09-01T23:04:57.147558+00:00 ip-172-31-37-199 kernel: 8021q: 802.1Q VLAN Support v1.8
+2025-09-01T23:04:57.147561+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756767896.410:127): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="rsyslogd" pid=630 comm="apparmor_parser"
+2025-09-01T23:04:59.152100+00:00 ip-172-31-37-199 kernel: loop3: detected capacity change from 0 to 8
+2025-09-03T14:35:37.076974+00:00 ip-172-31-37-199 kernel: Linux version 6.14.0-1011-aws (buildd@lcy02-amd64-107) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #11~24.04.1-Ubuntu SMP Fri Aug  1 02:07:25 UTC 2025 (Ubuntu 6.14.0-1011.11~24.04.1-aws 6.14.8)
+2025-09-03T14:35:37.100005+00:00 ip-172-31-37-199 kernel: Command line: BOOT_IMAGE=/vmlinuz-6.14.0-1011-aws root=PARTUUID=d8b02072-b013-48de-b7a8-331276413234 ro console=tty1 console=ttyS0 nvme_core.io_timeout=4294967295 panic=-1
+2025-09-03T14:35:37.100014+00:00 ip-172-31-37-199 kernel: KERNEL supported cpus:
+2025-09-03T14:35:37.100015+00:00 ip-172-31-37-199 kernel:   Intel GenuineIntel
+2025-09-03T14:35:37.100016+00:00 ip-172-31-37-199 kernel:   AMD AuthenticAMD
+2025-09-03T14:35:37.100017+00:00 ip-172-31-37-199 kernel:   Hygon HygonGenuine
+2025-09-03T14:35:37.100023+00:00 ip-172-31-37-199 kernel:   Centaur CentaurHauls
+2025-09-03T14:35:37.100024+00:00 ip-172-31-37-199 kernel:   zhaoxin   Shanghai  
+2025-09-03T14:35:37.100025+00:00 ip-172-31-37-199 kernel: BIOS-provided physical RAM map:
+2025-09-03T14:35:37.100026+00:00 ip-172-31-37-199 kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009dfff] usable
+2025-09-03T14:35:37.100027+00:00 ip-172-31-37-199 kernel: BIOS-e820: [mem 0x000000000009e000-0x000000000009ffff] reserved
+2025-09-03T14:35:37.100028+00:00 ip-172-31-37-199 kernel: BIOS-e820: [mem 0x00000000000e0000-0x00000000000fffff] reserved
+2025-09-03T14:35:37.100029+00:00 ip-172-31-37-199 kernel: BIOS-e820: [mem 0x0000000000100000-0x000000003fffffff] usable
+2025-09-03T14:35:37.100031+00:00 ip-172-31-37-199 kernel: BIOS-e820: [mem 0x00000000fc000000-0x00000000ffffffff] reserved
+2025-09-03T14:35:37.100032+00:00 ip-172-31-37-199 kernel: NX (Execute Disable) protection: active
+2025-09-03T14:35:37.100033+00:00 ip-172-31-37-199 kernel: APIC: Static calls initialized
+2025-09-03T14:35:37.100034+00:00 ip-172-31-37-199 kernel: SMBIOS 2.7 present.
+2025-09-03T14:35:37.100035+00:00 ip-172-31-37-199 kernel: DMI: Xen HVM domU, BIOS 4.11.amazon 08/24/2006
+2025-09-03T14:35:37.100035+00:00 ip-172-31-37-199 kernel: DMI: Memory slots populated: 1/1
+2025-09-03T14:35:37.100038+00:00 ip-172-31-37-199 kernel: Hypervisor detected: Xen HVM
+2025-09-03T14:35:37.100039+00:00 ip-172-31-37-199 kernel: Xen version 4.11.
+2025-09-03T14:35:37.100040+00:00 ip-172-31-37-199 kernel: platform_pci_unplug: Netfront and the Xen platform PCI driver have been compiled for this kernel: unplug emulated NICs.
+2025-09-03T14:35:37.100041+00:00 ip-172-31-37-199 kernel: platform_pci_unplug: Blkfront and the Xen platform PCI driver have been compiled for this kernel: unplug emulated disks.
+2025-09-03T14:35:37.100041+00:00 ip-172-31-37-199 kernel: You might have to change the root device
+2025-09-03T14:35:37.100042+00:00 ip-172-31-37-199 kernel: from /dev/hd[a-d] to /dev/xvd[a-d]
+2025-09-03T14:35:37.100045+00:00 ip-172-31-37-199 kernel: in your root= kernel command line option
+2025-09-03T14:35:37.100045+00:00 ip-172-31-37-199 kernel: HVMOP_pagetable_dying not supported
+2025-09-03T14:35:37.100046+00:00 ip-172-31-37-199 kernel: tsc: Detected 2299.998 MHz processor
+2025-09-03T14:35:37.100047+00:00 ip-172-31-37-199 kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+2025-09-03T14:35:37.100048+00:00 ip-172-31-37-199 kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+2025-09-03T14:35:37.100049+00:00 ip-172-31-37-199 kernel: last_pfn = 0x40000 max_arch_pfn = 0x400000000
+2025-09-03T14:35:37.100050+00:00 ip-172-31-37-199 kernel: MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
+2025-09-03T14:35:37.100052+00:00 ip-172-31-37-199 kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+2025-09-03T14:35:37.100053+00:00 ip-172-31-37-199 kernel: found SMP MP-table at [mem 0x000fbb70-0x000fbb7f]
+2025-09-03T14:35:37.100054+00:00 ip-172-31-37-199 kernel: RAMDISK: [mem 0x3669d000-0x37345fff]
+2025-09-03T14:35:37.100054+00:00 ip-172-31-37-199 kernel: ACPI: Early table checksum verification disabled
+2025-09-03T14:35:37.100055+00:00 ip-172-31-37-199 kernel: ACPI: RSDP 0x00000000000EA020 000024 (v02 Xen   )
+2025-09-03T14:35:37.100056+00:00 ip-172-31-37-199 kernel: ACPI: XSDT 0x00000000FC00A250 00005C (v01 Xen    HVM      00000000 HVML 00000000)
+2025-09-03T14:35:37.100058+00:00 ip-172-31-37-199 kernel: ACPI: FACP 0x00000000FC00A150 0000F4 (v04 Xen    HVM      00000000 HVML 00000000)
+2025-09-03T14:35:37.100059+00:00 ip-172-31-37-199 kernel: ACPI: DSDT 0x00000000FC001000 008A79 (v02 Xen    HVM      00000000 INTL 20090123)
+2025-09-03T14:35:37.100060+00:00 ip-172-31-37-199 kernel: ACPI: FACS 0x00000000FC00A050 000040
+2025-09-03T14:35:37.100061+00:00 ip-172-31-37-199 kernel: ACPI: FACS 0x00000000FC00A050 000040
+2025-09-03T14:35:37.100064+00:00 ip-172-31-37-199 kernel: ACPI: SSDT 0x00000000FC009A80 000033 (v02 Xen    HVM      00000000 INTL 20090123)
+2025-09-03T14:35:37.100065+00:00 ip-172-31-37-199 kernel: ACPI: SSDT 0x00000000FC009AC0 000031 (v02 Xen    HVM      00000000 INTL 20090123)
+2025-09-03T14:35:37.100067+00:00 ip-172-31-37-199 kernel: ACPI: APIC 0x00000000FC009B00 0000D8 (v02 Xen    HVM      00000000 HVML 00000000)
+2025-09-03T14:35:37.100068+00:00 ip-172-31-37-199 kernel: ACPI: HPET 0x00000000FC009FE0 000038 (v01 Xen    HVM      00000000 HVML 00000000)
+2025-09-03T14:35:37.100069+00:00 ip-172-31-37-199 kernel: ACPI: WAET 0x00000000FC00A020 000028 (v01 Xen    HVM      00000000 HVML 00000000)
+2025-09-03T14:35:37.100070+00:00 ip-172-31-37-199 kernel: ACPI: Reserving FACP table memory at [mem 0xfc00a150-0xfc00a243]
+2025-09-03T14:35:37.100071+00:00 ip-172-31-37-199 kernel: ACPI: Reserving DSDT table memory at [mem 0xfc001000-0xfc009a78]
+2025-09-03T14:35:37.100072+00:00 ip-172-31-37-199 kernel: ACPI: Reserving FACS table memory at [mem 0xfc00a050-0xfc00a08f]
+2025-09-03T14:35:37.100072+00:00 ip-172-31-37-199 kernel: ACPI: Reserving FACS table memory at [mem 0xfc00a050-0xfc00a08f]
+2025-09-03T14:35:37.100076+00:00 ip-172-31-37-199 kernel: ACPI: Reserving SSDT table memory at [mem 0xfc009a80-0xfc009ab2]
+2025-09-03T14:35:37.100076+00:00 ip-172-31-37-199 kernel: ACPI: Reserving SSDT table memory at [mem 0xfc009ac0-0xfc009af0]
+2025-09-03T14:35:37.100077+00:00 ip-172-31-37-199 kernel: ACPI: Reserving APIC table memory at [mem 0xfc009b00-0xfc009bd7]
+2025-09-03T14:35:37.100078+00:00 ip-172-31-37-199 kernel: ACPI: Reserving HPET table memory at [mem 0xfc009fe0-0xfc00a017]
+2025-09-03T14:35:37.100079+00:00 ip-172-31-37-199 kernel: ACPI: Reserving WAET table memory at [mem 0xfc00a020-0xfc00a047]
+2025-09-03T14:35:37.100080+00:00 ip-172-31-37-199 kernel: No NUMA configuration found
+2025-09-03T14:35:37.100083+00:00 ip-172-31-37-199 kernel: Faking a node at [mem 0x0000000000000000-0x000000003fffffff]
+2025-09-03T14:35:37.100084+00:00 ip-172-31-37-199 kernel: NODE_DATA(0) allocated [mem 0x3ffd5540-0x3fffffff]
+2025-09-03T14:35:37.100084+00:00 ip-172-31-37-199 kernel: Zone ranges:
+2025-09-03T14:35:37.100085+00:00 ip-172-31-37-199 kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+2025-09-03T14:35:37.100086+00:00 ip-172-31-37-199 kernel:   DMA32    [mem 0x0000000001000000-0x000000003fffffff]
+2025-09-03T14:35:37.100087+00:00 ip-172-31-37-199 kernel:   Normal   empty
+2025-09-03T14:35:37.100089+00:00 ip-172-31-37-199 kernel:   Device   empty
+2025-09-03T14:35:37.100090+00:00 ip-172-31-37-199 kernel: Movable zone start for each node
+2025-09-03T14:35:37.100091+00:00 ip-172-31-37-199 kernel: Early memory node ranges
+2025-09-03T14:35:37.100092+00:00 ip-172-31-37-199 kernel:   node   0: [mem 0x0000000000001000-0x000000000009dfff]
+2025-09-03T14:35:37.100093+00:00 ip-172-31-37-199 kernel:   node   0: [mem 0x0000000000100000-0x000000003fffffff]
+2025-09-03T14:35:37.100094+00:00 ip-172-31-37-199 kernel: Initmem setup node 0 [mem 0x0000000000001000-0x000000003fffffff]
+2025-09-03T14:35:37.100095+00:00 ip-172-31-37-199 kernel: On node 0, zone DMA: 1 pages in unavailable ranges
+2025-09-03T14:35:37.100097+00:00 ip-172-31-37-199 kernel: On node 0, zone DMA: 98 pages in unavailable ranges
+2025-09-03T14:35:37.100098+00:00 ip-172-31-37-199 kernel: ACPI: PM-Timer IO Port: 0xb008
+2025-09-03T14:35:37.100099+00:00 ip-172-31-37-199 kernel: IOAPIC[0]: apic_id 1, version 17, address 0xfec00000, GSI 0-47
+2025-09-03T14:35:37.100100+00:00 ip-172-31-37-199 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+2025-09-03T14:35:37.100100+00:00 ip-172-31-37-199 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 low level)
+2025-09-03T14:35:37.100101+00:00 ip-172-31-37-199 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 low level)
+2025-09-03T14:35:37.100104+00:00 ip-172-31-37-199 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 low level)
+2025-09-03T14:35:37.100104+00:00 ip-172-31-37-199 kernel: ACPI: Using ACPI (MADT) for SMP configuration information
+2025-09-03T14:35:37.100105+00:00 ip-172-31-37-199 kernel: ACPI: HPET id: 0x8086a201 base: 0xfed00000
+2025-09-03T14:35:37.100106+00:00 ip-172-31-37-199 kernel: TSC deadline timer available
+2025-09-03T14:35:37.100107+00:00 ip-172-31-37-199 kernel: CPU topo: Max. logical packages:   1
+2025-09-03T14:35:37.100108+00:00 ip-172-31-37-199 kernel: CPU topo: Max. logical dies:       1
+2025-09-03T14:35:37.100110+00:00 ip-172-31-37-199 kernel: CPU topo: Max. dies per package:   1
+2025-09-03T14:35:37.100111+00:00 ip-172-31-37-199 kernel: CPU topo: Max. threads per core:   1
+2025-09-03T14:35:37.100112+00:00 ip-172-31-37-199 kernel: CPU topo: Num. cores per package:     1
+2025-09-03T14:35:37.100113+00:00 ip-172-31-37-199 kernel: CPU topo: Num. threads per package:   1
+2025-09-03T14:35:37.100114+00:00 ip-172-31-37-199 kernel: CPU topo: Allowing 1 present CPUs plus 14 hotplug CPUs
+2025-09-03T14:35:37.100114+00:00 ip-172-31-37-199 kernel: PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+2025-09-03T14:35:37.100115+00:00 ip-172-31-37-199 kernel: PM: hibernation: Registered nosave memory: [mem 0x0009e000-0x000fffff]
+2025-09-03T14:35:37.100118+00:00 ip-172-31-37-199 kernel: [mem 0x40000000-0xfbffffff] available for PCI devices
+2025-09-03T14:35:37.100119+00:00 ip-172-31-37-199 kernel: Booting paravirtualized kernel on Xen HVM
+2025-09-03T14:35:37.100119+00:00 ip-172-31-37-199 kernel: clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+2025-09-03T14:35:37.100120+00:00 ip-172-31-37-199 kernel: setup_percpu: NR_CPUS:8192 nr_cpumask_bits:15 nr_cpu_ids:15 nr_node_ids:1
+2025-09-03T14:35:37.100121+00:00 ip-172-31-37-199 kernel: percpu: Embedded 88 pages/cpu s237568 r8192 d114688 u524288
+2025-09-03T14:35:37.100122+00:00 ip-172-31-37-199 kernel: pcpu-alloc: s237568 r8192 d114688 u524288 alloc=1*2097152
+2025-09-03T14:35:37.100124+00:00 ip-172-31-37-199 kernel: pcpu-alloc: [0] 00 01 02 03 [0] 04 05 06 07 
+2025-09-03T14:35:37.100125+00:00 ip-172-31-37-199 kernel: pcpu-alloc: [0] 08 09 10 11 [0] 12 13 14 -- 
+2025-09-03T14:35:37.100126+00:00 ip-172-31-37-199 kernel: xen: PV spinlocks enabled
+2025-09-03T14:35:37.100127+00:00 ip-172-31-37-199 kernel: PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+2025-09-03T14:35:37.100128+00:00 ip-172-31-37-199 kernel: Kernel command line: BOOT_IMAGE=/vmlinuz-6.14.0-1011-aws root=PARTUUID=d8b02072-b013-48de-b7a8-331276413234 ro console=tty1 console=ttyS0 nvme_core.io_timeout=4294967295 panic=-1
+2025-09-03T14:35:37.100129+00:00 ip-172-31-37-199 kernel: Unknown kernel command line parameters "BOOT_IMAGE=/vmlinuz-6.14.0-1011-aws", will be passed to user space.
+2025-09-03T14:35:37.100132+00:00 ip-172-31-37-199 kernel: random: crng init done
+2025-09-03T14:35:37.100132+00:00 ip-172-31-37-199 kernel: printk: log buffer data + meta data: 262144 + 917504 = 1179648 bytes
+2025-09-03T14:35:37.100133+00:00 ip-172-31-37-199 kernel: Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+2025-09-03T14:35:37.100134+00:00 ip-172-31-37-199 kernel: Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+2025-09-03T14:35:37.100135+00:00 ip-172-31-37-199 kernel: Fallback order for Node 0: 0 
+2025-09-03T14:35:37.100136+00:00 ip-172-31-37-199 kernel: Built 1 zonelists, mobility grouping on.  Total pages: 262045
+2025-09-03T14:35:37.100138+00:00 ip-172-31-37-199 kernel: Policy zone: DMA32
+2025-09-03T14:35:37.100179+00:00 ip-172-31-37-199 kernel: mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+2025-09-03T14:35:37.100180+00:00 ip-172-31-37-199 kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=15, Nodes=1
+2025-09-03T14:35:37.100180+00:00 ip-172-31-37-199 kernel: Kernel/User page tables isolation: enabled
+2025-09-03T14:35:37.100181+00:00 ip-172-31-37-199 kernel: ftrace: allocating 60654 entries in 237 pages
+2025-09-03T14:35:37.100182+00:00 ip-172-31-37-199 kernel: ftrace section at ffffffffb58eb000 sorted properly
+2025-09-03T14:35:37.100183+00:00 ip-172-31-37-199 kernel: ftrace: allocated 237 pages with 6 groups
+2025-09-03T14:35:37.100185+00:00 ip-172-31-37-199 kernel: rcu: Hierarchical RCU implementation.
+2025-09-03T14:35:37.100186+00:00 ip-172-31-37-199 kernel: rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=15.
+2025-09-03T14:35:37.100187+00:00 ip-172-31-37-199 kernel: 	Rude variant of Tasks RCU enabled.
+2025-09-03T14:35:37.100188+00:00 ip-172-31-37-199 kernel: 	Tracing variant of Tasks RCU enabled.
+2025-09-03T14:35:37.100189+00:00 ip-172-31-37-199 kernel: rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+2025-09-03T14:35:37.100190+00:00 ip-172-31-37-199 kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=15
+2025-09-03T14:35:37.100192+00:00 ip-172-31-37-199 kernel: RCU Tasks Rude: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=15.
+2025-09-03T14:35:37.100193+00:00 ip-172-31-37-199 kernel: RCU Tasks Trace: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=15.
+2025-09-03T14:35:37.100194+00:00 ip-172-31-37-199 kernel: NR_IRQS: 524544, nr_irqs: 952, preallocated irqs: 16
+2025-09-03T14:35:37.100194+00:00 ip-172-31-37-199 kernel: xen:events: Using 2-level ABI
+2025-09-03T14:35:37.100195+00:00 ip-172-31-37-199 kernel: xen:events: Xen HVM callback vector for event delivery is enabled
+2025-09-03T14:35:37.100196+00:00 ip-172-31-37-199 kernel: rcu: srcu_init: Setting srcu_struct sizes based on contention.
+2025-09-03T14:35:37.100198+00:00 ip-172-31-37-199 kernel: Console: colour VGA+ 80x25
+2025-09-03T14:35:37.100199+00:00 ip-172-31-37-199 kernel: printk: legacy console [tty1] enabled
+2025-09-03T14:35:37.100199+00:00 ip-172-31-37-199 kernel: Cannot get hvm parameter CONSOLE_EVTCHN (18): -22!
+2025-09-03T14:35:37.100200+00:00 ip-172-31-37-199 kernel: printk: legacy console [ttyS0] enabled
+2025-09-03T14:35:37.100201+00:00 ip-172-31-37-199 kernel: ACPI: Core revision 20240827
+2025-09-03T14:35:37.100202+00:00 ip-172-31-37-199 kernel: clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 30580167144 ns
+2025-09-03T14:35:37.100202+00:00 ip-172-31-37-199 kernel: APIC: Switch to symmetric I/O mode setup
+2025-09-03T14:35:37.100205+00:00 ip-172-31-37-199 kernel: x2apic enabled
+2025-09-03T14:35:37.100205+00:00 ip-172-31-37-199 kernel: APIC: Switched APIC routing to: physical x2apic
+2025-09-03T14:35:37.100206+00:00 ip-172-31-37-199 kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=0 pin2=0
+2025-09-03T14:35:37.100207+00:00 ip-172-31-37-199 kernel: clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x212733415c7, max_idle_ns: 440795236380 ns
+2025-09-03T14:35:37.100208+00:00 ip-172-31-37-199 kernel: Calibrating delay loop (skipped), value calculated using timer frequency.. 4599.99 BogoMIPS (lpj=2299998)
+2025-09-03T14:35:37.100208+00:00 ip-172-31-37-199 kernel: Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+2025-09-03T14:35:37.100211+00:00 ip-172-31-37-199 kernel: Last level dTLB entries: 4KB 64, 2MB 32, 4MB 32, 1GB 4
+2025-09-03T14:35:37.100211+00:00 ip-172-31-37-199 kernel: Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+2025-09-03T14:35:37.100212+00:00 ip-172-31-37-199 kernel: Spectre V2 : Mitigation: Retpolines
+2025-09-03T14:35:37.100213+00:00 ip-172-31-37-199 kernel: Spectre V2 : Spectre v2 / SpectreRSB: Filling RSB on context switch and VMEXIT
+2025-09-03T14:35:37.100214+00:00 ip-172-31-37-199 kernel: Speculative Store Bypass: Vulnerable
+2025-09-03T14:35:37.100214+00:00 ip-172-31-37-199 kernel: MDS: Vulnerable: Clear CPU buffers attempted, no microcode
+2025-09-03T14:35:37.100217+00:00 ip-172-31-37-199 kernel: MMIO Stale Data: Vulnerable: Clear CPU buffers attempted, no microcode
+2025-09-03T14:35:37.100217+00:00 ip-172-31-37-199 kernel: ITS: Mitigation: Aligned branch/return thunks
+2025-09-03T14:35:37.100218+00:00 ip-172-31-37-199 kernel: x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+2025-09-03T14:35:37.100219+00:00 ip-172-31-37-199 kernel: x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+2025-09-03T14:35:37.100220+00:00 ip-172-31-37-199 kernel: x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+2025-09-03T14:35:37.100220+00:00 ip-172-31-37-199 kernel: x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+2025-09-03T14:35:37.100221+00:00 ip-172-31-37-199 kernel: x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+2025-09-03T14:35:37.100223+00:00 ip-172-31-37-199 kernel: pid_max: default: 32768 minimum: 301
+2025-09-03T14:35:37.100224+00:00 ip-172-31-37-199 kernel: LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,ima,evm
+2025-09-03T14:35:37.100225+00:00 ip-172-31-37-199 kernel: landlock: Up and running.
+2025-09-03T14:35:37.100226+00:00 ip-172-31-37-199 kernel: Yama: becoming mindful.
+2025-09-03T14:35:37.100226+00:00 ip-172-31-37-199 kernel: AppArmor: AppArmor initialized
+2025-09-03T14:35:37.100227+00:00 ip-172-31-37-199 kernel: Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+2025-09-03T14:35:37.100232+00:00 ip-172-31-37-199 kernel: Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+2025-09-03T14:35:37.100233+00:00 ip-172-31-37-199 kernel: clocksource: xen: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+2025-09-03T14:35:37.100234+00:00 ip-172-31-37-199 kernel: Xen: using vcpuop timer interface
+2025-09-03T14:35:37.100234+00:00 ip-172-31-37-199 kernel: installing Xen timer for CPU 0
+2025-09-03T14:35:37.100235+00:00 ip-172-31-37-199 kernel: smpboot: CPU0: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz (family: 0x6, model: 0x4f, stepping: 0x1)
+2025-09-03T14:35:37.100236+00:00 ip-172-31-37-199 kernel: cpu 0 spinlock event irq 53
+2025-09-03T14:35:37.100238+00:00 ip-172-31-37-199 kernel: Performance Events: unsupported p6 CPU model 79 no PMU driver, software events only.
+2025-09-03T14:35:37.100239+00:00 ip-172-31-37-199 kernel: signal: max sigframe size: 1776
+2025-09-03T14:35:37.100240+00:00 ip-172-31-37-199 kernel: rcu: Hierarchical SRCU implementation.
+2025-09-03T14:35:37.100240+00:00 ip-172-31-37-199 kernel: rcu: 	Max phase no-delay instances is 400.
+2025-09-03T14:35:37.100241+00:00 ip-172-31-37-199 kernel: Timer migration: 2 hierarchy levels; 8 children per group; 2 crossnode level
+2025-09-03T14:35:37.100242+00:00 ip-172-31-37-199 kernel: NMI watchdog: Perf NMI watchdog permanently disabled
+2025-09-03T14:35:37.100243+00:00 ip-172-31-37-199 kernel: smp: Bringing up secondary CPUs ...
+2025-09-03T14:35:37.100245+00:00 ip-172-31-37-199 kernel: smp: Brought up 1 node, 1 CPU
+2025-09-03T14:35:37.100246+00:00 ip-172-31-37-199 kernel: smpboot: Total of 1 processors activated (4599.99 BogoMIPS)
+2025-09-03T14:35:37.100246+00:00 ip-172-31-37-199 kernel: Memory: 950884K/1048180K available (21443K kernel code, 4583K rwdata, 15116K rodata, 5248K init, 4312K bss, 90444K reserved, 0K cma-reserved)
+2025-09-03T14:35:37.100247+00:00 ip-172-31-37-199 kernel: devtmpfs: initialized
+2025-09-03T14:35:37.100248+00:00 ip-172-31-37-199 kernel: x86/mm: Memory block size: 128MB
+2025-09-03T14:35:37.100249+00:00 ip-172-31-37-199 kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+2025-09-03T14:35:37.100251+00:00 ip-172-31-37-199 kernel: futex hash table entries: 4096 (order: 6, 262144 bytes, linear)
+2025-09-03T14:35:37.100252+00:00 ip-172-31-37-199 kernel: pinctrl core: initialized pinctrl subsystem
+2025-09-03T14:35:37.100253+00:00 ip-172-31-37-199 kernel: PM: RTC time: 14:35:26, date: 2025-09-03
+2025-09-03T14:35:37.100253+00:00 ip-172-31-37-199 kernel: NET: Registered PF_NETLINK/PF_ROUTE protocol family
+2025-09-03T14:35:37.100254+00:00 ip-172-31-37-199 kernel: DMA: preallocated 128 KiB GFP_KERNEL pool for atomic allocations
+2025-09-03T14:35:37.100255+00:00 ip-172-31-37-199 kernel: DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+2025-09-03T14:35:37.100257+00:00 ip-172-31-37-199 kernel: DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+2025-09-03T14:35:37.100258+00:00 ip-172-31-37-199 kernel: audit: initializing netlink subsys (disabled)
+2025-09-03T14:35:37.100259+00:00 ip-172-31-37-199 kernel: thermal_sys: Registered thermal governor 'fair_share'
+2025-09-03T14:35:37.100259+00:00 ip-172-31-37-199 kernel: thermal_sys: Registered thermal governor 'bang_bang'
+2025-09-03T14:35:37.100260+00:00 ip-172-31-37-199 kernel: thermal_sys: Registered thermal governor 'step_wise'
+2025-09-03T14:35:37.100261+00:00 ip-172-31-37-199 kernel: thermal_sys: Registered thermal governor 'user_space'
+2025-09-03T14:35:37.100262+00:00 ip-172-31-37-199 kernel: thermal_sys: Registered thermal governor 'power_allocator'
+2025-09-03T14:35:37.100264+00:00 ip-172-31-37-199 kernel: audit: type=2000 audit(1756910126.812:1): state=initialized audit_enabled=0 res=1
+2025-09-03T14:35:37.100264+00:00 ip-172-31-37-199 kernel: cpuidle: using governor ladder
+2025-09-03T14:35:37.100265+00:00 ip-172-31-37-199 kernel: cpuidle: using governor menu
+2025-09-03T14:35:37.100266+00:00 ip-172-31-37-199 kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+2025-09-03T14:35:37.100267+00:00 ip-172-31-37-199 kernel: PCI: Using configuration type 1 for base access
+2025-09-03T14:35:37.100267+00:00 ip-172-31-37-199 kernel: kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+2025-09-03T14:35:37.100270+00:00 ip-172-31-37-199 kernel: HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+2025-09-03T14:35:37.100270+00:00 ip-172-31-37-199 kernel: HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+2025-09-03T14:35:37.100271+00:00 ip-172-31-37-199 kernel: ACPI: Added _OSI(Module Device)
+2025-09-03T14:35:37.100272+00:00 ip-172-31-37-199 kernel: ACPI: Added _OSI(Processor Device)
+2025-09-03T14:35:37.100273+00:00 ip-172-31-37-199 kernel: ACPI: Added _OSI(3.0 _SCP Extensions)
+2025-09-03T14:35:37.100273+00:00 ip-172-31-37-199 kernel: ACPI: Added _OSI(Processor Aggregator Device)
+2025-09-03T14:35:37.100274+00:00 ip-172-31-37-199 kernel: ACPI: 3 ACPI AML tables successfully acquired and loaded
+2025-09-03T14:35:37.100283+00:00 ip-172-31-37-199 kernel: xen: --> pirq=16 -> irq=9 (gsi=9)
+2025-09-03T14:35:37.100284+00:00 ip-172-31-37-199 kernel: ACPI: Interpreter enabled
+2025-09-03T14:35:37.100285+00:00 ip-172-31-37-199 kernel: ACPI: PM: (supports S0 S4 S5)
+2025-09-03T14:35:37.100286+00:00 ip-172-31-37-199 kernel: ACPI: Using IOAPIC for interrupt routing
+2025-09-03T14:35:37.100287+00:00 ip-172-31-37-199 kernel: PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+2025-09-03T14:35:37.100287+00:00 ip-172-31-37-199 kernel: PCI: Using E820 reservations for host bridge windows
+2025-09-03T14:35:37.100293+00:00 ip-172-31-37-199 kernel: ACPI: Enabled 2 GPEs in block 00 to 0F
+2025-09-03T14:35:37.100294+00:00 ip-172-31-37-199 kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+2025-09-03T14:35:37.100294+00:00 ip-172-31-37-199 kernel: acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI EDR HPX-Type3]
+2025-09-03T14:35:37.100295+00:00 ip-172-31-37-199 kernel: acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+2025-09-03T14:35:37.100296+00:00 ip-172-31-37-199 kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+2025-09-03T14:35:37.100297+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [0] registered
+2025-09-03T14:35:37.100300+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [3] registered
+2025-09-03T14:35:37.100301+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [4] registered
+2025-09-03T14:35:37.100302+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [5] registered
+2025-09-03T14:35:37.100302+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [6] registered
+2025-09-03T14:35:37.100303+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [7] registered
+2025-09-03T14:35:37.100337+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [8] registered
+2025-09-03T14:35:37.100338+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [9] registered
+2025-09-03T14:35:37.100341+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [10] registered
+2025-09-03T14:35:37.100342+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [11] registered
+2025-09-03T14:35:37.100343+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [12] registered
+2025-09-03T14:35:37.100344+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [13] registered
+2025-09-03T14:35:37.100344+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [14] registered
+2025-09-03T14:35:37.100345+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [15] registered
+2025-09-03T14:35:37.100348+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [16] registered
+2025-09-03T14:35:37.100349+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [17] registered
+2025-09-03T14:35:37.100350+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [18] registered
+2025-09-03T14:35:37.100351+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [19] registered
+2025-09-03T14:35:37.100351+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [20] registered
+2025-09-03T14:35:37.100352+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [21] registered
+2025-09-03T14:35:37.100355+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [22] registered
+2025-09-03T14:35:37.100356+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [23] registered
+2025-09-03T14:35:37.100357+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [24] registered
+2025-09-03T14:35:37.100358+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [25] registered
+2025-09-03T14:35:37.100358+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [26] registered
+2025-09-03T14:35:37.100359+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [27] registered
+2025-09-03T14:35:37.100360+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [28] registered
+2025-09-03T14:35:37.100363+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [29] registered
+2025-09-03T14:35:37.100364+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [30] registered
+2025-09-03T14:35:37.100365+00:00 ip-172-31-37-199 kernel: acpiphp: Slot [31] registered
+2025-09-03T14:35:37.100366+00:00 ip-172-31-37-199 kernel: PCI host bridge to bus 0000:00
+2025-09-03T14:35:37.100367+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+2025-09-03T14:35:37.100367+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+2025-09-03T14:35:37.100371+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+2025-09-03T14:35:37.100371+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: root bus resource [mem 0x40000000-0xffffffff window]
+2025-09-03T14:35:37.100372+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+2025-09-03T14:35:37.100373+00:00 ip-172-31-37-199 kernel: pci 0000:00:00.0: [8086:1237] type 00 class 0x060000 conventional PCI endpoint
+2025-09-03T14:35:37.100374+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.0: [8086:7000] type 00 class 0x060100 conventional PCI endpoint
+2025-09-03T14:35:37.100374+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: [8086:7010] type 00 class 0x010180 conventional PCI endpoint
+2025-09-03T14:35:37.100375+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: BAR 4 [io  0xc000-0xc00f]
+2025-09-03T14:35:37.100378+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: legacy IDE quirk
+2025-09-03T14:35:37.100379+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy IDE quirk
+2025-09-03T14:35:37.100380+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: legacy IDE quirk
+2025-09-03T14:35:37.100381+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy IDE quirk
+2025-09-03T14:35:37.100381+00:00 ip-172-31-37-199 kernel: * Found PM-Timer Bug on the chipset. Due to workarounds for a bug,
+2025-09-03T14:35:37.100382+00:00 ip-172-31-37-199 kernel: * this clock source is slow. Consider trying other clock sources
+2025-09-03T14:35:37.100385+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.3: [8086:7113] type 00 class 0x068000 conventional PCI endpoint
+2025-09-03T14:35:37.100386+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.3: quirk: [io  0xb000-0xb03f] claimed by PIIX4 ACPI
+2025-09-03T14:35:37.100387+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: [1013:00b8] type 00 class 0x030000 conventional PCI endpoint
+2025-09-03T14:35:37.100388+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: BAR 0 [mem 0xf8000000-0xf9ffffff pref]
+2025-09-03T14:35:37.100388+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: BAR 1 [mem 0xfbfff000-0xfbffffff]
+2025-09-03T14:35:37.100389+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+2025-09-03T14:35:37.100392+00:00 ip-172-31-37-199 kernel: pci 0000:00:03.0: [5853:0001] type 00 class 0xff8000 conventional PCI endpoint
+2025-09-03T14:35:37.100393+00:00 ip-172-31-37-199 kernel: pci 0000:00:03.0: BAR 0 [io  0xc100-0xc1ff]
+2025-09-03T14:35:37.100394+00:00 ip-172-31-37-199 kernel: pci 0000:00:03.0: BAR 1 [mem 0xfa000000-0xfaffffff pref]
+2025-09-03T14:35:37.100394+00:00 ip-172-31-37-199 kernel: ACPI: PCI: Interrupt link LNKA configured for IRQ 5
+2025-09-03T14:35:37.100395+00:00 ip-172-31-37-199 kernel: ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+2025-09-03T14:35:37.100396+00:00 ip-172-31-37-199 kernel: ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+2025-09-03T14:35:37.100397+00:00 ip-172-31-37-199 kernel: ACPI: PCI: Interrupt link LNKD configured for IRQ 5
+2025-09-03T14:35:37.100400+00:00 ip-172-31-37-199 kernel: xen:balloon: Initialising balloon driver
+2025-09-03T14:35:37.100401+00:00 ip-172-31-37-199 kernel: iommu: Default domain type: Translated
+2025-09-03T14:35:37.100401+00:00 ip-172-31-37-199 kernel: iommu: DMA domain TLB invalidation policy: lazy mode
+2025-09-03T14:35:37.100402+00:00 ip-172-31-37-199 kernel: SCSI subsystem initialized
+2025-09-03T14:35:37.100403+00:00 ip-172-31-37-199 kernel: libata version 3.00 loaded.
+2025-09-03T14:35:37.100404+00:00 ip-172-31-37-199 kernel: ACPI: bus type USB registered
+2025-09-03T14:35:37.100407+00:00 ip-172-31-37-199 kernel: usbcore: registered new interface driver usbfs
+2025-09-03T14:35:37.100408+00:00 ip-172-31-37-199 kernel: usbcore: registered new interface driver hub
+2025-09-03T14:35:37.100416+00:00 ip-172-31-37-199 kernel: usbcore: registered new device driver usb
+2025-09-03T14:35:37.100417+00:00 ip-172-31-37-199 kernel: pps_core: LinuxPPS API ver. 1 registered
+2025-09-03T14:35:37.100418+00:00 ip-172-31-37-199 kernel: pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+2025-09-03T14:35:37.100418+00:00 ip-172-31-37-199 kernel: PTP clock support registered
+2025-09-03T14:35:37.100419+00:00 ip-172-31-37-199 kernel: EDAC MC: Ver: 3.0.0
+2025-09-03T14:35:37.100423+00:00 ip-172-31-37-199 kernel: NetLabel: Initializing
+2025-09-03T14:35:37.100424+00:00 ip-172-31-37-199 kernel: NetLabel:  domain hash size = 128
+2025-09-03T14:35:37.100424+00:00 ip-172-31-37-199 kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+2025-09-03T14:35:37.100425+00:00 ip-172-31-37-199 kernel: NetLabel:  unlabeled traffic allowed by default
+2025-09-03T14:35:37.100426+00:00 ip-172-31-37-199 kernel: mctp: management component transport protocol core
+2025-09-03T14:35:37.100426+00:00 ip-172-31-37-199 kernel: NET: Registered PF_MCTP protocol family
+2025-09-03T14:35:37.100430+00:00 ip-172-31-37-199 kernel: PCI: Using ACPI for IRQ routing
+2025-09-03T14:35:37.100431+00:00 ip-172-31-37-199 kernel: PCI: pci_cache_line_size set to 64 bytes
+2025-09-03T14:35:37.100432+00:00 ip-172-31-37-199 kernel: e820: reserve RAM buffer [mem 0x0009e000-0x0009ffff]
+2025-09-03T14:35:37.100432+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: vgaarb: setting as boot VGA device
+2025-09-03T14:35:37.100433+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: vgaarb: bridge control possible
+2025-09-03T14:35:37.100434+00:00 ip-172-31-37-199 kernel: pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+2025-09-03T14:35:37.100437+00:00 ip-172-31-37-199 kernel: vgaarb: loaded
+2025-09-03T14:35:37.100438+00:00 ip-172-31-37-199 kernel: hpet: 3 channels of 0 reserved for per-cpu timers
+2025-09-03T14:35:37.100439+00:00 ip-172-31-37-199 kernel: hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+2025-09-03T14:35:37.100439+00:00 ip-172-31-37-199 kernel: hpet0: 3 comparators, 64-bit 62.500000 MHz counter
+2025-09-03T14:35:37.100440+00:00 ip-172-31-37-199 kernel: clocksource: Switched to clocksource xen
+2025-09-03T14:35:37.100441+00:00 ip-172-31-37-199 kernel: VFS: Disk quotas dquot_6.6.0
+2025-09-03T14:35:37.100441+00:00 ip-172-31-37-199 kernel: VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+2025-09-03T14:35:37.100445+00:00 ip-172-31-37-199 kernel: AppArmor: AppArmor Filesystem Enabled
+2025-09-03T14:35:37.100445+00:00 ip-172-31-37-199 kernel: pnp: PnP ACPI init
+2025-09-03T14:35:37.100446+00:00 ip-172-31-37-199 kernel: system 00:00: [mem 0x00000000-0x0009ffff] could not be reserved
+2025-09-03T14:35:37.100447+00:00 ip-172-31-37-199 kernel: system 00:01: [io  0x08a0-0x08a3] has been reserved
+2025-09-03T14:35:37.100448+00:00 ip-172-31-37-199 kernel: system 00:01: [io  0x0cc0-0x0ccf] has been reserved
+2025-09-03T14:35:37.100448+00:00 ip-172-31-37-199 kernel: system 00:01: [io  0x04d0-0x04d1] has been reserved
+2025-09-03T14:35:37.100452+00:00 ip-172-31-37-199 kernel: xen: --> pirq=17 -> irq=8 (gsi=8)
+2025-09-03T14:35:37.100452+00:00 ip-172-31-37-199 kernel: xen: --> pirq=18 -> irq=12 (gsi=12)
+2025-09-03T14:35:37.100453+00:00 ip-172-31-37-199 kernel: xen: --> pirq=19 -> irq=1 (gsi=1)
+2025-09-03T14:35:37.100454+00:00 ip-172-31-37-199 kernel: xen: --> pirq=20 -> irq=6 (gsi=6)
+2025-09-03T14:35:37.100455+00:00 ip-172-31-37-199 kernel: pnp 00:05: [dma 2]
+2025-09-03T14:35:37.100455+00:00 ip-172-31-37-199 kernel: xen: --> pirq=21 -> irq=4 (gsi=4)
+2025-09-03T14:35:37.100456+00:00 ip-172-31-37-199 kernel: system 00:07: [io  0x10c0-0x1141] has been reserved
+2025-09-03T14:35:37.100459+00:00 ip-172-31-37-199 kernel: system 00:07: [io  0xb044-0xb047] has been reserved
+2025-09-03T14:35:37.100460+00:00 ip-172-31-37-199 kernel: pnp: PnP ACPI: found 8 devices
+2025-09-03T14:35:37.100461+00:00 ip-172-31-37-199 kernel: clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+2025-09-03T14:35:37.100462+00:00 ip-172-31-37-199 kernel: NET: Registered PF_INET protocol family
+2025-09-03T14:35:37.100462+00:00 ip-172-31-37-199 kernel: IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+2025-09-03T14:35:37.100463+00:00 ip-172-31-37-199 kernel: tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+2025-09-03T14:35:37.100466+00:00 ip-172-31-37-199 kernel: Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+2025-09-03T14:35:37.100467+00:00 ip-172-31-37-199 kernel: TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+2025-09-03T14:35:37.100468+00:00 ip-172-31-37-199 kernel: TCP bind hash table entries: 8192 (order: 6, 262144 bytes, linear)
+2025-09-03T14:35:37.100469+00:00 ip-172-31-37-199 kernel: TCP: Hash tables configured (established 8192 bind 8192)
+2025-09-03T14:35:37.100469+00:00 ip-172-31-37-199 kernel: MPTCP token hash table entries: 1024 (order: 2, 24576 bytes, linear)
+2025-09-03T14:35:37.100470+00:00 ip-172-31-37-199 kernel: UDP hash table entries: 512 (order: 3, 32768 bytes, linear)
+2025-09-03T14:35:37.100473+00:00 ip-172-31-37-199 kernel: UDP-Lite hash table entries: 512 (order: 3, 32768 bytes, linear)
+2025-09-03T14:35:37.100474+00:00 ip-172-31-37-199 kernel: NET: Registered PF_UNIX/PF_LOCAL protocol family
+2025-09-03T14:35:37.100475+00:00 ip-172-31-37-199 kernel: NET: Registered PF_XDP protocol family
+2025-09-03T14:35:37.100476+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+2025-09-03T14:35:37.100476+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+2025-09-03T14:35:37.100477+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+2025-09-03T14:35:37.100478+00:00 ip-172-31-37-199 kernel: pci_bus 0000:00: resource 7 [mem 0x40000000-0xffffffff window]
+2025-09-03T14:35:37.100481+00:00 ip-172-31-37-199 kernel: pci 0000:00:01.0: PIIX3: Enabling Passive Release
+2025-09-03T14:35:37.100482+00:00 ip-172-31-37-199 kernel: pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+2025-09-03T14:35:37.100483+00:00 ip-172-31-37-199 kernel: PCI: CLS 0 bytes, default 64
+2025-09-03T14:35:37.100483+00:00 ip-172-31-37-199 kernel: Trying to unpack rootfs image as initramfs...
+2025-09-03T14:35:37.100484+00:00 ip-172-31-37-199 kernel: clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x212733415c7, max_idle_ns: 440795236380 ns
+2025-09-03T14:35:37.100485+00:00 ip-172-31-37-199 kernel: Freeing initrd memory: 12964K
+2025-09-03T14:35:37.100522+00:00 ip-172-31-37-199 kernel: Initialise system trusted keyrings
+2025-09-03T14:35:37.100522+00:00 ip-172-31-37-199 kernel: Key type blacklist registered
+2025-09-03T14:35:37.100523+00:00 ip-172-31-37-199 kernel: workingset: timestamp_bits=36 max_order=18 bucket_order=0
+2025-09-03T14:35:37.100524+00:00 ip-172-31-37-199 kernel: zbud: loaded
+2025-09-03T14:35:37.100525+00:00 ip-172-31-37-199 kernel: squashfs: version 4.0 (2009/01/31) Phillip Lougher
+2025-09-03T14:35:37.100526+00:00 ip-172-31-37-199 kernel: fuse: init (API version 7.42)
+2025-09-03T14:35:37.100526+00:00 ip-172-31-37-199 kernel: integrity: Platform Keyring initialized
+2025-09-03T14:35:37.100531+00:00 ip-172-31-37-199 kernel: integrity: Machine keyring initialized
+2025-09-03T14:35:37.100532+00:00 ip-172-31-37-199 kernel: Key type asymmetric registered
+2025-09-03T14:35:37.100533+00:00 ip-172-31-37-199 kernel: Asymmetric key parser 'x509' registered
+2025-09-03T14:35:37.100533+00:00 ip-172-31-37-199 kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+2025-09-03T14:35:37.100534+00:00 ip-172-31-37-199 kernel: io scheduler mq-deadline registered
+2025-09-03T14:35:37.100535+00:00 ip-172-31-37-199 kernel: ledtrig-cpu: registered to indicate activity on CPUs
+2025-09-03T14:35:37.100538+00:00 ip-172-31-37-199 kernel: shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+2025-09-03T14:35:37.100539+00:00 ip-172-31-37-199 kernel: input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+2025-09-03T14:35:37.100540+00:00 ip-172-31-37-199 kernel: ACPI: button: Power Button [PWRF]
+2025-09-03T14:35:37.100540+00:00 ip-172-31-37-199 kernel: input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+2025-09-03T14:35:37.100541+00:00 ip-172-31-37-199 kernel: ACPI: button: Sleep Button [SLPF]
+2025-09-03T14:35:37.100542+00:00 ip-172-31-37-199 kernel: xen: --> pirq=22 -> irq=28 (gsi=28)
+2025-09-03T14:35:37.100545+00:00 ip-172-31-37-199 kernel: xen:grant_table: Grant tables using version 1 layout
+2025-09-03T14:35:37.100546+00:00 ip-172-31-37-199 kernel: Grant table initialized
+2025-09-03T14:35:37.100547+00:00 ip-172-31-37-199 kernel: Cannot get hvm parameter CONSOLE_EVTCHN (18): -22!
+2025-09-03T14:35:37.100547+00:00 ip-172-31-37-199 kernel: Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+2025-09-03T14:35:37.100548+00:00 ip-172-31-37-199 kernel: 00:06: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+2025-09-03T14:35:37.100549+00:00 ip-172-31-37-199 kernel: Linux agpgart interface v0.103
+2025-09-03T14:35:37.100550+00:00 ip-172-31-37-199 kernel: loop: module loaded
+2025-09-03T14:35:37.100553+00:00 ip-172-31-37-199 kernel: Invalid max_queues (4), will use default max: 1.
+2025-09-03T14:35:37.100554+00:00 ip-172-31-37-199 kernel: Key type psk registered
+2025-09-03T14:35:37.100554+00:00 ip-172-31-37-199 kernel: ata_piix 0000:00:01.1: version 2.13
+2025-09-03T14:35:37.100555+00:00 ip-172-31-37-199 kernel: scsi host0: ata_piix
+2025-09-03T14:35:37.100556+00:00 ip-172-31-37-199 kernel: blkfront: xvda: barrier or flush: disabled; persistent grants: disabled; indirect descriptors: enabled; bounce buffer: disabled;
+2025-09-03T14:35:37.100557+00:00 ip-172-31-37-199 kernel: scsi host1: ata_piix
+2025-09-03T14:35:37.100560+00:00 ip-172-31-37-199 kernel: ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc000 irq 14 lpm-pol 0
+2025-09-03T14:35:37.100561+00:00 ip-172-31-37-199 kernel: ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc008 irq 15 lpm-pol 0
+2025-09-03T14:35:37.100561+00:00 ip-172-31-37-199 kernel: ACPI: bus type drm_connector registered
+2025-09-03T14:35:37.100562+00:00 ip-172-31-37-199 kernel: tun: Universal TUN/TAP device driver, 1.6
+2025-09-03T14:35:37.100563+00:00 ip-172-31-37-199 kernel: PPP generic driver version 2.4.2
+2025-09-03T14:35:37.100564+00:00 ip-172-31-37-199 kernel: xen_netfront: Initialising Xen virtual ethernet driver
+2025-09-03T14:35:37.100567+00:00 ip-172-31-37-199 kernel: i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f13:PS2M] at 0x60,0x64 irq 1,12
+2025-09-03T14:35:37.100568+00:00 ip-172-31-37-199 kernel: i8042: Warning: Keylock active
+2025-09-03T14:35:37.100568+00:00 ip-172-31-37-199 kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+2025-09-03T14:35:37.100569+00:00 ip-172-31-37-199 kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+2025-09-03T14:35:37.100570+00:00 ip-172-31-37-199 kernel: mousedev: PS/2 mouse device common for all mice
+2025-09-03T14:35:37.100571+00:00 ip-172-31-37-199 kernel:  xvda: xvda1 xvda14 xvda15 xvda16
+2025-09-03T14:35:37.100571+00:00 ip-172-31-37-199 kernel: rtc_cmos 00:02: registered as rtc0
+2025-09-03T14:35:37.100574+00:00 ip-172-31-37-199 kernel: rtc_cmos 00:02: setting system clock to 2025-09-03T14:35:27 UTC (1756910127)
+2025-09-03T14:35:37.100575+00:00 ip-172-31-37-199 kernel: rtc_cmos 00:02: alarms up to one day, 114 bytes nvram, hpet irqs
+2025-09-03T14:35:37.100576+00:00 ip-172-31-37-199 kernel: i2c_dev: i2c /dev entries driver
+2025-09-03T14:35:37.100577+00:00 ip-172-31-37-199 kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+2025-09-03T14:35:37.100578+00:00 ip-172-31-37-199 kernel: device-mapper: uevent: version 1.0.3
+2025-09-03T14:35:37.100578+00:00 ip-172-31-37-199 kernel: device-mapper: ioctl: 4.49.0-ioctl (2025-01-17) initialised: dm-devel@lists.linux.dev
+2025-09-03T14:35:37.100581+00:00 ip-172-31-37-199 kernel: intel_pstate: CPU model not supported
+2025-09-03T14:35:37.100582+00:00 ip-172-31-37-199 kernel: drop_monitor: Initializing network drop monitor service
+2025-09-03T14:35:37.100583+00:00 ip-172-31-37-199 kernel: NET: Registered PF_INET6 protocol family
+2025-09-03T14:35:37.100584+00:00 ip-172-31-37-199 kernel: Segment Routing with IPv6
+2025-09-03T14:35:37.100584+00:00 ip-172-31-37-199 kernel: In-situ OAM (IOAM) with IPv6
+2025-09-03T14:35:37.100585+00:00 ip-172-31-37-199 kernel: NET: Registered PF_PACKET protocol family
+2025-09-03T14:35:37.100598+00:00 ip-172-31-37-199 kernel: Key type dns_resolver registered
+2025-09-03T14:35:37.100599+00:00 ip-172-31-37-199 kernel: resctrl: No MBM correction factor available
+2025-09-03T14:35:37.100599+00:00 ip-172-31-37-199 kernel: IPI shorthand broadcast: enabled
+2025-09-03T14:35:37.100600+00:00 ip-172-31-37-199 kernel: sched_clock: Marking stable (368003202, 272617056)->(1072621064, -432000806)
+2025-09-03T14:35:37.100601+00:00 ip-172-31-37-199 kernel: registered taskstats version 1
+2025-09-03T14:35:37.100602+00:00 ip-172-31-37-199 kernel: Loading compiled-in X.509 certificates
+2025-09-03T14:35:37.100602+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Build time autogenerated kernel key: 0cf8a6b46dcd641ad7b737fe6daf194f26895f62'
+2025-09-03T14:35:37.100606+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Live Patch Signing 2025 Kmod: d541cef61dc7e793b7eb7e899970a2eef0b5dc8c'
+2025-09-03T14:35:37.100607+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+2025-09-03T14:35:37.100607+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+2025-09-03T14:35:37.100608+00:00 ip-172-31-37-199 kernel: blacklist: Loading compiled-in revocation X.509 certificates
+2025-09-03T14:35:37.100609+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+2025-09-03T14:35:37.100610+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+2025-09-03T14:35:37.100613+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+2025-09-03T14:35:37.100614+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+2025-09-03T14:35:37.100614+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+2025-09-03T14:35:37.100615+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+2025-09-03T14:35:37.100616+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+2025-09-03T14:35:37.100619+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+2025-09-03T14:35:37.100620+00:00 ip-172-31-37-199 kernel: Demotion targets for Node 0: null
+2025-09-03T14:35:37.100621+00:00 ip-172-31-37-199 kernel: Key type .fscrypt registered
+2025-09-03T14:35:37.100622+00:00 ip-172-31-37-199 kernel: Key type fscrypt-provisioning registered
+2025-09-03T14:35:37.100622+00:00 ip-172-31-37-199 kernel: Key type encrypted registered
+2025-09-03T14:35:37.100623+00:00 ip-172-31-37-199 kernel: AppArmor: AppArmor sha256 policy hashing enabled
+2025-09-03T14:35:37.100627+00:00 ip-172-31-37-199 kernel: ima: No TPM chip found, activating TPM-bypass!
+2025-09-03T14:35:37.100627+00:00 ip-172-31-37-199 kernel: Loading compiled-in module X.509 certificates
+2025-09-03T14:35:37.100628+00:00 ip-172-31-37-199 kernel: Loaded X.509 cert 'Build time autogenerated kernel key: 0cf8a6b46dcd641ad7b737fe6daf194f26895f62'
+2025-09-03T14:35:37.100629+00:00 ip-172-31-37-199 kernel: ima: Allocated hash algorithm: sha256
+2025-09-03T14:35:37.100630+00:00 ip-172-31-37-199 kernel: ima: No architecture policies found
+2025-09-03T14:35:37.100630+00:00 ip-172-31-37-199 kernel: evm: Initialising EVM extended attributes:
+2025-09-03T14:35:37.100631+00:00 ip-172-31-37-199 kernel: evm: security.selinux
+2025-09-03T14:35:37.100634+00:00 ip-172-31-37-199 kernel: evm: security.SMACK64
+2025-09-03T14:35:37.100635+00:00 ip-172-31-37-199 kernel: evm: security.SMACK64EXEC
+2025-09-03T14:35:37.100636+00:00 ip-172-31-37-199 kernel: evm: security.SMACK64TRANSMUTE
+2025-09-03T14:35:37.100637+00:00 ip-172-31-37-199 kernel: evm: security.SMACK64MMAP
+2025-09-03T14:35:37.100637+00:00 ip-172-31-37-199 kernel: evm: security.apparmor
+2025-09-03T14:35:37.100638+00:00 ip-172-31-37-199 kernel: evm: security.ima
+2025-09-03T14:35:37.100642+00:00 ip-172-31-37-199 kernel: evm: security.capability
+2025-09-03T14:35:37.100643+00:00 ip-172-31-37-199 kernel: evm: HMAC attrs: 0x1
+2025-09-03T14:35:37.100643+00:00 ip-172-31-37-199 kernel: PM:   Magic number: 9:756:585
+2025-09-03T14:35:37.100644+00:00 ip-172-31-37-199 kernel: RAS: Correctable Errors collector initialized.
+2025-09-03T14:35:37.100645+00:00 ip-172-31-37-199 kernel: clk: Disabling unused clocks
+2025-09-03T14:35:37.100645+00:00 ip-172-31-37-199 kernel: PM: genpd: Disabling unused power domains
+2025-09-03T14:35:37.100646+00:00 ip-172-31-37-199 kernel: input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+2025-09-03T14:35:37.100650+00:00 ip-172-31-37-199 kernel: md: Waiting for all devices to be available before autodetect
+2025-09-03T14:35:37.100650+00:00 ip-172-31-37-199 kernel: md: If you don't use raid, use raid=noautodetect
+2025-09-03T14:35:37.100651+00:00 ip-172-31-37-199 kernel: md: Autodetecting RAID arrays.
+2025-09-03T14:35:37.100652+00:00 ip-172-31-37-199 kernel: md: autorun ...
+2025-09-03T14:35:37.100653+00:00 ip-172-31-37-199 kernel: md: ... autorun DONE.
+2025-09-03T14:35:37.100653+00:00 ip-172-31-37-199 kernel: EXT4-fs (xvda1): mounted filesystem 41a438f9-9b73-40e9-9093-3c0a3ce03d5c ro with ordered data mode. Quota mode: none.
+2025-09-03T14:35:37.100657+00:00 ip-172-31-37-199 kernel: VFS: Mounted root (ext4 filesystem) readonly on device 202:1.
+2025-09-03T14:35:37.100658+00:00 ip-172-31-37-199 kernel: devtmpfs: mounted
+2025-09-03T14:35:37.100658+00:00 ip-172-31-37-199 kernel: Freeing unused decrypted memory: 2028K
+2025-09-03T14:35:37.100659+00:00 ip-172-31-37-199 kernel: Freeing unused kernel image (initmem) memory: 5248K
+2025-09-03T14:35:37.100660+00:00 ip-172-31-37-199 kernel: Write protecting the kernel read-only data: 38912k
+2025-09-03T14:35:37.100660+00:00 ip-172-31-37-199 kernel: Freeing unused kernel image (text/rodata gap) memory: 1084K
+2025-09-03T14:35:37.100664+00:00 ip-172-31-37-199 kernel: Freeing unused kernel image (rodata/data gap) memory: 1268K
+2025-09-03T14:35:37.100665+00:00 ip-172-31-37-199 kernel: x86/mm: Checked W+X mappings: passed, no W+X pages found.
+2025-09-03T14:35:37.100666+00:00 ip-172-31-37-199 kernel: x86/mm: Checking user space page tables
+2025-09-03T14:35:37.100666+00:00 ip-172-31-37-199 kernel: x86/mm: Checked W+X mappings: passed, no W+X pages found.
+2025-09-03T14:35:37.100692+00:00 ip-172-31-37-199 kernel: Run /sbin/init as init process
+2025-09-03T14:35:37.100693+00:00 ip-172-31-37-199 kernel:   with arguments:
+2025-09-03T14:35:37.100693+00:00 ip-172-31-37-199 kernel:     /sbin/init
+2025-09-03T14:35:37.100697+00:00 ip-172-31-37-199 kernel:   with environment:
+2025-09-03T14:35:37.100698+00:00 ip-172-31-37-199 kernel:     HOME=/
+2025-09-03T14:35:37.100698+00:00 ip-172-31-37-199 kernel:     TERM=linux
+2025-09-03T14:35:37.100699+00:00 ip-172-31-37-199 kernel:     BOOT_IMAGE=/vmlinuz-6.14.0-1011-aws
+2025-09-03T14:35:37.100766+00:00 ip-172-31-37-199 kernel: EXT4-fs (xvda1): re-mounted 41a438f9-9b73-40e9-9093-3c0a3ce03d5c r/w. Quota mode: none.
+2025-09-03T14:35:37.100771+00:00 ip-172-31-37-199 kernel: loop0: detected capacity change from 0 to 56624
+2025-09-03T14:35:37.100772+00:00 ip-172-31-37-199 kernel: loop1: detected capacity change from 0 to 151376
+2025-09-03T14:35:37.100773+00:00 ip-172-31-37-199 kernel: loop2: detected capacity change from 0 to 100952
+2025-09-03T14:35:37.100773+00:00 ip-172-31-37-199 kernel: vif vif-0 enX0: renamed from eth0
+2025-09-03T14:35:37.100779+00:00 ip-172-31-37-199 kernel: EXT4-fs (xvda16): mounted filesystem fc01183f-27c0-4f69-b1c0-fb1c01e8fe57 r/w with ordered data mode. Quota mode: none.
+2025-09-03T14:35:37.100780+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910130.429:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="1password" pid=280 comm="apparmor_parser"
+2025-09-03T14:35:37.100781+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910130.434:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="Discord" pid=282 comm="apparmor_parser"
+2025-09-03T14:35:37.100782+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910130.437:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name=4D6F6E676F444220436F6D70617373 pid=283 comm="apparmor_parser"
+2025-09-03T14:35:37.100783+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910130.440:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="QtWebEngineProcess" pid=286 comm="apparmor_parser"
+2025-09-03T14:35:37.100786+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910130.443:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="balena-etcher" pid=287 comm="apparmor_parser"
+2025-09-03T14:35:37.100787+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910130.457:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="brave" pid=288 comm="apparmor_parser"
+2025-09-03T14:35:37.100788+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910130.465:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="buildah" pid=292 comm="apparmor_parser"
+2025-09-03T14:35:37.100793+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910130.471:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="busybox" pid=293 comm="apparmor_parser"
+2025-09-03T14:35:37.100794+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910130.475:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="cam" pid=295 comm="apparmor_parser"
+2025-09-03T14:35:37.100795+00:00 ip-172-31-37-199 kernel: cryptd: max_cpu_qlen set to 1000
+2025-09-03T14:35:37.100800+00:00 ip-172-31-37-199 kernel: AES CTR mode by8 optimization enabled
+2025-09-03T14:35:37.100801+00:00 ip-172-31-37-199 kernel: input: ImPS/2 Generic Wheel Mouse as /devices/platform/i8042/serio1/input/input4
+2025-09-03T14:35:37.100801+00:00 ip-172-31-37-199 kernel: 8021q: 802.1Q VLAN Support v1.8
+2025-09-03T14:35:37.100802+00:00 ip-172-31-37-199 kernel: floppy0: no floppy controllers found
+2025-09-03T14:35:37.100803+00:00 ip-172-31-37-199 kernel: work still pending
+2025-09-03T14:35:37.100803+00:00 ip-172-31-37-199 kernel: kauditd_printk_skb: 116 callbacks suppressed
+2025-09-03T14:35:37.100807+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910136.311:127): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="rsyslogd" pid=552 comm="apparmor_parser"
+2025-09-03T14:35:39.802047+00:00 ip-172-31-37-199 kernel: loop3: detected capacity change from 0 to 8
+2025-09-03T14:40:43.555731+00:00 ip-172-31-37-199 kernel: loop3: detected capacity change from 0 to 103976
+2025-09-03T14:40:43.847030+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910443.845:128): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/snap/snapd/25202/usr/lib/snapd/snap-confine" pid=1013 comm="apparmor_parser"
+2025-09-03T14:40:43.847047+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910443.845:129): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/snap/snapd/25202/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=1013 comm="apparmor_parser"
+2025-09-03T14:40:48.326159+00:00 ip-172-31-37-199 kernel: loop4: detected capacity change from 0 to 8
+2025-09-03T14:40:48.555413+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910448.553:130): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/snapd/25202/usr/lib/snapd/snap-confine" pid=1092 comm="apparmor_parser"
+2025-09-03T14:40:48.558014+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910448.556:131): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/snapd/25202/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=1092 comm="apparmor_parser"
+2025-09-03T14:40:48.561060+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910448.559:132): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.amazon-ssm-agent" pid=1094 comm="apparmor_parser"
+2025-09-03T14:40:48.562024+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910448.560:133): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.amazon-ssm-agent.amazon-ssm-agent" pid=1095 comm="apparmor_parser"
+2025-09-03T14:40:48.564242+00:00 ip-172-31-37-199 kernel: audit: type=1400 audit(1756910448.562:134): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.amazon-ssm-agent.ssm-cli" pid=1096 comm="apparmor_parser"
+2025-09-03T14:40:51.669862+00:00 ip-172-31-37-199 kernel: loop4: detected capacity change from 0 to 151384

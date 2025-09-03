@@ -1,0 +1,13 @@
+File Name,Keyword,Count
+auth.log,ERROR,0
+auth.log,WARNING,0
+auth.log,CRITICAL,0
+dpkg.log,ERROR,0
+dpkg.log,WARNING,0
+dpkg.log,CRITICAL,0
+kern.log,ERROR,0
+kern.log,WARNING,2
+kern.log,CRITICAL,0
+syslog,ERROR,51
+syslog,WARNING,2
+syslog,CRITICAL,0
