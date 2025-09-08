@@ -1,1 +1,1 @@
-version: base
+version: A
