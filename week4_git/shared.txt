@@ -1,2 +1,2 @@
 
-version: A2+base2 merged
+version: A 2+ B2 merged
