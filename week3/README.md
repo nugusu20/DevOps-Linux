@@ -88,7 +88,7 @@ Automate:
 
 **Example:**
 ```bash
-./remote_log_analyzer.sh ubuntu@35.181.39.60 /var/log "ERROR,WARNING,CRITICAL"
+./remote_log_analyzer.sh ubuntu@35.100.38.60 /var/log "ERROR,WARNING,CRITICAL"
 ```
 
 ---
