@@ -1,4 +1,5 @@
-```markdown
+# Week 5 – CI/CD with GitHub Actions
+
 ## Task 1 – Intro to GitHub Actions (Q&A)
 
 **What is GitHub Actions?**  
@@ -12,5 +13,4 @@
 **Which events can trigger a workflow (name ≥2)?**  
 - `push`, `pull_request`.  
 - Also: `workflow_dispatch` (manual run), `schedule` (cron), `release`, `tag`.
-```
 
