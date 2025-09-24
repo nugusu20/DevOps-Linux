@@ -1,6 +1,3 @@
-
-להדבקה ל־`week5/README.md` (להחליף את ה-placeholders תחת Task 1):
-
 ```markdown
 ## Task 1 – Intro to GitHub Actions (Q&A)
 
