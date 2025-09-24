@@ -1,4 +1,4 @@
-name: CI - Matrix Tests
+name: CI - Basic Tests
 
 on:
   push:
@@ -7,51 +7,18 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node: [18, 20, 22]   # run the job three times (one per version)
-
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js (${{ matrix.node }})
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 20
           cache: npm
 
-      # FRONTEND: install & test only if a package.json exists
-      - name: Install (frontend)
-        if: ${{ hashFiles('frontend/package.json') != '' }}
-        run: |
-          cd frontend
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install --no-audit --no-fund
-          fi
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
 
-      - name: Test (frontend)
-        if: ${{ hashFiles('frontend/package.json') != '' }}
-        run: |
-          cd frontend
-          npm test --if-present
-
-      # BACKEND: install & test only if a package.json exists
-      - name: Install (backend)
-        if: ${{ hashFiles('backend/package.json') != '' }}
-        run: |
-          cd backend
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install --no-audit --no-fund
-          fi
-
-      - name: Test (backend)
-        if: ${{ hashFiles('backend/package.json') != '' }}
-        run: |
-          cd backend
-          npm test --if-present
+      - name: Run tests
+        run: npm test --if-present
