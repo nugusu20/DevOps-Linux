@@ -1,5 +1,3 @@
-
-
 name: CI - Matrix Tests with Artifacts
 
 on:
