@@ -1,0 +1,56 @@
+name: CI - Frontend & Backend
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies (frontend)
+        working-directory: week5/frontend
+        run: npm install
+
+      - name: Run frontend tests
+        working-directory: week5/frontend
+        run: npm test
+
+      - name: Upload frontend artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-logs
+          path: week5/frontend/package.json
+
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies (backend)
+        working-directory: week5/backend
+        run: npm install
+
+      - name: Run backend tests
+        working-directory: week5/backend
+        run: npm test
+
+      - name: Upload backend artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-logs
+          path: week5/backend/package.json
