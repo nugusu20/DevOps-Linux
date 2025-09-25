@@ -1,4 +1,4 @@
-name: CI - Matrix Tests with Artifacts
+name: CI - Matrix Tests with Artifacts + Slack
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund || echo "No package.json"
+        run: npm install --no-audit --no-fund || echo "No package.json found"
 
       - name: Run tests
         run: |
@@ -38,44 +38,12 @@ jobs:
       - name: Post-job check (mock endpoint)
         run: |
           curl -Is https://example.com | head -n 1 || echo "Mock check done"
-YA
-name: CI - Matrix Tests with Artifacts
 
-on:
-  push:
-  pull_request:
-
-jobs:
-  tests:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node: [18, 20, 22]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js (${{ matrix.node }})
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund || echo "No package.json"
-
-      - name: Run tests
+      - name: Notify Slack
+        if: always()
         run: |
-          npm test --if-present || echo "No tests found"
-          echo "Matrix Node version: ${{ matrix.node }}" > test-log.txt
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"GitHub Actions job *${{ job.status }}* on Node ${{ matrix.node }}"}' \
+          ${{ secrets.SLACK_WEBHOOK }}
 
-      - name: Upload test logs
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-logs-${{ matrix.node }}
-          path: test-log.txt
 
-      - name: Post-job check (mock endpoint)
-        run: |
-          curl -Is https://example.com | head -n 1 || echo "Mock check done"
