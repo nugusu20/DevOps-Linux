@@ -1,0 +1,24 @@
+services:
+  app:
+    image: myflask:dev-hc1
+    ports:
+      - "5002:5000"
+    environment:
+      GREETING: "${GREETING}"
+      API_URL: "${API_URL}"
+    networks: [app_net]
+    depends_on: [db]
+
+  db:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - webdata:/usr/share/nginx/html   # ← named volume (לא תלוי בקבצים מקומיים)
+    networks: [app_net]
+
+networks:
+  app_net: {}
+
+volumes:
+  webdata: {}    # ← הכרזה על ה-volume

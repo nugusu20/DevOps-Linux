@@ -1,0 +1,20 @@
+FROM python:3.12-alpine
+
+WORKDIR /app
+# מתקינים curl ל-HEALTHCHECK ו-busybox נוסף אם צריך
+RUN apk add --no-cache curl
+
+# תלויות
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# קוד
+COPY src/ /app/
+
+EXPOSE 5000
+
+# (אופציונלי:) HEALTHCHECK כמו אצלנו בבסיס ה-slim
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+  CMD curl -fsS http://127.0.0.1:5000/ || exit 1
+
+CMD ["python", "app.py"]
