@@ -17,11 +17,9 @@ jobs:
       run:
         working-directory: week6_docker
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@v3
 
       - name: Build image
         run: docker build -t myflask:ci .
@@ -29,15 +27,18 @@ jobs:
       - name: Run container
         run: docker run -d --name app-ci -p 5007:5000 myflask:ci
 
-      - name: Wait for app
+      - name: Wait for health (up to 60s)
         run: |
-          for i in {1..20}; do
-            if curl -fsS http://localhost:5007/health >/dev/null 2>&1; then
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:5007/health >/dev/null; then
+              echo "Service is healthy"
               exit 0
             fi
             sleep 1
           done
-          echo "App did not become healthy" >&2
+          echo "Service did not become healthy in time" >&2
+          docker ps -a
+          echo "--- app-ci logs ---"
           docker logs app-ci || true
           exit 1
 
@@ -46,5 +47,5 @@ jobs:
 
       - name: Cleanup
         if: always()
-        run: |
-          docker rm -f app-ci || true
+        run: docker rm -f app-ci || true
+
