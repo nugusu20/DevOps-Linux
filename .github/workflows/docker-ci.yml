@@ -1,0 +1,50 @@
+name: Week6 Docker CI
+
+on:
+  push:
+    paths:
+      - 'week6_docker/**'
+      - '.github/workflows/docker-ci.yml'
+  pull_request:
+    paths:
+      - 'week6_docker/**'
+      - '.github/workflows/docker-ci.yml'
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: week6_docker
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build image
+        run: docker build -t myflask:ci .
+
+      - name: Run container
+        run: docker run -d --name app-ci -p 5007:5000 myflask:ci
+
+      - name: Wait for app
+        run: |
+          for i in {1..20}; do
+            if curl -fsS http://localhost:5007/health >/dev/null 2>&1; then
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "App did not become healthy" >&2
+          docker logs app-ci || true
+          exit 1
+
+      - name: Show image size
+        run: docker images myflask:ci
+
+      - name: Cleanup
+        if: always()
+        run: |
+          docker rm -f app-ci || true
