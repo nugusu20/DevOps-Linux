@@ -1,3 +1,5 @@
+**Current version:** v1.0.1
+
 <p align="center">
   <img src="https://img.shields.io/badge/DevOps%20Course-Linux%20%7C%20Cloud-blue?style=for-the-badge&logo=linux&logoColor=white" alt="DevOps Banner">
 </p>
