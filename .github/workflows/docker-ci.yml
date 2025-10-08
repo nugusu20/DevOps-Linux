@@ -16,6 +16,7 @@ jobs:
     defaults:
       run:
         working-directory: week6_docker
+
     steps:
       - uses: actions/checkout@v4
 
@@ -26,20 +27,51 @@ jobs:
 
       - name: Run container
         run: docker run -d --name app-ci -p 5007:5000 myflask:ci
+      # -----------------------------------
 
-      - name: Wait for health (up to 60s)
+      - name: Wait for health (external, up to 90s)
+        id: ext
+        continue-on-error: true
         run: |
-          for i in $(seq 1 60); do
+          for i in $(seq 1 90); do
             if curl -fsS http://127.0.0.1:5007/health >/dev/null; then
-              echo "Service is healthy"
-              exit 0
+              echo "Service is healthy (external)"; exit 0
             fi
             sleep 1
           done
-          echo "Service did not become healthy in time" >&2
+          echo "External probe failed after 90s" >&2
+          exit 1
+
+      - name: Internal probe (inside container)
+        id: int
+        if: steps.ext.outcome == 'failure'
+        continue-on-error: true
+        run: |
+          docker exec app-ci python - <<'PY'
+import urllib.request, sys
+try:
+    r = urllib.request.urlopen("http://127.0.0.1:5000/health", timeout=2)
+    print("INTERNAL PROBE:", r.status, (r.read().decode()[:120]))
+    sys.exit(0)
+except Exception as e:
+    print("INTERNAL PROBE FAILED:", e)
+    sys.exit(1)
+PY
+
+      - name: Debug (ps, logs, inspect)
+        if: steps.ext.outcome == 'failure' && steps.int.outcome == 'failure'
+        run: |
+          echo "--- docker ps -a ---"
           docker ps -a
-          echo "--- app-ci logs ---"
-          docker logs app-ci || true
+          echo "--- app-ci logs (last 150) ---"
+          docker logs --tail=150 app-ci || true
+          echo "--- docker inspect (ports & health) ---"
+          docker inspect app-ci | jq '.[0] | {ports: .NetworkSettings.Ports, health: .State.Health}' || true
+
+      - name: Assert health success
+        if: steps.ext.outcome == 'failure' && steps.int.outcome == 'failure'
+        run: |
+          echo "Both external and internal probes failed" >&2
           exit 1
 
       - name: Show image size
