@@ -2,3 +2,12 @@
 *.swp
 *.swo
 *.swn
+
+# local/dev
+.env
+*.swp
+*.swm
+
+.env
+*.swp
+*.swm
