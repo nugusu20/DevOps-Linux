@@ -1,213 +1,281 @@
 # Week 6 – Docker & Containers
-**Current version:** v1.0.1  
-**Based on Week 5:** ../week5
+**Version:** v1.0.7  
+**Based on Week 5 (CI/CD):** [../week5](../week5)
 
-## Quickstart
+> Goal: Run a Flask app together with nginx using Docker Compose, with health checks (`/health`), logs, internal networking, and image tagging. All commands are copy-paste ready.
+
+---
+
+## 🚀 Quickstart
 ```bash
-docker compose up -d --build
-curl -I http://localhost:5002   # app (Flask) → 200 OK
-curl -I http://localhost:8080   # db  (nginx) → 200 OK
+docker compose up -d --build      # Build + start all services
+docker compose ps                 # Show services known to this Compose project
+docker compose ps -a              # Include previously stopped containers (very useful)
+curl -I http://localhost:5002     # app (Flask) → 200 OK
+curl -I http://localhost:8080     # db  (nginx) → 200 OK
 ```
 
-## Architecture
+### Useful during runtime
+```bash
+docker compose logs -f --tail=100 app   # live logs
+docker compose logs -f --tail=100 db
+docker compose top                      # processes in each service
+docker compose ls                       # local Compose projects
+```
+
+---
+
+## 🗂 Minimal layout (as we used)
+```
+week6_docker/
+├─ Dockerfile
+├─ requirements.txt
+├─ src/
+│  └─ app.py                 # exposes GET /health → 200
+├─ docker-compose.yml        # services: app, db; ports; network
+└─ diagram/
+   └─ architecture.png
+```
+
+## 🧭 Diagram
 ![Architecture](diagram/architecture.png)
 
 ---
 
 <details>
-<summary><strong>Daily Practice – Tasks 1–7 (click to expand)</strong></summary>
+<summary><strong>Practice 1 – Core Docker CLI (click to expand)</strong></summary>
 
-### Task 1 – Introduction to Docker CLI
-**Goal:** Understand core objects (Images, Containers) and their lifecycle.
+**Goal:** Understand Images vs Containers and the basic lifecycle.  
+**Commands:**
 ```bash
-# First run
-docker run hello-world
-
-# Basic listings
-docker ps                      # running containers
-docker ps -a                   # all containers (including exited)
-docker images                  # local images
-
-# Stop / remove
-docker stop <CONTAINER_ID|NAME>
-docker rm   <CONTAINER_ID|NAME>
-docker rmi  <IMAGE_ID|NAME:TAG>
+docker run hello-world                        # sanity check
+docker ps                                      # running containers
+docker ps -a                                   # include stopped (history)
+docker images                                  # local images
+docker stop <NAME|ID> && docker rm <NAME|ID>   # stop & remove
+docker rmi <IMAGE_ID|NAME:TAG>                 # remove image
 ```
-**Why:** Build intuition of Image → Container and the day‑to‑day CLI.
+**Why it matters:** Solid CLI fundamentals save debug time later.
+</details>
 
 ---
 
-### Task 2 – Working with Images & Ports (nginx)
-**Goal:** Pull & run images, expose ports host↔container.
+<details>
+<summary><strong>Practice 2 – Images & Ports (nginx)</strong></summary>
+
+**Goal:** Pull and run images; expose host↔container ports.  
+**Commands:**
 ```bash
-# Pull & run nginx (default tag)
 docker pull nginx:latest
 docker run -d --name web1 -p 8080:80 nginx:latest
 curl -I http://localhost:8080
 
-# Bonus: lighter image
 docker pull nginx:alpine
 docker run -d --name web2 -p 8081:80 nginx:alpine
 
-# Compare sizes
-docker image ls nginx --format 'table {{.Repository}}\t{{.Tag}}\t{{.Size}}'
+docker image ls nginx --format 'table {{.Repository}}	{{.Tag}}	{{.Size}}'
 ```
-**Why:** Understand host:container port mapping and why alpine images are smaller.
+**Why it matters:** Learn port mapping and image size differences (alpine is smaller).
+</details>
 
 ---
 
-### Task 3 – Dockerfile Basics (Flask “Hello from Docker”)
-**Goal:** Write a slim, cache‑efficient Dockerfile + .dockerignore.
-```bash
-# (Already present in this repo)
-# Dockerfile (key lines):
-# FROM python:3.12-slim
-# WORKDIR /app
-# COPY requirements.txt .
-# RUN pip install --no-cache-dir -r requirements.txt
-# COPY src/ /app/
-# EXPOSE 5000
-# HEALTHCHECK --interval=10s --timeout=2s --retries=3 CMD curl -fsS http://127.0.0.1:5000/health || exit 1
-# CMD ["python", "app.py"]
+<details>
+<summary><strong>Practice 3 – Dockerfile (lean Flask + cache-friendly)</strong></summary>
 
-# Build & run
+**Goal:** Create a lean Dockerfile with proper layer order and a healthcheck.  
+**Dockerfile template used:**
+```dockerfile
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY src/ /app/
+EXPOSE 5000
+HEALTHCHECK --interval=10s --timeout=2s --retries=3   CMD curl -fsS http://127.0.0.1:5000/health || exit 1
+CMD ["python", "app.py"]
+```
+**Local build & run:**
+```bash
 docker build -t myflask:dev .
 docker run -d --name app1 -p 5000:5000 myflask:dev
 curl -I http://localhost:5000
-
-# .dockerignore (example)
-# __pycache__/
-# *.pyc
-# .git
 ```
-**Why:** Correct layer order preserves cache; small base (`slim`) reduces image size.
+**`.dockerignore` example:**
+```
+__pycache__/
+*.pyc
+.git
+```
+**Why it matters:** Correct layer order preserves cache; `slim` base keeps images small.
+</details>
 
 ---
 
-### Task 4 – Custom Networking & Multi‑container
-**Goal:** Internal networking and service‑name DNS.
-```bash
-# Manual network (example)
-docker network create mynet
-docker run -d --name db  --network mynet nginx:alpine
-docker run -d --name web --network mynet nginx:alpine
-docker exec db ping -c 1 web   # service name resolves via Docker DNS
+<details>
+<summary><strong>Practice 4 – Compose & internal network (app ↔ db)</strong></summary>
 
-# In Compose it’s automatic with a user-defined network (app_net)
-docker compose up -d
-docker compose exec app sh -lc 'wget -qS -O- http://db | head -n 3'
+**Goal:** Connect services on a user-defined network (DNS by service name).  
+**`docker-compose.yml` (concise, as used):**
+```yaml
+services:
+  app:
+    build: .
+    image: myflask:1.0.1
+    ports: ["5002:5000"]
+    networks: ["app_net"]
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:5000/health"]
+      interval: 10s
+      timeout: 2s
+      retries: 3
+
+  db:
+    image: nginx:alpine
+    ports: ["8080:80"]
+    networks: ["app_net"]
+
+networks:
+  app_net: {}
 ```
-**Why:** Services on the same user‑defined network can talk via names, no hardcoded IPs.
-
----
-
-### Task 5 – Docker Compose Intro
-**Goal:** Orchestrate multi‑service app with one file.
+**Commands:**
 ```bash
 docker compose up -d --build
-docker compose ps
-docker compose logs --tail=50 app
+docker compose ps -a
+docker compose exec app sh -lc 'wget -qS -O- http://db | head -n 3'  # DNS check
 docker compose down
 ```
-**Why:** Single source of truth for services, networks, volumes, env, and ports.
+**Why it matters:** No hardcoded IPs; Compose provides DNS for service names.
+</details>
 
 ---
 
-### Task 6 – Monitoring & Logging Basics
-**Goal:** Health endpoints and logs for visibility.
-```bash
-# App health (HTTP 200/500)
-curl -i http://localhost:5002/health
+<details>
+<summary><strong>Practice 5 – Health & Logs (observability)</strong></summary>
 
-# Docker health status
+**Goal:** Verify readiness and read meaningful logs.  
+**Commands:**
+```bash
+curl -i http://localhost:5002/health
 docker inspect -f 'Health={{.State.Health.Status}}' $(docker compose ps -q app)
 
-# Logs
-docker logs <container>
 docker compose logs --tail=100 app
+docker compose logs --tail=100 db
+docker compose logs -f --tail=100 app
+docker compose top
 ```
-**Why:** Know when the service is healthy and how to debug.
+**Why it matters:** Know when the app is ready; shorten time-to-root-cause.
+</details>
 
 ---
 
-### Task 7 – Advanced Docker Features
-**Goal:** Image tags (SemVer) + Alpine variant.
+<details>
+<summary><strong>Practice 6 – Image tagging (SemVer, not <code>latest</code>)</strong></summary>
+
+**Goal:** Use explicit version tags.  
+**Commands:**
 ```bash
-# Tag images
 docker build -t myflask:1.0.1 .
 docker tag myflask:1.0.1 myflask:latest
 docker images myflask
-
-# Optional: alpine variant (if you keep an alternate Dockerfile)
-# docker build -f Dockerfile.alpine -t myflask:alpine .
-# docker run -d --name app-alpine -p 5003:5000 myflask:alpine
 ```
-**Why:** Avoid deploying `latest`; prefer explicit SemVer tags. Explore lighter bases.
+**Why it matters:** Predictable promotions and safe rollbacks.
 </details>
 
 ---
 
 <details>
-<summary><strong>Week 6 – Summary Task (click to expand)</strong></summary>
+<summary><strong>Practice 7 – Handy Compose commands</strong></summary>
 
-### Step 1 – Flow Diagram
-- Architecture diagram checked in: `diagram/architecture.png`  
-- Source for edits: `diagram/architecture.drawio`
-
-### Step 2 – Dockerize Your Project
-- Slim base: `python:3.12-slim`
-- Cache‑friendly order: copy `requirements.txt` → `pip install` → copy `src/`
-
-### Step 3 – Compose & Networking
-- Two services (`app`, `db`) on the same custom network (`app_net`)
-- Ports: `5002:5000` (app) and `8080:80` (db)
-- Named volume mapped to nginx static content (if used)
-
-### Step 4 – Healthchecks & Tags
-- `/health` endpoint returns 200 (OK) or 500 (fail path)
-- `HEALTHCHECK` in Dockerfile probes `/health`
-- Image tags: `myflask:1.0.1` (and optionally `latest`)
-- (Recommended) Git tag: `v1.0.1`
-
-### Step 5 – GitHub Actions (CI)
-- Workflow in `.github/workflows/docker-ci.yml` builds → runs → curls `/health`
-- (Optional) Slack/Discord notifications via repository secrets:
-  - `SLACK_WEBHOOK_URL` / `DISCORD_WEBHOOK_URL`
-  - Then add a final `curl` step on success/failure
-
-### Step 6 – Update README
-- Quickstart commands
-- Embedded architecture diagram
-- Link back to Week 5 code: `../week5`
-- (Optional) “Current version: v1.0.2”
-
-### Step 7 – Submission Instructions
-- Open a PR “Week 6 Summary”; ensure CI is green; merge to `main`
-- Ensure all changes landed via PRs
-
-#### ✅ Checklist Before Submission
-- [x] Flow diagram created and embedded
-- [x] Dockerfile present and lightweight
-- [x] docker-compose.yml manages both services
-- [x] Healthcheck and image tags added
-- [x] CI pipeline builds, runs, and probes health
-- [x] README updated and clear
-- [x] All code submitted via Pull Requests
+**Goal:** Operate the stack throughout its lifecycle.  
+**Commands:**
+```bash
+docker compose up -d --build           # build & start
+docker compose ps                      # status
+docker compose ps -a                   # include stopped
+docker compose logs -f --tail=100 app  # live logs
+docker compose exec app sh             # shell into service
+docker compose stop && docker compose rm -f   # stop & remove
+docker compose down -v                 # remove also volumes (⚠ data loss)
+docker compose ls                      # local compose projects
+```
+**Why it matters:** Full control of the stack, including clean-ups when needed.
 </details>
 
 ---
 
 <details>
-<summary><strong>Troubleshooting (quick diagnostics)</strong></summary>
+<summary><strong>Summary (separate clip) – with link to Week 5 CI/CD</strong></summary>
+
+### What we built
+- Two services: **app** (Flask) 5000 internal (published 5002), **db** (nginx) 80 (published 8080).  
+- Network `app_net` between services; use service names (DNS).  
+- Health endpoint `/health` + `HEALTHCHECK` in Dockerfile.  
+- Image tags: `myflask:1.0.1` (avoid `latest`).  
+- Diagram: `diagram/architecture.png`.  
+- **CI/CD** continues from Week 5: see [../week5](../week5).
+
+### Exact steps to reproduce (end‑to‑end)
+1) **Clone / update repo** and switch to the week folder:  
+   ```bash
+   git pull && cd week6_docker
+   ```
+2) **Create/verify app layout** (`Dockerfile`, `requirements.txt`, `src/app.py`, `docker-compose.yml`, `diagram/architecture.png`).  
+3) **Build & run with Compose**:  
+   ```bash
+   docker compose up -d --build
+   ```
+4) **Verify service status**:  
+   ```bash
+   docker compose ps
+   docker compose ps -a
+   ```
+5) **Probe endpoints**:  
+   ```bash
+   curl -I http://localhost:5002      # app → 200
+   curl -I http://localhost:8080      # db  → 200
+   ```
+6) **Check health**:  
+   ```bash
+   curl -i http://localhost:5002/health
+   docker inspect -f 'Health={{.State.Health.Status}}' $(docker compose ps -q app)
+   ```
+7) **Tag the image** (explicit version):  
+   ```bash
+   docker build -t myflask:1.0.1 .
+   docker tag myflask:1.0.1 myflask:latest
+   ```
+8) **Review logs if needed**:  
+   ```bash
+   docker compose logs --tail=100 app
+   docker compose logs --tail=100 db
+   ```
+9) **Wire up CI/CD (from Week 5)** – in your workflow: build → run → probe `http://localhost:5002/health`.  
+10) **Submit via PR** (Week 6 Summary), ensure CI is green, and merge to `main`.
+
+### Submission checklist
+- [x] `docker-compose.yml` with `app` + `db`, ports `5002:5000` and `8080:80`.
+- [x] `Dockerfile` is lean and includes a working `/health`.
+- [x] Tags applied: `myflask:1.0.1` (no reliance on `latest`).
+- [x] Diagram embedded (`diagram/architecture.png`).
+- [x] CI/CD probes `/health` (see Week 5).
+- [x] PR opened and merged.
+</details>
+
+---
+
+<details>
+<summary><strong>🧪 Quick Troubleshooting</strong></summary>
 
 ```bash
-# What’s running
+# What is running?
 docker ps
 docker compose ps
+docker compose ps -a
 
 # Logs
-docker compose logs --tail=100 app
-docker compose logs --tail=100 db
+docker compose logs -f --tail=100 app
+docker compose logs -f --tail=100 db
 
 # Health
 curl -i http://localhost:5002/health
@@ -217,11 +285,11 @@ docker inspect -f 'Health={{.State.Health.Status}}' $(docker compose ps -q app)
 docker network ls
 docker compose exec app ping -c 1 db
 
-# Ports on host
+# Host ports
 ss -tuln | grep -E '5002|8080'
 ```
+**Tips:**
+- Health stuck at `starting`? Check ports, env, dependencies between services.
+- Inter-service comm failing? Ensure both are on the same Compose network and you use the **service name**.
+- Aggressive cleanup? `docker compose down -v` (⚠ removes volumes).
 </details>
-
----
-
-*Note:* If your Week 5 app was multi‑tier (frontend/backend/db), mirror that here (add services in Compose and update the diagram accordingly). This repo captures the two‑service variant we implemented during practice.
