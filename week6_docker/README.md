@@ -179,7 +179,7 @@ docker images myflask
 - Quickstart commands
 - Embedded architecture diagram
 - Link back to Week 5 code: `../week5`
-- (Optional) “Current version: v1.0.1”
+- (Optional) “Current version: v1.0.2”
 
 ### Step 7 – Submission Instructions
 - Open a PR “Week 6 Summary”; ensure CI is green; merge to `main`
