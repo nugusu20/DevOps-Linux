@@ -1,6 +1,6 @@
 name: CI - Frontend & Backend
 
-  on:
+on:
   workflow_dispatch:
 
 
