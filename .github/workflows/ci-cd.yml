@@ -1,8 +1,8 @@
 name: CI - Frontend & Backend
 
-on:
-  push:
-  pull_request:
+  on:
+  workflow_dispatch:
+
 
 jobs:
   frontend:
