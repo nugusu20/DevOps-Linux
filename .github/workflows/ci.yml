@@ -1,8 +1,7 @@
 name: CI - Matrix Tests with Artifacts + Slack
 
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   tests:
