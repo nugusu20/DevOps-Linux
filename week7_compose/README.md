@@ -8,169 +8,175 @@ Each section follows the *actual chronological order you performed*: local setup
 <details>
 <summary>📝 <strong>Daily Tasks (Task 1 → Task 7)</strong></summary>
 
-## Task 1 – Local Setup & Docker Installation
+## Task 1 – Local Setup: Install Docker, Build Images, Compose, Network & Health
 
 ### 📖 Theory
-Install Docker on the local Linux machine and prepare the project directory.
+Set up Docker locally, scaffold the project, build images, define Docker Compose (backend + db), verify network (DNS) and healthchecks.
 
-### 💻 Commands
+### 💻 Commands (annotated)
 ```bash
-# (If needed) Install Docker Engine on Ubuntu
-sudo apt update
-sudo apt install -y docker.io docker-compose-plugin
-sudo usermod -aG docker $USER
-# re-login to apply group membership
+# 1) Install Docker Engine & Compose plugin (Ubuntu)
+sudo apt update && sudo apt install -y docker.io docker-compose-plugin   # install engine + compose v2
 
-# Verify
-docker --version
-docker compose version
+# 2) Allow running docker without sudo (re-login required to take effect)
+sudo usermod -aG docker $USER                                           # add current user to 'docker' group
 
-# Project root (local)
-cd /srv/DevOps-Linux/week7_compose
+# 3) Verify installation
+docker --version                                                         # show Docker version
+docker compose version                                                   # show Compose plugin version
+
+# 4) Go to the local project root
+cd /srv/DevOps-Linux/week7_compose                                      # change directory to Week 7 folder
+
+# 5) (If needed) Build backend image from Dockerfile
+docker compose build backend                                            # build only the backend service image
+
+# 6) Start the multi-container app (detached)
+docker compose up -d                                                    # bring up all services in the background
+
+# 7) List running services with status and ports
+docker compose ps                                                       # show containers status; 'Up (healthy)' means healthcheck passed
+
+# 8) See recent logs to confirm startup (optional)
+docker compose logs --tail 30                                           # tail last 30 log lines from all services
+
+# 9) Verify backend is reachable locally
+curl -I http://127.0.0.1:8000/                                          # HEAD request; expect HTTP/1.0 200 OK
+
+# 10) Verify inter-container DNS resolution (backend can resolve 'db')
+docker compose exec backend getent hosts db                              # should print internal IP for 'db' on app_net
 ```
 
 ### ✅ Expected Result
-- Docker installed and usable without sudo.
-- Working directory: `/srv/DevOps-Linux/week7_compose`.
+- Docker installed and usable without sudo (after re-login).
+- `docker compose ps` shows: backend **Up (healthy)**, db **Up**.
+- `curl -I http://127.0.0.1:8000/` returns **200 OK**.
+- `getent hosts db` returns an internal IP (e.g., `172.x.x.x`).
 
 ---
 
-## Task 2 – Backend & Database Containers (Compose)
+## Task 2 – Persistency, Images Overview & Recreate Stack
 
 ### 📖 Theory
-Define a multi-service app with **backend** (Python HTTP server) and **db** (PostgreSQL), connected via an internal Docker network.
+Use a named volume for database persistence and understand built images. Recreate the stack to prove data survives restarts.
 
-### 💻 Commands
+### 💻 Commands (annotated)
 ```bash
-# Bring up the stack locally
-docker compose up -d
+# 1) List Docker images present locally
+docker images                                                           # shows local images (backend + postgres)
 
-# List running services
-docker compose ps
+# 2) List volumes
+docker volume ls                                                        # named volumes for persistence (e.g., db_data)
+
+# 3) Restart stack (cleanly) to validate persistency
+docker compose down                                                     # stop services (keeps volumes by default)
+docker compose up -d                                                    # start services again in background
+
+# 4) Check status again
+docker compose ps                                                       # verify services are Up (healthy)
 ```
 
 ### 📸 Screenshot
 ![compose ps](docs/docker_compose_ps+logs.png)
 
 ### ✅ Expected Result
-```
-week7_compose-backend-1   Up (healthy)   0.0.0.0:8000->8000/tcp
-week7_compose-db-1        Up             5432/tcp
-```
+- Named volume present.
+- Data persists across `down`/`up` cycles.
 
 ---
 
-## Task 3 – Healthcheck & Internal Communication
+## Task 3 – Healthcheck Deep Dive & Internal Communication
 
 ### 📖 Theory
-Use a `healthcheck` to ensure the backend is responsive. Verify inter-container DNS and networking (backend ↔ db over `app_net`).
+`healthcheck` ensures containers are actually responsive (not just running). Validate backend health and internal DNS/networking.
 
-### 💻 Commands
+### 💻 Commands (annotated)
 ```bash
-# Inspect health
-docker ps
-docker inspect $(docker compose ps -q backend) | grep -i Health -n
-
-# (optional) Test service over localhost
-curl -I http://127.0.0.1:8000/
-
-# Internal DNS (inside backend) – db should resolve
-docker compose exec backend getent hosts db
+docker ps                                                               # quick view of running containers
+docker inspect $(docker compose ps -q backend) | grep -n '"Health"'     # inspect backend and filter health section
+curl -I http://127.0.0.1:8000/                                          # HEAD request to backend
+docker compose exec backend getent hosts db                              # confirm backend resolves 'db' over app_net
 ```
 
 ### 📸 Screenshot
 ![healthcheck](docs/healthcheck.png)
 
 ### ✅ Expected Result
-- Backend container shows `"Status": "healthy"`.
-- `db` resolves to an internal IP (e.g., `172.x.x.x`).
+- `"Status": "healthy"` in inspect output.
+- DNS resolution working between containers.
 
 ---
 
-## Task 4 – Network & Volume Persistence
+## Task 4 – Network & Volume Verification
 
 ### 📖 Theory
-Compose creates an isolated network (`app_net`) and a named volume for persistent database data.
+Verify Compose network (`app_net`) and persistent volume. These ensure isolated comms and durable data.
 
-### 💻 Commands
+### 💻 Commands (annotated)
 ```bash
-# Networks & volumes
-docker network ls
-docker volume ls
-
-# Recreate stack to prove persistence
-docker compose down
-docker compose up -d
+docker network ls                                                       # list docker networks; look for app_net
+docker volume ls                                                        # list volumes; look for the named DB volume
 ```
 
 ### 📸 Screenshot
 ![docker images / volumes](docs/docker_images.png)
 
 ### ✅ Expected Result
-- Custom network present.
-- Named volume present; DB data persists across restarts.
+- `app_net` network exists.
+- Named volume exists and is attached to db.
 
 ---
 
 ## Task 5 – EC2 Instance Creation & SSH Access
 
 ### 📖 Theory
-Provision an **AWS EC2 (t2.micro, Free Tier)** Ubuntu instance. Open ports **22 (SSH)** and **8000 (App)** in the Security Group. Connect via SSH.
+Provision AWS EC2 (Ubuntu, Free Tier), open SG ports (22, 8000), and connect via SSH.
 
-### 💻 Commands
+### 💻 Commands (annotated)
 ```bash
-# Connect from local to EC2
-ssh -i ~/.ssh/week7-key.pem ubuntu@<EC2_PUBLIC_IP>
-
-# Basic health
-uptime
-df -h
-free -m
+ssh -i ~/.ssh/week7-key.pem ubuntu@<EC2_PUBLIC_IP>                      # connect to the EC2 instance
+uptime                                                                  # instance load/uptime
+df -h                                                                   # disk usage
+free -m                                                                 # memory usage
 ```
 
 ### ✅ Expected Result
-- SSH prompt on the EC2 host: `ubuntu@ip-...:~$`
-- Instance healthy and responsive.
+- SSH prompt on EC2: `ubuntu@ip-...:~$` and basic health looks good.
 
 ---
 
 ## Task 6 – Transfer Project & Run Compose on EC2
 
 ### 📖 Theory
-Copy the local project to EC2, then run the same Compose stack on the remote machine.
+Copy the project to EC2 and run the same Compose stack remotely.
 
-### 💻 Commands
+### 💻 Commands (annotated)
 ```bash
-# From local → to EC2 home dir
-scp -i ~/.ssh/week7-key.pem -r /srv/DevOps-Linux/week7_compose ubuntu@<EC2_PUBLIC_IP>:~/
+# From local to EC2 (copies Week 7 only)
+scp -i ~/.ssh/week7-key.pem -r /srv/DevOps-Linux/week7_compose ubuntu@<EC2_PUBLIC_IP>:~/   # transfer project
 
 # On EC2
-ssh -i ~/.ssh/week7-key.pem ubuntu@<EC2_PUBLIC_IP>
-cd ~/week7_compose
-docker compose up -d
-docker compose ps
-
-# Browser test from your PC (Windows)
-# http://<EC2_PUBLIC_IP>:8000
+ssh -i ~/.ssh/week7-key.pem ubuntu@<EC2_PUBLIC_IP>                  # connect
+cd ~/week7_compose                                                  # enter project folder on EC2
+docker compose up -d                                                # start services in background
+docker compose ps                                                   # verify 'Up (healthy)' and ports mapping (0.0.0.0:8000->8000)
 ```
 
 ### 📸 Screenshot
 ![curl / ping / check](docs/ping_test.png)
 
 ### ✅ Expected Result
-- Backend reachable at `http://<EC2_PUBLIC_IP>:8000`.
-- Containers show `Up (healthy)` on EC2.
+- Backend available at `http://<EC2_PUBLIC_IP>:8000` from your browser.
+- Services report healthy on EC2.
 
 ---
 
-## Task 7 – CI/CD Deployment via GitHub Actions
+## Task 7 – CI/CD: compose-e2e (CI) and deploy (CD)
 
 ### 📖 Theory
-Automate deploys with two workflows:
-- **compose-e2e** – CI: build, run, wait for health, smoke test (on GitHub runner).
-- **deploy** – CD: copy project to EC2 and `docker compose up -d --build` remotely.
+Two workflows: **CI** (compose-e2e) validates the stack on a GitHub runner; **CD** (deploy) syncs the project to EC2 and restarts services.
 
-### 💻 Snippets
+### 💻 Snippets (key parts)
 ```yaml
 # .github/workflows/compose-ci.yml  (CI)
 name: compose-e2e
@@ -240,8 +246,8 @@ jobs:
 ```
 
 ### ✅ Expected Result
-- CI passes (green) on pushes/PRs to week7 files.
-- CD deploys to EC2 on each push to `main`.
+- CI turns green after health + smoke test.
+- CD deploys to EC2 whenever you push to `main`.
 
 </details>
 
@@ -251,11 +257,11 @@ jobs:
 <summary>🚀 <strong>Summary Project – Architecture & Flow</strong></summary>
 
 ### 🧠 Overview
-- **Backend**: Python HTTP server (port 8000), with Docker `healthcheck`.
+- **Backend**: Python HTTP server (port 8000), `healthcheck` enabled.
 - **Database**: PostgreSQL (port 5432).
 - **Network**: Internal Docker network `app_net` (backend ↔ db).
 - **Volume**: Persistent data at `/var/lib/postgresql/data`.
-- **Host**: AWS EC2 (Ubuntu), Security Group allows 22/8000.
+- **Host**: AWS EC2 (Ubuntu), SG allows 22/8000.
 - **CI/CD**: GitHub Actions (`compose-e2e` → `deploy`).
 
 ### 🖼️ Architecture Diagram
@@ -288,23 +294,26 @@ docker system prune -a -f
 docker volume prune -f
 ```
 
-### Useful Docker Commands
+### Useful Docker Commands (annotated)
 ```bash
-docker compose ps
-docker compose logs --tail 50
-docker compose down -v
-docker exec -it week7_compose-backend-1 sh
-docker inspect week7_compose-backend-1
+docker compose up -d                     # start all services (detached)
+docker compose ps                        # list services, status, health, port mappings
+docker compose logs --tail 50            # last 50 log lines from all services
+docker compose down -v                   # stop and remove services + volumes
+docker exec -it <container> sh           # open shell inside a running container
+docker inspect <container>               # detailed container information (including health)
+docker images                            # list local images
+docker volume ls                         # list volumes (named and anonymous)
 ```
 
 ### Git Basics
 ```bash
 git add .
-git commit -m "docs(week7): add README with tasks & diagram"
+git commit -m "docs(week7): update README with full local flow & annotations"
 git push origin main
 ```
 </details>
 
 ---
 
-✅ This completes **Week 7** – from local Docker setup to automated EC2 deployment with Docker Compose, healthchecks, volumes, and CI/CD.
+✅ This completes **Week 7** – from local Docker setup and validation to automated EC2 deployment with Docker Compose, healthchecks, volumes, and CI/CD.
