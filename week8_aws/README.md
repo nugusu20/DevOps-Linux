@@ -112,26 +112,112 @@ chmod +x healthcheck.sh
 ---
 
 <details>
-<summary>🖼️ Summary Project – Architecture & Flow</summary>
+<summary>⚙️ Auto-Start Flask on Reboot using systemd</summary>
 
-### ✅ Diagram
-📌 Shows full communication flow from user → EC2 → Nginx → Flask App  
-(See image: `diagram_flask_architecture.png`)
+### ✅ Service file (`/etc/systemd/system/flask-app.service`):
+```ini
+[Unit]
+Description=Flask App
+After=network.target
 
-![Architecture](diagram_flask_architecture.png)
+[Service]
+User=devouser
+ExecStart=/usr/bin/python3 /home/devouser/app.py
+WorkingDirectory=/home/devouser/
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### 💻 Commands to enable:
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl enable flask-app
+sudo systemctl start flask-app
+```
 
 </details>
 
 ---
 
-## 🧠 Tips & Useful Notes
+<details>
+<summary>🧪 Debugging & Validation Tools</summary>
 
-- Use `chmod 400 devops-key.pem` to prevent SSH permission denied.
-- Use `nohup python3 app.py &` to keep Flask alive after logout.
-- Configure Nginx to serve as reverse proxy so you can access Flask externally.
-- Use `curl -I http://localhost` to verify HTTP status (200 OK).
+### 🔎 Useful Commands:
+```bash
+curl http://localhost
+curl -I http://<PUBLIC-IP>
+ps aux | grep app.py
+sudo ss -tuln | grep ':80'
+```
+
+### ✅ Nginx Status:
+```bash
+sudo systemctl status nginx
+```
+
+</details>
 
 ---
 
-✅ This completes **Week 8** – You now have a working EC2 deployment with Flask, Nginx, and healthchecks.
+<details>
+<summary>🔐 Permissions & Security</summary>
+
+### ✅ Key Permissions:
+```bash
+chmod 400 devops-key.pem
+```
+
+### ✅ `.gitignore`:
+```bash
+# Ignore SSH private keys and envs
+*.pem
+.env
+```
+
+</details>
+
+---
+
+<details>
+<summary>📈 Persistence & Reboot Test</summary>
+
+### ✅ Validations After Reboot:
+- Flask service starts via systemd
+- Nginx responds with `HTTP 200 OK`
+- `curl` works internally and externally
+- Healthcheck returns ✅
+
+</details>
+
+---
+
+<details>
+<summary>🖼️ Summary Project – Architecture & Flow</summary>
+
+### ✅ Diagram
+Shows full communication flow from user → EC2 → Nginx → Flask App  
+🖼️ `diagram_flask_architecture.png`  
+📸 `screenshot_flask_app.png`
+
+![Architecture](diagram_flask_architecture.png)
+![Screenshot](screenshot_flask_app.png)
+
+</details>
+
+---
+
+## ✅ Project Complete – Week 8 Checklist
+
+- [x] EC2 instance created and SSH working
+- [x] Flask app deployed and accessible
+- [x] Reverse proxy configured with nginx
+- [x] Systemd service created for persistence
+- [x] Healthcheck validates app is up
+- [x] Diagram and screenshot included
+- [x] Project pushed to GitHub
+
+🎉 Well done!
 
