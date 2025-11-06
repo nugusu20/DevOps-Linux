@@ -18,7 +18,7 @@ This document covers all setup steps for deploying a simple Flask app on an AWS 
 ### 💻 Commands:
 ```bash
 aws ec2 create-key-pair --key-name devops-key --query 'KeyMaterial' --output text > devops-key.pem
-chmod 400 devops-key.pem
+chmod 400 devops-key.pem   # secure the private key for SSH
 ```
 
 ```bash
@@ -134,8 +134,8 @@ WantedBy=multi-user.target
 ```bash
 sudo systemctl daemon-reexec
 sudo systemctl daemon-reload
-sudo systemctl enable flask-app
-sudo systemctl start flask-app
+sudo systemctl enable flask-app   # enable Flask app to start on boot
+sudo systemctl start flask-app    # start Flask app service now
 ```
 
 </details>
@@ -147,7 +147,7 @@ sudo systemctl start flask-app
 
 ### 🔎 Useful Commands:
 ```bash
-curl http://localhost
+curl http://localhost   # test the app locally from the server
 curl -I http://<PUBLIC-IP>
 ps aux | grep app.py
 sudo ss -tuln | grep ':80'
@@ -167,7 +167,7 @@ sudo systemctl status nginx
 
 ### ✅ Key Permissions:
 ```bash
-chmod 400 devops-key.pem
+chmod 400 devops-key.pem   # secure the private key for SSH
 ```
 
 ### ✅ `.gitignore`:
@@ -221,3 +221,104 @@ Shows full communication flow from user → EC2 → Nginx → Flask App
 
 🎉 Well done!
 
+
+---
+
+## ℹ️ Introduction
+
+> This project demonstrates how to deploy a simple Flask web app on AWS EC2 using NGINX as a reverse proxy.  
+> All steps are performed using the AWS Free Tier, via CLI only, and are suitable for DevOps beginners.
+
+---
+
+## 🧭 AMI Selection – Important!
+
+> ⚠️ Make sure you choose a valid AMI ID for your **region** (e.g., `eu-central-1`).  
+> Recommended: Ubuntu Server 22.04 LTS.  
+> You can find the latest AMI ID via AWS Console → EC2 → AMIs  
+> [🔗 AMI Catalog – Frankfurt](https://eu-central-1.console.aws.amazon.com/ec2/home?region=eu-central-1#AMIs:)
+
+---
+
+<details>
+<summary>👤 Add EC2 User (devouser)</summary>
+
+Create a dedicated user for running the Flask app:
+
+```bash
+sudo adduser devouser   # create a new user named devouser
+sudo usermod -aG sudo devouser   # give devouser sudo permissions
+```
+
+Switch to the user:
+```bash
+su - devouser   # switch to devouser user account
+```
+
+</details>
+
+---
+
+<details>
+<summary>🧪 Validate systemd Status</summary>
+
+After enabling the Flask service, check that it is active:
+
+```bash
+sudo systemctl status flask-app   # check status of Flask app service
+```
+
+If there are issues, use:
+
+```bash
+journalctl -xe
+```
+
+</details>
+
+---
+
+<details>
+<summary>📁 .gitignore Reminder</summary>
+
+Ensure the following is included in your project root `.gitignore`:
+
+```gitignore
+# Sensitive files
+*.pem
+.env
+```
+
+> 💡 This prevents private keys from being uploaded to GitHub.
+</details>
+
+---
+
+<details>
+<summary>♻️ Shutdown Checklist (Avoid Charges)</summary>
+
+> ✅ Done working? Don’t forget to clean up.
+
+- [x] Stop your EC2 instance
+- [x] Clean up unused storage or snapshots
+- [x] Remove old AMIs or volumes (if not needed)
+
+```bash
+aws ec2 stop-instances --instance-ids <your-instance-id>   # stop EC2 instance to avoid charges
+```
+
+</details>
+
+---
+
+<details>
+<summary>🐞 Troubleshooting</summary>
+
+| Problem | Solution |
+|--------|----------|
+| 🔒 `Permission denied (publickey)` | Ensure `.pem` file is 400 and correct SSH user |
+| 🌐 App not showing in browser | Check if port 80 is open in Security Group |
+| 🚫 Flask not running | Verify `ps aux | grep app.py` or systemd |
+| 🔁 Rebooted and app is down | Check systemd is `enabled` and working |
+
+</details>
