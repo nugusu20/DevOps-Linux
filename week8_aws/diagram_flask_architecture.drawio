@@ -1,0 +1,48 @@
+<mxfile host="65bd71144e">
+    <diagram id="b29gUlSAVZfGg5VRl0nn" name="Page-1">
+        <mxGraphModel dx="714" dy="1663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <UserObject label="&lt;b&gt;EC2 Instance (Ubuntu Server)&lt;br&gt;Region: eu-central-1&lt;br&gt;Instance Type: t2.micro&lt;/b&gt;" link="EC2 Instance (Ubuntu Server)&#xa;Region: eu-central-1&#xa;Instance Type: t2.micro" id="2">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#647687;strokeColor=#314354;glass=1;fillStyle=auto;labelBorderColor=default;fontColor=#ffffff;" vertex="1" parent="1">
+                        <mxGeometry x="20" y="50" width="700" height="500" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="3" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;b&gt;NGINX&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;b&gt;Reverse Proxy (Port 80 → 5000)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#f0a30a;strokeColor=#BD7000;shadow=0;glass=1;perimeterSpacing=0;strokeWidth=2;labelBorderColor=default;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="100" width="660" height="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="220" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=none;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="5" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="5" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;b style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Flask App&amp;nbsp;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;b style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Python (Flask Server)&amp;nbsp;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;b style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Port: 5000&amp;nbsp;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;b style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Healthcheck: ✔️&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;labelBorderColor=default;fillColor=#1ba1e2;strokeColor=#006EAF;glass=1;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="140" width="620" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=#001DBC;fillColor=#0050ef;shape=mxgraph.azure.user;fontColor=#ffffff;gradientColor=default;gradientDirection=radial;" vertex="1" parent="1">
+                    <mxGeometry x="100" width="47.5" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="User  &#xa;Browser Access" style="text;whiteSpace=wrap;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="143" y="-19" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="HTTP Request (Port 80)" style="text;whiteSpace=wrap;rotation=30;" vertex="1" parent="1">
+                    <mxGeometry x="157.99999999999997" y="43" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;b&gt;Healthcheck Script&amp;nbsp;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;b&gt;(healthcheck.sh)&amp;nbsp;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;b&gt;Verifies Internal &amp;amp; External Access&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;labelBorderColor=default;fillColor=#bac8d3;strokeColor=#23445d;glass=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="210" width="580" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" style="html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.268;entryY=0.001;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="5" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

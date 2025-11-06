@@ -205,7 +205,7 @@ docker compose ls                      # local compose projects
 ---
 
 <details>
-<summary><strong>Summary (separate clip) – with link to Week 5 CI/CD</strong></summary>
+<summary><strong>Summary with link to Week 5 CI/CD</strong></summary>
 
 ### What we built
 - Two services: **app** (Flask) 5000 internal (published 5002), **db** (nginx) 80 (published 8080).  
