@@ -5,7 +5,7 @@
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <UserObject label="&lt;b&gt;EC2 Instance (Ubuntu Server)&lt;br&gt;Region: eu-central-1&lt;br&gt;Instance Type: t2.micro&lt;/b&gt;" link="EC2 Instance (Ubuntu Server)&#xa;Region: eu-central-1&#xa;Instance Type: t2.micro" id="2">
-                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#647687;strokeColor=#314354;glass=1;fillStyle=auto;labelBorderColor=default;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fa6800;strokeColor=#C73500;glass=1;fillStyle=auto;labelBorderColor=default;fontColor=#000000;" vertex="1" parent="1">
                         <mxGeometry x="20" y="50" width="700" height="500" as="geometry"/>
                     </mxCell>
                 </UserObject>
@@ -27,7 +27,7 @@
                 <mxCell id="8" style="edgeStyle=none;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6" target="3">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=#001DBC;fillColor=#0050ef;shape=mxgraph.azure.user;fontColor=#ffffff;gradientColor=default;gradientDirection=radial;" vertex="1" parent="1">
+                <mxCell id="6" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=#001DBC;fillColor=#0050ef;shape=mxgraph.azure.user;fontColor=#ffffff;gradientColor=light-dark(#373768,#D4D4FF);gradientDirection=radial;" vertex="1" parent="1">
                     <mxGeometry x="100" width="47.5" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="User  &#xa;Browser Access" style="text;whiteSpace=wrap;fontStyle=1" vertex="1" parent="1">
