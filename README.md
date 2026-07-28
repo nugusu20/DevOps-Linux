@@ -1,18 +1,21 @@
 <div align="center">
-  <img src="portfolio.png" width="130" style="border-radius: 50%;" alt="Nugusu Akalo" />
-  <h1>Nugusu Akalo</h1>
+  <img src="portfolio.png" width="130" style="border-radius: 50%;" alt="Nugusu Akelo" />
+  <h1>Nugusu Akelo</h1>
   <p><b>Junior DevOps Engineer</b> — NOC background, hands-on infrastructure projects, real troubleshooting experience</p>
+  
   <a href="https://www.linkedin.com/in/nugusu-akalo/">
-    <img src="https://img.shields.io/badge/LinkedIn-Nugusu%20Akalo-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
+    <img src="https://img.shields.io/badge/LinkedIn-Nugusu%20Akelo-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
   </a>
   &nbsp;
-  <a href="mailto:nugusu14@gmail.com">
-    <img src="https://img.shields.io/badge/Email-nugusu14%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" />
+  <a href="mailto:nugusu20@gmail.com">
+    <img src="https://img.shields.io/badge/Email-nugusu20%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" />
   </a>
   &nbsp;
   <a href="https://github.com/nugusu20">
     <img src="https://img.shields.io/badge/GitHub-nugusu20-181717?style=flat-square&logo=github&logoColor=white" />
   </a>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Clearance-Active%20High--Level-success?style=flat-square&logo=shield" />
 </div>
 
 ---
