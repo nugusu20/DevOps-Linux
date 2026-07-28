@@ -109,7 +109,7 @@ The project simulates a real-world deployment constraint: preparing and deployin
 
 | Period | Role |
 |---|---|
-| **2024–2025** | NOC Technician — Government / classified infrastructure environment (Prime Minister's Office) |
+| **2024** | NOC Technician — Government / classified infrastructure environment (Prime Minister's Office) |
 | **2023–2024** | Internal Help Desk — NESS Technologies |
 | **2021–2023** | Project Manager — SOB Communications |
 | **2016–2019** | Classified Facility Security Officer — Defense environment |
