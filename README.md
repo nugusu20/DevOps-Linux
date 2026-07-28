@@ -22,7 +22,7 @@
 
 ## Projects
 
-### SDS Inject — Offline Kubernetes Installer
+### Inject — Offline Kubernetes Installer
 
 > Deploying Kubernetes in environments with no internet access is a real constraint in government and classified infrastructure. This project builds a self-contained installer that bundles everything needed — binaries, configs, CNI packages — into a single runnable file.
 
