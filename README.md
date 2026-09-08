@@ -40,9 +40,9 @@ I am looking for a **Junior DevOps / Cloud / Infrastructure** role where I can c
 ## Recruiter Snapshot
 
 | Area | Summary |
-|---|---|
+|---|---|F
 | **Target Role** | Junior DevOps / Cloud / Infrastructure Engineer |
-| **Background** | Tier 2 NOC Operations (Prime Minister's Office), Help Desk (NESS), Project Management |
+| **Background** |  NOC Operations (Prime Minister's Office), Help Desk (NESS), Project Management |
 | **Clearance & Security** | Active High-Level Security Clearance, Classified Environments, Maglan Military Service |
 | **Core Strengths** | Root-cause troubleshooting, operational discipline, air-gapped logic, documentation |
 | **Main Tools** | Linux (Ubuntu/RHEL), Docker, Kubernetes, GitHub Actions, AWS, Bash, Terraform, Ansible |
@@ -54,7 +54,7 @@ I am looking for a **Junior DevOps / Cloud / Infrastructure** role where I can c
 
 I come from an operations and infrastructure background, where system reliability, clear procedures, and fast root-cause troubleshooting matter.
 
-My experience includes Tier 2 NOC operations at the Prime Minister's Office, internal technical support, project management, classified security environments, and military service in Maglan. These environments shaped how I work: stay calm under pressure, read logs, reproduce issues, validate each step, document clearly, and think about failure scenarios before writing features.
+My experience includes NOC operations at the Prime Minister's Office, internal technical support, project management, classified security environments, and military service in Maglan. These environments shaped how I work: stay calm under pressure, read logs, reproduce issues, validate each step, document clearly, and think about failure scenarios before writing features.
 
 Today, I am focused on DevOps and cloud infrastructure. I build hands-on projects around Linux, Docker, CI/CD, Kubernetes, AWS, automation, and offline/air-gapped deployment constraints.
 
